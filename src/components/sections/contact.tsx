@@ -52,22 +52,22 @@ export function Contact() {
                         </div>
 
                         {/* CTAs */}
-                        <div className="mt-10 flex flex-wrap gap-4">
+                        <div className="mt-10 grid grid-cols-2 gap-4 w-full md:w-auto">
                             <StrongButton
                                 variant="primary"
                                 onClick={() => window.open(siteConfig.social.facebook, "_blank")}
-                                className="h-14 px-8"
+                                className="h-14 w-full px-4 md:px-8 text-xs md:text-sm"
                             >
-                                <Facebook size={20} />
-                                MESSAGE ON FACEBOOK
+                                <Facebook size={18} className="shrink-0" />
+                                <span className="truncate">FACEBOOK</span>
                             </StrongButton>
                             <StrongButton
                                 variant="outline"
                                 onClick={() => window.open(`tel:${siteConfig.contact.phone}`, "_self")}
-                                className="h-14 px-8"
+                                className="h-14 w-full px-4 md:px-8 text-xs md:text-sm"
                             >
-                                <Phone size={20} />
-                                CALL NOW
+                                <Phone size={18} className="shrink-0" />
+                                <span className="truncate">CALL NOW</span>
                             </StrongButton>
                         </div>
                     </div>

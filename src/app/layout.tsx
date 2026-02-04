@@ -1,20 +1,20 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
+import { Oswald, Montserrat } from "next/font/google"; // Strong, Old School Modern
 import "./globals.css";
 
 // ============================================
 // FONTS - Optimized font loading
 // ============================================
-const inter = Inter({
+const oswald = Oswald({
     subsets: ["latin"],
     display: "swap",
-    variable: "--font-inter",
+    variable: "--font-oswald",
 });
 
-const playfair = Playfair_Display({
+const montserrat = Montserrat({
     subsets: ["latin"],
     display: "swap",
-    variable: "--font-playfair",
+    variable: "--font-montserrat",
 });
 
 // ============================================
@@ -102,15 +102,18 @@ import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { BackgroundGrain } from "@/components/ui/background-animation";
 
+import { ScrollToTop } from "@/components/ui/scroll-to-top";
+
 export default function RootLayout({
     children,
 }: Readonly<{
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
+        <html lang="en" className={`${oswald.variable} ${montserrat.variable}`}>
             <body className="min-h-screen bg-neutral-950 font-body text-neutral-50 selection:bg-primary-500/30 selection:text-neutral-50">
                 <SmoothScroll>
+                    <ScrollToTop />
                     {/* Background Animation */}
                     <BackgroundGrain />
 

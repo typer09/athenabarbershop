@@ -1,10 +1,16 @@
 "use client";
 
-import { useRef, useState, useEffect } from "react";
+import { useRef, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion, useScroll, useTransform, useSpring } from "framer-motion";
-import { ChevronRight, ArrowRight } from "lucide-react";
+import {
+    motion,
+    useAnimationFrame,
+    useMotionValue,
+    useSpring,
+    useTransform,
+} from "framer-motion";
+import { ArrowRight, ChevronRight } from "lucide-react";
 import { StrongButton } from "@/components/ui/strong-button";
 
 interface GalleryImage {
@@ -19,29 +25,61 @@ interface GallerySliderProps {
 
 export function GallerySlider({ images }: GallerySliderProps) {
     const containerRef = useRef<HTMLDivElement>(null);
-    const sliderRef = useRef<HTMLDivElement>(null);
+    const scrollContainerRef = useRef<HTMLDivElement>(null);
 
-    // Limit to 10 images for the slider to keep it performant
-    const sliderImages = images.slice(0, 8);
+    // 1. DUPLICATE IMAGES FOR INFINITE LOOP
+    // We need enough copies to cover the screen width + buffer.
+    // 4 copies should be plenty for standard screens.
+    const loopImages = [...images, ...images, ...images, ...images];
 
-    const [dragConstraint, setDragConstraint] = useState(0);
+    // 2. MOTION VALUES
+    const baseX = useMotionValue(0);
+    const scrollX = useSpring(baseX, {
+        stiffness: 400,
+        damping: 90,
+    });
 
-    useEffect(() => {
-        const handleResize = () => {
-            const cardWidth = window.innerWidth >= 768 ? 350 : 280;
-            const gap = 24;
-            const totalContentWidth = sliderImages.length * (cardWidth + gap);
-            // We want to drag left until the last item is visible on the right. 
-            // Logic: Total Width - Viewport. 
-            // Adding a buffer for safety and "overscroll" feel.
-            const maxDrag = -((totalContentWidth) - window.innerWidth + 100);
-            setDragConstraint(Math.min(0, maxDrag));
-        };
+    const autoScrollSpeed = 0.5; // Pixels per frame (approx)
+    const isDragging = useRef(false);
+    const directionFactor = useRef<number>(1); // 1 = moving left (standard)
 
-        handleResize();
-        window.addEventListener("resize", handleResize);
-        return () => window.removeEventListener("resize", handleResize);
-    }, [sliderImages.length]);
+    // 3. ANIMATION FRAME LOOP
+    useAnimationFrame((t, delta) => {
+        if (!isDragging.current) {
+            // Move purely by time
+            let moveBy = directionFactor.current * autoScrollSpeed * (delta / 16);
+
+            // Move LEFT by default (so subtract)
+            // But we actually want to move the container left, which means x goes negative.
+            // So moveBy should be negative.
+
+            baseX.set(baseX.get() - moveBy);
+        }
+    });
+
+    // 4. WRAPPING LOGIC & RESIZE
+    // We need to know the width of one "set" of images to wrap correctly.
+    // This is a bit tricky with responsive widths. 
+    // Simplified approach: Render a long strip, and when we hit a threshold, jump back.
+
+    // Instead of complex measuring, let's use the 'percent' approach or simple CSS marquee?
+    // User wants "interactive".
+    // Best way: useMotionValue driving a transform.
+
+    // Helper to wrap the value.
+    const x = useTransform(baseX, (v) => {
+        // Assume one set width. 
+        // We'll calculate this dynamically or just assume a large enough wrap point?
+        // Let's rely on a large negative number and modulo? 
+        // Framer Motion's `wrap` utility is good but we need the width.
+
+        // Let's try to measure width on mount/resize.
+        if (!scrollContainerRef.current) return `${v}px`;
+
+        const totalWidth = scrollContainerRef.current.scrollWidth / 4; // Since we quadrupled
+        const wrapped = ((v % totalWidth) - totalWidth) % totalWidth;
+        return `${wrapped}px`;
+    });
 
     return (
         <section className="relative bg-neutral-950 py-24 overflow-hidden border-t border-neutral-900">
@@ -60,47 +98,52 @@ export function GallerySlider({ images }: GallerySliderProps) {
                 </Link>
             </div>
 
-            {/* DRAG SLIDER */}
-            <div className="relative w-full cursor-grab active:cursor-grabbing pl-[5vw] md:pl-[max(0px,calc((100vw-1200px)/2+2rem))]">
+            {/* INTERACTIVE MARQUEE */}
+            <div
+                ref={containerRef}
+                className="relative w-full overflow-hidden cursor-grab active:cursor-grabbing"
+            >
+                <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-neutral-950 to-transparent z-10 pointer-events-none" />
+                <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-neutral-950 to-transparent z-10 pointer-events-none" />
+
                 <motion.div
-                    ref={sliderRef}
-                    className="flex gap-6"
+                    ref={scrollContainerRef}
+                    className="flex gap-6 w-max pl-4" // w-max to force horizontal
+                    style={{ x }}
                     drag="x"
-                    dragConstraints={{ right: 0, left: dragConstraint }}
-                    whileTap={{ cursor: "grabbing" }}
+                    dragConstraints={{ left: -10000, right: 10000 }} // Effectively infinite drag
+                    onDragStart={() => {
+                        isDragging.current = true;
+                    }}
+                    onDragEnd={(e, info) => {
+                        isDragging.current = false;
+                        // Optional: Add momentum to baseX based on drag velocity?
+                        // For now simple resume is safer to avoid glitches.
+                    }}
+                    onDrag={(e, info) => {
+                        // We manually update baseX to follow the drag
+                        // Actually `drag` prop handles the visual movement on top of `x`?
+                        // No, if we bind `style={{ x }}`, drag might fight it.
+                        // BETTER: Don't use `drag` prop if we control X manually?
+                        // OR: use drag to update baseX.
+                        baseX.set(baseX.get() + info.delta.x);
+                    }}
                 >
-                    {sliderImages.map((img, index) => (
-                        <motion.div
+                    {loopImages.map((img, index) => (
+                        <div
                             key={index}
-                            className="relative aspect-[3/4] w-[280px] md:w-[350px] shrink-0 overflow-hidden rounded-lg bg-neutral-900"
-                            whileHover={{ scale: 0.98 }}
-                            transition={{ duration: 0.3 }}
+                            className="relative aspect-[3/4] w-[280px] md:w-[350px] shrink-0 overflow-hidden rounded-lg bg-neutral-900 group"
                         >
                             <Image
                                 src={img.src}
                                 alt={img.alt}
                                 fill
-                                className="object-cover transition-transform duration-700 hover:scale-110 pointer-events-none" // pointer-events-none prevents dragging image ghost
+                                className="object-cover transition-transform duration-700 group-hover:scale-110 pointer-events-none"
                                 sizes="(max-width: 768px) 280px, 350px"
                             />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60" />
-                            <div className="absolute bottom-4 left-4">
-                                <span className="text-xs font-bold uppercase tracking-widest text-white/80 filter backdrop-blur-sm bg-black/20 px-2 py-1 rounded">
-                                    {img.category}
-                                </span>
-                            </div>
-                        </motion.div>
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                        </div>
                     ))}
-
-                    {/* "See More" Card at end of slider */}
-                    <div className="relative aspect-[3/4] w-[280px] md:w-[350px] shrink-0 flex items-center justify-center">
-                        <Link href="/gallery" className="w-full">
-                            <StrongButton variant="outline" className="w-full h-full aspect-[3/4] flex-col gap-4 text-xl">
-                                <span>VIEW FULL GALLERY</span>
-                                <ArrowRight size={24} />
-                            </StrongButton>
-                        </Link>
-                    </div>
                 </motion.div>
             </div>
 

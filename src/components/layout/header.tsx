@@ -47,7 +47,7 @@ export function Header() {
                             className="object-cover"
                         />
                     </div>
-                    <span className="font-heading text-lg font-bold tracking-tight hidden sm:block text-neutral-100">
+                    <span className="font-heading text-xl font-bold tracking-tight hidden sm:block text-neutral-100">
                         BLACK <span className="text-primary-500">BARBER</span>
                     </span>
                 </Link>

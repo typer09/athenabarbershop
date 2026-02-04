@@ -48,7 +48,7 @@ export default function ContactPage() {
                         </section>
 
                         {/* 3. LOCATION & HOURS (Merged Compact Card) */}
-                        <section className="rounded-3xl bg-neutral-900/30 border border-white/5 p-6 md:p-8 backdrop-blur-sm">
+                        <section className="rounded-sm bg-neutral-900/30 border border-white/5 p-6 md:p-8 backdrop-blur-sm">
                             <div className="flex flex-col gap-8 md:flex-row md:gap-12">
                                 {/* Location */}
                                 <div className="flex-1 space-y-4">
@@ -89,25 +89,11 @@ export default function ContactPage() {
                                 </div>
                             </div>
                         </section>
-
-                        {/* 4. VIBE IMAGE CARD (Visual Enhancement) */}
-                        <div className="relative h-48 w-full overflow-hidden rounded-3xl border border-neutral-800/50 md:h-64">
-                            <Image
-                                src="/images/gallery/crop/nicehaircut.jpg" // Using existing gallery image
-                                alt="Barbershop Vibe"
-                                fill
-                                className="object-cover grayscale transition-all duration-700 hover:grayscale-0 hover:scale-105"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/80 to-transparent pointer-events-none" />
-                            <div className="absolute bottom-6 left-6 right-6">
-                                <p className="font-heading text-2xl text-white font-bold">Classic Cuts, Modern Vibe.</p>
-                            </div>
-                        </div>
                     </div>
 
                     {/* RIGHT COLUMN: BOOKING FORM (Secondary) */}
                     <div className="lg:col-span-6">
-                        <div className="rounded-3xl bg-neutral-900 border border-neutral-800 p-8 shadow-2xl relative overflow-hidden">
+                        <div className="rounded-sm bg-neutral-900 border border-neutral-800 p-8 shadow-2xl relative overflow-hidden">
                             {/* Subtle top visual */}
                             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-neutral-700 to-transparent opacity-20" />
 

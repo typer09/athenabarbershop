@@ -3,22 +3,17 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, Play, Star, ShieldCheck, Clock } from "lucide-react";
+import { Play, Star, ShieldCheck, Clock } from "lucide-react";
 import { StrongButton } from "@/components/ui/strong-button";
 import BlurText from "@/components/ui/blur-text";
+import { PageBackButton } from "@/components/ui/page-back-button";
 
 export default function PrivateServicePage() {
     return (
         <main className="min-h-screen bg-neutral-950 pt-20 pb-20">
+            <PageBackButton />
             {/* Header / Intro */}
             <div className="section-container pt-8 pb-16">
-                <Link
-                    href="/"
-                    className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-neutral-500 hover:text-primary-500 transition-colors mb-8"
-                >
-                    <ArrowLeft size={14} />
-                    <span>Back to Home</span>
-                </Link>
 
                 <div className="flex flex-col md:flex-row items-end justify-between gap-8 border-b border-neutral-900 pb-12">
                     <div className="max-w-2xl">

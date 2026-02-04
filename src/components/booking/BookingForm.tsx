@@ -34,9 +34,9 @@ export function BookingForm() {
     };
 
     const inputClasses = (name: string) => cn(
-        "w-full rounded-xl bg-neutral-950 border p-4 text-sm text-neutral-100 placeholder:text-neutral-600 transition-all duration-300 outline-none appearance-none",
+        "w-full rounded-sm bg-neutral-950 border p-4 text-sm text-neutral-100 placeholder:text-neutral-600 transition-all duration-300 outline-none appearance-none",
         focusedField === name
-            ? "border-primary-500/50 ring-4 ring-primary-500/10 shadow-[0_0_20px_rgba(212,168,83,0.1)]"
+            ? "border-primary-500/50 ring-1 ring-primary-500/50" // Sharper ring style
             : "border-neutral-800 hover:border-neutral-700"
     );
 
@@ -133,7 +133,7 @@ export function BookingForm() {
             </div>
 
             {/* Helper Text */}
-            <div className="rounded-lg bg-neutral-950/50 p-3 border border-neutral-800/50 flex items-start gap-3">
+            <div className="rounded-sm bg-neutral-950/50 p-3 border border-neutral-800/50 flex items-start gap-3">
                 <CheckCircle2 size={16} className="text-primary-500 mt-0.5 shrink-0" />
                 <p className="text-xs text-neutral-400 leading-relaxed">
                     Submitting will open <strong>WhatsApp</strong> with your details pre-filled. You can edit the message before sending.
@@ -144,7 +144,7 @@ export function BookingForm() {
             <button
                 type="submit"
                 disabled={isLoading}
-                className="group relative w-full overflow-hidden rounded-xl bg-primary-500 py-4 text-sm font-bold uppercase tracking-widest text-neutral-950 transition-all hover:bg-primary-400 hover:shadow-[0_0_40px_rgba(212,168,83,0.3)] active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed"
+                className="group relative w-full overflow-hidden rounded-sm bg-primary-500 py-4 text-sm font-bold uppercase tracking-widest text-neutral-950 transition-all hover:bg-primary-400 hover:shadow-[0_0_40px_rgba(212,168,83,0.3)] active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed"
             >
                 <div className="relative z-10 flex items-center justify-center gap-2">
                     {isLoading ? (

@@ -27,6 +27,7 @@ type BlurTextProps = {
     easing?: string | number[];
     onAnimationComplete?: () => void;
     stepDuration?: number;
+    triggerOnce?: boolean;
 };
 
 // Build keyframes function was slightly complex in original, creating a simpler compatible version for framer-motion structure if needed, 
@@ -57,7 +58,8 @@ const BlurText: React.FC<BlurTextProps> = ({
     animationTo,
     easing = "easeInOut",
     onAnimationComplete,
-    stepDuration = 0.35
+    stepDuration = 0.35,
+    triggerOnce = false,
 }) => {
     const elements = animateBy === 'words' ? text.split(' ') : text.split('');
     const [inView, setInView] = useState(false);
@@ -69,14 +71,18 @@ const BlurText: React.FC<BlurTextProps> = ({
             ([entry]) => {
                 if (entry.isIntersecting) {
                     setInView(true);
-                    observer.unobserve(ref.current as Element);
+                    if (triggerOnce) {
+                        observer.unobserve(ref.current as Element);
+                    }
+                } else if (!triggerOnce) {
+                    setInView(false);
                 }
             },
             { threshold, rootMargin }
         );
         observer.observe(ref.current);
         return () => observer.disconnect();
-    }, [threshold, rootMargin]);
+    }, [threshold, rootMargin, triggerOnce]);
 
     const defaultFrom = useMemo(
         () =>

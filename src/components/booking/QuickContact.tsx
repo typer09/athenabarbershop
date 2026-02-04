@@ -5,43 +5,39 @@ import { Phone, MessageCircle, Facebook, ArrowUpRight } from "lucide-react";
 
 export function QuickContact() {
     return (
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-4">
             {/* WhatsApp - DOMINANT */}
             <a
                 href={siteConfig.social.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative overflow-hidden bg-[#25D366] p-6 transition-all duration-300 hover:brightness-110 active:scale-[0.98]"
+                className="group relative overflow-hidden rounded-sm bg-[#25D366] px-5 py-4 transition-all duration-300 hover:brightness-110 active:scale-[0.98] shadow-lg shadow-[#25D366]/20"
             >
                 <div className="relative z-10 flex items-center justify-between">
-                    <div className="flex items-center gap-5">
-                        <div className="flex h-14 w-14 items-center justify-center bg-white/20 text-white">
-                            <MessageCircle size={28} fill="currentColor" />
-                        </div>
-                        <div>
-                            <h4 className="font-heading text-xl font-black tracking-wider text-neutral-950 uppercase">Chat on WhatsApp</h4>
-                            <p className="font-body text-base text-neutral-900 font-medium opacity-80">Instant Booking & Support</p>
+                    <div className="flex items-center gap-4">
+                        <MessageCircle size={24} fill="currentColor" className="text-white" />
+                        <div className="flex flex-col">
+                            <h4 className="font-bold text-neutral-950 uppercase tracking-wider text-sm leading-tight">Chat on WhatsApp</h4>
+                            <p className="text-xs text-neutral-900/80 font-medium">Instant Booking</p>
                         </div>
                     </div>
-                    <div className="h-10 w-10 flex items-center justify-center bg-white/20 text-neutral-950 opacity-0 transform translate-x-4 transition-all group-hover:opacity-100 group-hover:translate-x-0">
-                        <ArrowUpRight size={20} />
-                    </div>
+                    <ArrowUpRight size={18} className="text-neutral-950 opacity-70 group-hover:translate-x-1 transition-transform" />
                 </div>
             </a>
 
-            {/* Secondary Actions - Strong Button Style */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {/* Secondary Actions */}
+            <div className="grid grid-cols-2 gap-4">
                 {/* Call Now */}
                 <a
                     href={`tel:${siteConfig.contact.phone}`}
-                    className="group flex items-center gap-4 bg-neutral-900 border border-neutral-800 p-5 transition-all hover:border-primary-500 active:scale-[0.98]"
+                    className="group flex items-center gap-3 rounded-sm bg-neutral-900 border border-neutral-800 px-4 py-4 transition-all hover:border-primary-500/50 hover:bg-neutral-800/50 active:scale-[0.98]"
                 >
-                    <div className="flex h-12 w-12 items-center justify-center bg-neutral-800 text-neutral-400 group-hover:bg-primary-500/10 group-hover:text-primary-500 transition-colors">
-                        <Phone size={22} />
+                    <div className="shrink-0 text-neutral-400 group-hover:text-primary-500 transition-colors">
+                        <Phone size={20} />
                     </div>
-                    <div>
-                        <h4 className="font-heading font-black tracking-widest text-neutral-200 group-hover:text-primary-500 uppercase text-sm">Call Shop</h4>
-                        <p className="text-xs text-neutral-500 mt-1">{siteConfig.contact.phone}</p>
+                    <div className="overflow-hidden">
+                        <h4 className="font-bold text-neutral-200 group-hover:text-primary-500 uppercase text-xs tracking-wider truncate">Call Shop</h4>
+                        <p className="text-[10px] text-neutral-500 truncate">{siteConfig.contact.phone}</p>
                     </div>
                 </a>
 
@@ -50,14 +46,14 @@ export function QuickContact() {
                     href={siteConfig.social.facebook}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group flex items-center gap-4 bg-neutral-900 border border-neutral-800 p-5 transition-all hover:border-primary-500 active:scale-[0.98]"
+                    className="group flex items-center gap-3 rounded-sm bg-neutral-900 border border-neutral-800 px-4 py-4 transition-all hover:border-blue-500/50 hover:bg-neutral-800/50 active:scale-[0.98]"
                 >
-                    <div className="flex h-12 w-12 items-center justify-center bg-neutral-800 text-neutral-400 group-hover:bg-blue-500/10 group-hover:text-blue-500 transition-colors">
-                        <Facebook size={22} />
+                    <div className="shrink-0 text-neutral-400 group-hover:text-blue-500 transition-colors">
+                        <Facebook size={20} />
                     </div>
                     <div>
-                        <h4 className="font-heading font-black tracking-widest text-neutral-200 group-hover:text-primary-500 uppercase text-sm">Messenger</h4>
-                        <p className="text-xs text-neutral-500 mt-1">The Black Barbershop</p>
+                        <h4 className="font-bold text-neutral-200 group-hover:text-blue-500 uppercase text-xs tracking-wider">Messenger</h4>
+                        <p className="text-[10px] text-neutral-500">The Black Barbershop</p>
                     </div>
                 </a>
             </div>

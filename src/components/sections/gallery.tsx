@@ -3,8 +3,10 @@
 import { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, ChevronLeft, ChevronRight } from "lucide-react";
+import { X, ChevronLeft, ChevronRight, ChevronsRight } from "lucide-react";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
+import { StrongButton } from "@/components/ui/strong-button";
 
 // Types
 export type GalleryCategory = "all" | "fade" | "classic" | "crop" | "beard" | "combo";
@@ -40,7 +42,7 @@ export function Gallery({ images }: GalleryProps) {
         e.stopPropagation();
         if (selectedImage === null) return;
         const nextIndex =
-            selectedImage + 1 >= filteredImages.length ? 0 : selectedImage + 1;
+            selectedImage + 1 >= images.length ? 0 : selectedImage + 1;
         setSelectedImage(nextIndex);
     };
 
@@ -48,54 +50,31 @@ export function Gallery({ images }: GalleryProps) {
         e.stopPropagation();
         if (selectedImage === null) return;
         const prevIndex =
-            selectedImage - 1 < 0 ? filteredImages.length - 1 : selectedImage - 1;
+            selectedImage - 1 < 0 ? images.length - 1 : selectedImage - 1;
         setSelectedImage(prevIndex);
     };
 
     return (
-        <section id="gallery" className="section-padding bg-neutral-950">
-            <div className="section-container">
-                <div className="mb-12 text-center">
-                    <h2 className="heading-lg mb-4 text-neutral-50">Our Masterpieces</h2>
-                    <p className="text-neutral-400">Precision in every detail</p>
-                </div>
-
-                {/* Filter Tabs */}
-                <div className="mb-12 flex flex-wrap justify-center gap-4">
-                    {categories.map((cat) => (
-                        <button
-                            key={cat.id}
-                            onClick={() => setFilter(cat.id)}
-                            className={cn(
-                                "relative rounded-full px-6 py-2 text-sm font-medium transition-colors",
-                                filter === cat.id
-                                    ? "text-neutral-950"
-                                    : "text-neutral-400 hover:text-neutral-200"
-                            )}
-                        >
-                            {filter === cat.id && (
-                                <motion.div
-                                    layoutId="activeTab"
-                                    className="absolute inset-0 rounded-full bg-primary-500"
-                                    initial={false}
-                                    transition={{ type: "spring", stiffness: 500, damping: 30 }}
-                                />
-                            )}
-                            <span className="relative z-10">{cat.label}</span>
-                        </button>
-                    ))}
+        <section id="gallery" className="section-padding bg-neutral-950 min-h-screen flex flex-col">
+            <div className="section-container flex-1">
+                <div className="mb-16 text-center">
+                    <p className="text-primary-500 font-bold tracking-widest uppercase mb-4 text-sm">Portfolio</p>
+                    <h2 className="heading-xl text-neutral-50 mb-6">Masterpieces <br /><span className="text-neutral-500">In The Dark</span></h2>
+                    <p className="text-neutral-400 max-w-2xl mx-auto font-body text-lg">
+                        Precision in every detail. Explore our collection of refined cuts and styles.
+                    </p>
                 </div>
 
                 {/* MASONRY GRID */}
                 <motion.div
                     layout
-                    className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4"
+                    className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-5 mb-24"
                 >
                     <AnimatePresence>
-                        {filteredImages.map((img, index) => (
+                        {images.map((img, index) => (
                             <motion.div
                                 layout
-                                key={img.src}
+                                key={index}
                                 initial={{ opacity: 0, scale: 0.8 }}
                                 animate={{ opacity: 1, scale: 1 }}
                                 exit={{ opacity: 0, scale: 0.8 }}
@@ -115,6 +94,28 @@ export function Gallery({ images }: GalleryProps) {
                         ))}
                     </AnimatePresence>
                 </motion.div>
+
+                {/* NEXT GUEST CTA */}
+                {/* NEXT GUEST CTA - Strong & Clean Design */}
+                <div className="relative overflow-hidden bg-neutral-900 border-y border-neutral-800 py-24 text-center mb-12 group">
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-neutral-800/20 via-neutral-900/0 to-neutral-900/0 opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
+
+                    <div className="relative z-10 flex flex-col items-center gap-8">
+                        <h3 className="flex flex-wrap justify-center items-baseline gap-x-3 text-6xl md:text-8xl font-heading font-black text-white uppercase tracking-tighter leading-none">
+                            <span>Next</span>
+                            <span className="text-transparent text-stroke-1 text-stroke-white transition-all duration-500 group-hover:text-white group-hover:text-stroke-0">Guest?</span>
+                        </h3>
+                        <p className="text-neutral-400 max-w-lg text-xl font-light leading-relaxed">
+                            Your transformation awaits. <br />
+                            <span className="text-primary-500 font-bold">Claim your legacy.</span>
+                        </p>
+                        <Link href="/contact">
+                            <StrongButton className="h-16 px-12 text-lg tracking-widest">
+                                BOOK APPOINTMENT
+                            </StrongButton>
+                        </Link>
+                    </div>
+                </div>
             </div>
 
             {/* LIGHTBOX */}
@@ -161,17 +162,17 @@ export function Gallery({ images }: GalleryProps) {
                         >
                             <div className="relative h-full w-full">
                                 <Image
-                                    src={filteredImages[selectedImage].src}
-                                    alt={filteredImages[selectedImage].alt}
+                                    src={images[selectedImage].src}
+                                    alt={images[selectedImage].alt}
                                     fill
                                     className="rounded-lg object-contain"
                                     priority
                                     quality={90}
                                 />
                                 {/* Caption */}
-                                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 rounded-full bg-black/50 px-4 py-2 text-sm text-white backdrop-blur-md">
-                                    {filteredImages[selectedImage].category.toUpperCase()} Style
-                                </div>
+                                {/* <div className="absolute bottom-4 left-1/2 -translate-x-1/2 rounded-full bg-black/50 px-4 py-2 text-sm text-white backdrop-blur-md">
+                                    {images[selectedImage].category.toUpperCase()} Style
+                                </div> */}
                             </div>
                         </motion.div>
                     </motion.div>

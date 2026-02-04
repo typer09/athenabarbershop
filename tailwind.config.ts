@@ -40,8 +40,8 @@ const config: Config = {
             },
             fontFamily: {
                 // Classic serif for headings, clean sans for body
-                heading: ["var(--font-playfair)", "Georgia", "serif"],
-                body: ["var(--font-inter)", "system-ui", "sans-serif"],
+                heading: ["var(--font-oswald)", "sans-serif"],
+                body: ["var(--font-montserrat)", "sans-serif"],
             },
             animation: {
                 "fade-in": "fadeIn 0.5s ease-out forwards",

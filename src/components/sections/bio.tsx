@@ -36,15 +36,15 @@ export function Bio() {
                         <div className="space-y-6 max-w-lg mb-10">
                             {/* Founder Name */}
                             <motion.div
-                                initial={{ opacity: 0, y: 10 }}
-                                whileInView={{ opacity: 1, y: 0 }}
+                                initial={{ opacity: 0, x: -20 }}
+                                whileInView={{ opacity: 1, x: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: 0.2 }}
                                 className="flex items-center gap-3"
                             >
-                                <div className="w-10 h-px bg-primary-500" />
-                                <span className="text-primary-500 font-heading font-bold tracking-widest uppercase text-sm">
-                                    Est. by Mai Đức
+                                <span className="h-px w-12 bg-primary-500" />
+                                <span className="font-heading font-bold tracking-[0.2em] uppercase text-sm text-neutral-300">
+                                    EST. BY <span className="text-primary-500">MAI DUC</span>
                                 </span>
                             </motion.div>
 
@@ -54,16 +54,16 @@ export function Bio() {
                                 delay={20}
                                 animateBy="words"
                                 direction="bottom"
-                                className="text-neutral-400 text-lg leading-relaxed font-light"
+                                className="text-neutral-400 text-lg leading-relaxed font-light text-center lg:text-left"
                             />
 
                             {/* Shop Bio */}
                             <BlurText
-                                text="Since 2023, The Black Barber has set the standard for masculine grooming in An Thượng where every cut is a craft."
+                                text="Since 2025, The Black Barber has set the standard for masculine grooming in An Thượng where every cut is a craft."
                                 delay={20}
                                 animateBy="words"
                                 direction="bottom"
-                                className="text-neutral-500 text-base leading-relaxed"
+                                className="text-neutral-500 text-base leading-relaxed text-center lg:text-left"
                             />
                         </div>
 
