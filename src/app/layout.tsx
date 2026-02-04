@@ -18,51 +18,53 @@ const montserrat = Montserrat({
 });
 
 // ============================================
-// METADATA - SEO Configuration
+// METADATA - SEO Configuration for Local Search
 // ============================================
 export const metadata: Metadata = {
     metadataBase: new URL(
-        process.env.NEXT_PUBLIC_SITE_URL || "https://theblackbarber.com"
+        process.env.NEXT_PUBLIC_SITE_URL || "https://theblackbarbershop.site"
     ),
     title: {
-        default: "The Black Barber | Premium Barbershop Experience",
-        template: "%s | The Black Barber",
+        default: "The Black Barbershop Da Nang | Professional Barber Shop in Da Nang",
+        template: "%s | The Black Barbershop Da Nang",
     },
     description:
-        "Experience the art of classic barbering. Premium cuts, hot towel shaves, and grooming services in a refined atmosphere. Book your appointment today.",
+        "The Black Barbershop Da Nang - Premium barber shop in An Thuong, Da Nang, Vietnam. Professional men's haircut, hot towel shaving, and grooming services. Book your appointment today.",
     keywords: [
-        "barbershop",
-        "haircut",
-        "shave",
-        "grooming",
-        "men's haircut",
-        "fade",
-        "beard trim",
-        "hot towel shave",
+        "the black barbershop da nang",
+        "black barber shop da nang",
+        "barber shop da nang",
+        "barbershop da nang",
+        "men haircut da nang",
+        "barber da nang vietnam",
+        "shaving da nang",
+        "men grooming da nang",
+        "an thuong barber",
+        "haircut vietnam",
     ],
-    authors: [{ name: "The Black Barber" }],
-    creator: "The Black Barber",
+    authors: [{ name: "The Black Barbershop Da Nang" }],
+    creator: "The Black Barbershop Da Nang",
     openGraph: {
         type: "website",
-        locale: "en_US",
-        siteName: "The Black Barber",
-        title: "The Black Barber | Premium Barbershop Experience",
+        locale: "vi_VN",
+        siteName: "The Black Barbershop Da Nang",
+        title: "The Black Barbershop Da Nang | Professional Barber Shop in Da Nang",
         description:
-            "Experience the art of classic barbering. Premium cuts, hot towel shaves, and grooming services in a refined atmosphere.",
+            "Premium barber shop in An Thuong, Da Nang. Professional men's haircut, hot towel shaving, and grooming services.",
         images: [
             {
                 url: "/og-image.jpg",
                 width: 1200,
                 height: 630,
-                alt: "The Black Barber - Premium Barbershop",
+                alt: "The Black Barbershop Da Nang - Premium Barber Shop",
             },
         ],
     },
     twitter: {
         card: "summary_large_image",
-        title: "The Black Barber | Premium Barbershop",
+        title: "The Black Barbershop Da Nang | Barber Shop in Da Nang",
         description:
-            "Experience the art of classic barbering. Premium cuts, hot towel shaves, and grooming services.",
+            "Premium barber shop in Da Nang, Vietnam. Men's haircut, shaving, and grooming services.",
         images: ["/og-image.jpg"],
     },
     robots: {
@@ -76,12 +78,11 @@ export const metadata: Metadata = {
             "max-snippet": -1,
         },
     },
-    icons: {
-        icon: "/favicon.ico",
-        shortcut: "/favicon-16x16.png",
-        apple: "/apple-touch-icon.png",
-    },
+    // icons: { ... } removed to use Next.js file-based icon generation (src/app/icon.jpg)
     manifest: "/site.webmanifest",
+    alternates: {
+        canonical: "https://theblackbarbershop.site",
+    },
 };
 
 export const viewport: Viewport = {
@@ -101,8 +102,8 @@ import { SmoothScroll } from "@/components/ui/smooth-scroll";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { BackgroundGrain } from "@/components/ui/background-animation";
-
 import { ScrollToTop } from "@/components/ui/scroll-to-top";
+import { LocalBusinessJsonLd } from "@/components/seo/LocalBusinessJsonLd";
 
 export default function RootLayout({
     children,
@@ -110,7 +111,10 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en" className={`${oswald.variable} ${montserrat.variable}`}>
+        <html lang="vi" className={`${oswald.variable} ${montserrat.variable}`}>
+            <head>
+                <LocalBusinessJsonLd />
+            </head>
             <body className="min-h-screen bg-neutral-950 font-body text-neutral-50 selection:bg-primary-500/30 selection:text-neutral-50">
                 <SmoothScroll>
                     <ScrollToTop />

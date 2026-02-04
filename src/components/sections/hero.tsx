@@ -100,10 +100,13 @@ export function Hero() {
                     <p className="hero-text-element font-body text-sm font-medium tracking-widest text-primary-500 uppercase">
                         Est. 2022 Hoi An/ 2025 Da Nang
                     </p>
-                    <h1 className="hero-text-element mt-4 font-heading text-6xl font-bold leading-none text-neutral-50 sm:text-8xl md:text-9xl lg:text-[10rem] uppercase">
+                    <h1 className="hero-text-element mt-4 font-heading text-5xl font-bold leading-none text-neutral-50 sm:text-7xl md:text-8xl lg:text-9xl uppercase">
                         The Black <br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-neutral-200 to-neutral-500">
-                            Barber
+                            Barbershop
+                        </span>
+                        <span className="block text-primary-500 text-3xl sm:text-4xl md:text-5xl mt-2">
+                            Da Nang
                         </span>
                     </h1>
                     <p className="hero-text-element mt-8 max-w-xl font-body text-lg text-neutral-300 sm:text-xl">

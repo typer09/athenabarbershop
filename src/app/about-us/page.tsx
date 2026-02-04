@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { Footer } from "@/components/layout/footer";
 import { PageBackButton } from "@/components/ui/page-back-button";
 import Image from "next/image";
@@ -6,6 +7,17 @@ import Link from "next/link";
 import BlurText from "@/components/ui/blur-text";
 import { Separator } from "@/components/ui/separator";
 import TextType from "@/components/ui/text-type";
+
+export const metadata: Metadata = {
+    title: "About The Black Barbershop Da Nang | Our Story",
+    description:
+        "Learn about The Black Barbershop Da Nang - from Hoi An origins to Da Nang's premier barber shop. Professional men's grooming in An Thuong, Da Nang, Vietnam.",
+    openGraph: {
+        title: "About The Black Barbershop Da Nang",
+        description:
+            "From Hoi An to Da Nang - the story of The Black Barbershop. Premium barber services in An Thuong.",
+    },
+};
 
 export default function AboutUsPage() {
     return (

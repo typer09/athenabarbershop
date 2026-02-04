@@ -1,12 +1,20 @@
-"use client";
-
+import type { Metadata } from "next";
 import { BookingForm } from "@/components/booking/BookingForm";
 import { QuickContact } from "@/components/booking/QuickContact";
 import { siteConfig } from "@/lib/config";
-import { motion } from "framer-motion";
 import { MapPin, Clock, ArrowLeft } from "lucide-react";
 import Link from "next/link";
-import Image from "next/image";
+
+export const metadata: Metadata = {
+    title: "Contact & Book | The Black Barbershop Da Nang",
+    description:
+        "Book your appointment at The Black Barbershop Da Nang. Call +84 36 969 2729 or WhatsApp. Located in An Thuong, Da Nang, Vietnam. Open daily 9:00 AM - 9:30 PM.",
+    openGraph: {
+        title: "Book Your Appointment | The Black Barbershop Da Nang",
+        description:
+            "Contact The Black Barbershop in An Thuong, Da Nang. Call, WhatsApp, or book online.",
+    },
+};
 
 export default function ContactPage() {
     return (
@@ -24,10 +32,10 @@ export default function ContactPage() {
                 <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
                     <div>
                         <h1 className="font-heading text-4xl font-bold text-white md:text-5xl lg:text-6xl mb-4">
-                            Connect & Book
+                            Contact The Black Barbershop Da Nang
                         </h1>
                         <p className="text-neutral-400 max-w-lg text-lg">
-                            The quickest way to get a slot is via WhatsApp or a direct call.
+                            The quickest way to book is via WhatsApp or a direct call.
                         </p>
                     </div>
                 </div>
@@ -47,14 +55,14 @@ export default function ContactPage() {
                             <QuickContact />
                         </section>
 
-                        {/* 3. LOCATION & HOURS (Merged Compact Card) */}
+                        {/* 2. LOCATION & HOURS (Merged Compact Card) */}
                         <section className="rounded-sm bg-neutral-900/30 border border-white/5 p-6 md:p-8 backdrop-blur-sm">
                             <div className="flex flex-col gap-8 md:flex-row md:gap-12">
                                 {/* Location */}
                                 <div className="flex-1 space-y-4">
                                     <div className="flex items-center gap-3">
                                         <MapPin size={18} className="text-neutral-400" />
-                                        <h3 className="font-heading text-lg font-bold text-white">Visit Us</h3>
+                                        <h3 className="font-heading text-lg font-bold text-white">Visit Us in Da Nang</h3>
                                     </div>
                                     <p className="text-sm text-neutral-400 leading-relaxed">
                                         {siteConfig.address.full}
@@ -65,7 +73,7 @@ export default function ContactPage() {
                                         rel="noopener noreferrer"
                                         className="inline-block text-xs font-bold uppercase tracking-wider text-primary-500 hover:text-white transition-colors border-b border-primary-500/30 hover:border-white pb-0.5"
                                     >
-                                        Open Map
+                                        Open in Google Maps
                                     </a>
                                 </div>
 
@@ -89,6 +97,27 @@ export default function ContactPage() {
                                 </div>
                             </div>
                         </section>
+
+                        {/* 3. GOOGLE MAPS EMBED */}
+                        <section className="rounded-sm overflow-hidden border border-white/5">
+                            <div className="mb-4 flex items-center gap-3 px-1">
+                                <span className="h-px w-8 bg-primary-500"></span>
+                                <h2 className="text-sm font-bold uppercase tracking-widest text-primary-500">Find Us in An Thuong, Da Nang</h2>
+                            </div>
+                            <div className="aspect-video w-full">
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3835.369!2d108.2424!3d16.0497!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x314219c8e1e4e1e1%3A0x1e1e1e1e1e1e1e1e!2sThe%20Black%20Barbershop!5e0!3m2!1sen!2s!4v1706000000000!5m2!1sen!2s"
+                                    width="100%"
+                                    height="100%"
+                                    style={{ border: 0 }}
+                                    allowFullScreen
+                                    loading="lazy"
+                                    referrerPolicy="no-referrer-when-downgrade"
+                                    title="The Black Barbershop Da Nang Location"
+                                    className="grayscale hover:grayscale-0 transition-all duration-500"
+                                ></iframe>
+                            </div>
+                        </section>
                     </div>
 
                     {/* RIGHT COLUMN: BOOKING FORM (Secondary) */}
@@ -98,9 +127,9 @@ export default function ContactPage() {
                             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-neutral-700 to-transparent opacity-20" />
 
                             <div className="mb-8">
-                                <h2 className="font-heading text-2xl font-bold text-white mb-2">Detailed Booking</h2>
+                                <h2 className="font-heading text-2xl font-bold text-white mb-2">Book Your Haircut in Da Nang</h2>
                                 <p className="text-sm text-neutral-500">
-                                    Prefer to fill out details first? Use this form to prepare your request.
+                                    Fill out this form to prepare your booking request.
                                 </p>
                             </div>
 

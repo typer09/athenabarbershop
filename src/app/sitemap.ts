@@ -3,11 +3,11 @@ import type { MetadataRoute } from "next";
 /**
  * SITEMAP
  * Generates sitemap.xml for SEO
- * Add new pages here as they are created
+ * All pages for The Black Barbershop Da Nang
  */
 export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl =
-        process.env.NEXT_PUBLIC_SITE_URL || "https://theblackbarber.com";
+        process.env.NEXT_PUBLIC_SITE_URL || "https://theblackbarbershop.site";
 
     return [
         {
@@ -20,10 +20,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
             url: `${baseUrl}/services`,
             lastModified: new Date(),
             changeFrequency: "monthly",
-            priority: 0.8,
+            priority: 0.9,
         },
         {
-            url: `${baseUrl}/about`,
+            url: `${baseUrl}/about-us`,
             lastModified: new Date(),
             changeFrequency: "monthly",
             priority: 0.7,
@@ -38,14 +38,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
             url: `${baseUrl}/contact`,
             lastModified: new Date(),
             changeFrequency: "monthly",
+            priority: 0.8,
+        },
+        {
+            url: `${baseUrl}/private-service`,
+            lastModified: new Date(),
+            changeFrequency: "monthly",
             priority: 0.6,
         },
-        // Add booking page when implemented
-        // {
-        //   url: `${baseUrl}/book`,
-        //   lastModified: new Date(),
-        //   changeFrequency: "weekly",
-        //   priority: 0.9,
-        // },
     ];
 }
+

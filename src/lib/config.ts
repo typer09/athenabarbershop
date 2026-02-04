@@ -10,7 +10,7 @@ export const siteConfig = {
     short_name: "The Black Barber",
     description:
         "Premium barbering in An Thuong, Da Nang. Precision fades, cold towel shaves, and the distinct Innoir atmosphere.",
-    url: process.env.NEXT_PUBLIC_SITE_URL || "https://theblackbarber.com",
+    url: process.env.NEXT_PUBLIC_SITE_URL || "https://theblackbarbershop.site",
 
     // Contact Information
     contact: {
