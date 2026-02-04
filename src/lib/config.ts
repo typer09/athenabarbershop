@@ -43,7 +43,7 @@ export const siteConfig = {
 
     // Business Hours
     hours: [
-        { day: "Everyday", opens: "09:00", closes: "20:00" },
+        { day: "Everyday", opens: "09:00", closes: "21:30" },
     ],
 
     // Social Media Links
