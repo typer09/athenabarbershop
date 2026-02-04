@@ -1,0 +1,138 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================
+   GLOBALS - Base styles for The Black Barber
+   ============================================ */
+
+@layer base {
+    :root {
+        /* CSS Variables for theming */
+        --background: 12 10 9;
+        /* neutral-950 */
+        --foreground: 250 250 249;
+        /* neutral-50 */
+        --primary: 212 168 83;
+        /* primary-500 gold */
+        --muted: 68 64 60;
+        /* neutral-700 */
+        --border: 41 37 36;
+        /* neutral-800 */
+        --radius: 0.5rem;
+    }
+
+    html.lenis,
+    html.lenis body {
+        height: auto;
+    }
+
+    .lenis.lenis-smooth {
+        scroll-behavior: auto !important;
+    }
+
+    .lenis.lenis-smooth [data-lenis-prevent] {
+        overscroll-behavior: contain;
+    }
+
+    .lenis.lenis-stopped {
+        overflow: hidden;
+    }
+
+    .lenis.lenis-scrolling iframe {
+        pointer-events: none;
+    }
+
+    html {
+        /* scroll-behavior: smooth;  <-- Disable native smooth scroll when using Lenis */
+    }
+
+    body {
+        @apply bg-neutral-950 text-neutral-50 antialiased;
+        font-feature-settings: "rlig" 1, "calt" 1;
+    }
+
+    /* Typography defaults */
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @apply font-heading font-bold tracking-tight;
+    }
+
+    p,
+    span,
+    li {
+        @apply font-body;
+    }
+
+    /* Focus states for accessibility */
+    :focus-visible {
+        @apply outline-2 outline-offset-2 outline-primary-500;
+    }
+
+    /* Selection styling */
+    ::selection {
+        @apply bg-primary-500/30 text-neutral-50;
+    }
+}
+
+@layer components {
+
+    /* Reusable component patterns */
+    .section-container {
+        @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+    }
+
+    .section-padding {
+        @apply py-16 md:py-24 lg:py-32;
+    }
+
+    .heading-xl {
+        @apply text-4xl sm:text-5xl md:text-6xl lg:text-7xl;
+    }
+
+    .heading-lg {
+        @apply text-3xl sm:text-4xl md:text-5xl;
+    }
+
+    .heading-md {
+        @apply text-2xl sm:text-3xl md:text-4xl;
+    }
+
+    .text-gradient {
+        @apply bg-gradient-to-r from-primary-400 to-primary-600 bg-clip-text text-transparent;
+    }
+}
+
+@layer utilities {
+
+    /* Animation utilities */
+    .animate-delay-100 {
+        animation-delay: 100ms;
+    }
+
+    .animate-delay-200 {
+        animation-delay: 200ms;
+    }
+
+    .animate-delay-300 {
+        animation-delay: 300ms;
+    }
+
+    .animate-delay-500 {
+        animation-delay: 500ms;
+    }
+
+    /* Hide scrollbar but keep functionality */
+    .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+    }
+}
