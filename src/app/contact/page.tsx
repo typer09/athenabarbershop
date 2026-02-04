@@ -60,7 +60,7 @@ export default function ContactPage() {
                                         {siteConfig.address.full}
                                     </p>
                                     <a
-                                        href={siteConfig.address.googleMap}
+                                        href={siteConfig.address.googleMapLink}
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="inline-block text-xs font-bold uppercase tracking-wider text-primary-500 hover:text-white transition-colors border-b border-primary-500/30 hover:border-white pb-0.5"

@@ -86,8 +86,7 @@ export function BookingForm() {
                         >
                             <option value="Haircut (150k)">Haircut (150k)</option>
                             <option value="Shaving (80k)">Shaving (80k)</option>
-                            <option value="Combo (200k)">Combo (200k)</option>
-                            <option value="VIP Combo (250k)">VIP Combo (250k)</option>
+                            <option value="Combo (250k)">Combo (250k)</option>
                             <option value="Private Service">Private Service</option>
                         </select>
                         <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-neutral-500">

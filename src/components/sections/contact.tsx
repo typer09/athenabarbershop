@@ -73,10 +73,10 @@ export function Contact() {
                     </div>
 
                     {/* Map Side */}
-                    <div className="h-[400px] overflow-hidden rounded-2xl border border-neutral-800 bg-neutral-950 lg:h-auto">
+                    <div className="h-[400px] overflow-hidden rounded-2xl border border-neutral-800 bg-neutral-950 lg:h-auto relative">
                         <iframe
                             title="Location Map"
-                            src={siteConfig.address.googleMap}
+                            src={siteConfig.address.googleMapEmbed}
                             width="100%"
                             height="100%"
                             style={{ border: 0, filter: "grayscale(1) invert(1) contrast(1.2)" }}
@@ -85,6 +85,16 @@ export function Contact() {
                             referrerPolicy="no-referrer-when-downgrade"
                             className="opacity-80 transition-opacity hover:opacity-100"
                         />
+                        {/* View on Map Button */}
+                        <a
+                            href={siteConfig.address.googleMapLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="absolute bottom-4 right-4 flex items-center gap-2 bg-primary-500 hover:bg-primary-400 text-neutral-950 px-4 py-2 rounded-sm font-bold text-xs uppercase tracking-wider transition-all shadow-lg hover:shadow-xl active:scale-95"
+                        >
+                            <MapPin size={16} />
+                            <span>Get Directions</span>
+                        </a>
                     </div>
                 </div>
             </div>

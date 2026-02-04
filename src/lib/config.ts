@@ -25,20 +25,20 @@ export const siteConfig = {
 
     // Physical Address
     address: {
-        street: "32 b5 Khu K38, An Thượng 39, Bắc Mỹ Phú",
+        street: "D29, An Thượng 34, Bắc Mỹ Phú",
         city: "Ngũ Hành Sơn",
         state: "Da Nang",
         zip: "556920",
         country: "Vietnam",
-        full: "32 b5 Khu K38, An Thượng 39, Bắc Mỹ Phú, Ngũ Hành Sơn, Đà Nẵng, Việt Nam",
-        // Using valid iframe embed URL for the address
-        googleMap: "https://maps.google.com/maps?q=32%20b5%20Khu%20K38%2C%20An%20Th%C6%B0%E1%BB%A3ng%2039%2C%20Ng%C5%A9%20H%C3%A0nh%20S%C6%A1n%2C%20%C4%90%C3%A0%20N%E1%BA%B5ng&t=&z=15&ie=UTF8&iwloc=&output=embed",
+        full: "D29, An Thượng 34, Bắc Mỹ Phú, Ngũ Hành Sơn, Đà Nẵng 500000, Vietnam",
+        googleMapLink: "https://maps.app.goo.gl/gvT2DE26CUAUk6j67",
+        googleMapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3835.3699686894196!2d108.24239687573127!3d16.04967698396434!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x314219c8e1e4e1e1%3A0x1e1e1e1e1e1e1e1e!2sThe%20Black%20Barbershop!5e0!3m2!1sen!2s!4v1000000000000!5m2!1sen!2s",
     },
 
     // Geolocation (for maps and local SEO)
     geo: {
-        lat: 16.0544,
-        lng: 108.2022,
+        lat: 16.04967695751448,
+        lng: 108.24461553374563,
     },
 
     // Business Hours
@@ -81,14 +81,7 @@ export const siteConfig = {
         {
             id: "combo",
             name: "Combo",
-            description: "Haircut + Shaving + Shampoo + Styling",
-            price: 200000,
-            category: "Combo"
-        },
-        {
-            id: "vip",
-            name: "VIP Combo",
-            description: "Haircut + Cold Towel Shave + Shampoo + Styling",
+            description: "Haircut + Hot Towel Shave + Shampoo + Styling",
             price: 250000,
             category: "Combo"
         },

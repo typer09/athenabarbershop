@@ -50,7 +50,7 @@ export function Bio() {
 
                             {/* Short Bio */}
                             <BlurText
-                                text="Master barber with 5+ years of experience specializing in modern fades, classic cuts, and beard sculpting. Trained in traditional techniques with a vision to bring premium grooming to Da Nang."
+                                text="Master barber with 15+ years of experience specializing in modern fades, classic cuts, and beard sculpting. Trained in traditional techniques with a vision to bring premium grooming to Da Nang."
                                 delay={20}
                                 animateBy="words"
                                 direction="bottom"
