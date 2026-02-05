@@ -63,8 +63,8 @@ export function LocalBusinessJsonLd() {
                 "Saturday",
                 "Sunday",
             ],
-            opens: h.opens,
-            closes: h.closes,
+            opens: h.opens.replace(/^T/, ""),
+            closes: h.closes.replace(/^T/, ""),
         })),
         sameAs: [siteConfig.social.facebook],
         hasOfferCatalog: {
@@ -88,13 +88,7 @@ export function LocalBusinessJsonLd() {
             name: siteConfig.contact.founder,
             sameAs: siteConfig.contact.founderProfile,
         },
-        aggregateRating: {
-            "@type": "AggregateRating",
-            ratingValue: "5",
-            reviewCount: "50",
-            bestRating: "5",
-            worstRating: "1",
-        },
+        // Note: aggregateRating removed - requires real review data from Google Business Profile
     };
 
     return (
