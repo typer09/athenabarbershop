@@ -13,7 +13,7 @@ export function Footer() {
                     {/* Column 1: Brand (Full width on mobile) */}
                     <div className="col-span-2 md:col-span-1 space-y-6">
                         <h3 className="font-heading text-xl font-bold tracking-tight text-white">
-                            THE BLACK <span className="text-primary-500">BARBER</span>
+                            ATHENA <span className="text-primary-500">BARBER SHOP</span>
                         </h3>
                         <p className="text-sm text-neutral-400 leading-relaxed max-w-xs">
                             {siteConfig.description}

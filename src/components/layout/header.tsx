@@ -48,7 +48,7 @@ export function Header() {
                         />
                     </div>
                     <span className="font-heading text-xl font-bold tracking-tight hidden sm:block text-neutral-100">
-                        BLACK <span className="text-primary-500">BARBER</span>
+                        ATHENA <span className="text-primary-500">BARBER SHOP</span>
                     </span>
                 </Link>
 
