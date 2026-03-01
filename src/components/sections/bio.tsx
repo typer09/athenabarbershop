@@ -96,7 +96,7 @@ export function Bio() {
 
                             <Image
                                 src="/images/gallery/crop/owner.png"
-                                alt="Mai Duc - Master Barber"
+                                alt="Duy Phong (Spinn) - Master Barber"
                                 fill
                                 className="object-cover object-[50%_20%] grayscale hover:grayscale-0 transition-all duration-700"
                                 sizes="(max-width: 768px) 100vw, 50vw"

@@ -26,7 +26,7 @@ export function About() {
 
                         <div className="space-y-6 text-lg text-neutral-400 leading-relaxed">
                             <p>
-                                Located in the localized An Thuong area (K38), Athena Barber Shop brings a distinct
+                                Located in the localized Hai Chau district (K38), Athena Barber Shop brings a distinct
                                 <span className="text-neutral-200 font-medium"> &quot;Innoir&quot;</span> atmosphere to Da Nang&apos;s grooming scene.
                                 We move away from the noise to focus purely on the craft.
                             </p>

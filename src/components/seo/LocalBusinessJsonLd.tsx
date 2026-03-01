@@ -15,7 +15,7 @@ export function LocalBusinessJsonLd() {
         name: "Athena Barber Shop Da Nang",
         alternateName: ["Athena Barber Shop", "Athena Barber Shop Da Nang"],
         description:
-            "Premium barber shop in An Thuong, Da Nang, Vietnam. Professional men's haircut, hot towel shaving, and grooming services.",
+            "Premium barber shop in Hai Chau, Da Nang, Vietnam. Professional men's haircut, hot towel shaving, and grooming services.",
         url: "https://theathenabarbershopshop.site",
         telephone: siteConfig.contact.phoneIntl,
         email: siteConfig.contact.email,
@@ -45,7 +45,7 @@ export function LocalBusinessJsonLd() {
             },
             {
                 "@type": "Neighborhood",
-                name: "An Thuong",
+                name: "Hai Chau",
                 containedInPlace: {
                     "@type": "City",
                     name: "Da Nang",
