@@ -22,17 +22,17 @@ const montserrat = Montserrat({
 // ============================================
 export const metadata: Metadata = {
     metadataBase: new URL(
-        process.env.NEXT_PUBLIC_SITE_URL || "https://theblackbarbershop.site"
+        process.env.NEXT_PUBLIC_SITE_URL || "https://theathenabarbershopshop.site"
     ),
     title: {
-        default: "The Black Barbershop Da Nang | Professional Barber Shop in Da Nang",
-        template: "%s | The Black Barbershop Da Nang",
+        default: "Athena Barber Shop Da Nang | Professional Barber Shop in Da Nang",
+        template: "%s | Athena Barber Shop Da Nang",
     },
     description:
-        "The Black Barbershop Da Nang - Premium barber shop in An Thuong, Da Nang, Vietnam. Professional men's haircut, hot towel shaving, and grooming services. Book your appointment today.",
+        "Athena Barber Shop Da Nang - Premium barber shop in An Thuong, Da Nang, Vietnam. Professional men's haircut, hot towel shaving, and grooming services. Book your appointment today.",
     keywords: [
-        "the black barbershop da nang",
-        "black barber shop da nang",
+        "athena barber shop da nang",
+        "athena barber shop da nang",
         "barber shop da nang",
         "barbershop da nang",
         "men haircut da nang",
@@ -42,13 +42,13 @@ export const metadata: Metadata = {
         "an thuong barber",
         "haircut vietnam",
     ],
-    authors: [{ name: "The Black Barbershop Da Nang" }],
-    creator: "The Black Barbershop Da Nang",
+    authors: [{ name: "Athena Barber Shop Da Nang" }],
+    creator: "Athena Barber Shop Da Nang",
     openGraph: {
         type: "website",
         locale: "vi_VN",
-        siteName: "The Black Barbershop Da Nang",
-        title: "The Black Barbershop Da Nang | Professional Barber Shop in Da Nang",
+        siteName: "Athena Barber Shop Da Nang",
+        title: "Athena Barber Shop Da Nang | Professional Barber Shop in Da Nang",
         description:
             "Premium barber shop in An Thuong, Da Nang. Professional men's haircut, hot towel shaving, and grooming services.",
         images: [
@@ -56,13 +56,13 @@ export const metadata: Metadata = {
                 url: "/og-image.jpg",
                 width: 1200,
                 height: 630,
-                alt: "The Black Barbershop Da Nang - Premium Barber Shop",
+                alt: "Athena Barber Shop Da Nang - Premium Barber Shop",
             },
         ],
     },
     twitter: {
         card: "summary_large_image",
-        title: "The Black Barbershop Da Nang | Barber Shop in Da Nang",
+        title: "Athena Barber Shop Da Nang | Barber Shop in Da Nang",
         description:
             "Premium barber shop in Da Nang, Vietnam. Men's haircut, shaving, and grooming services.",
         images: ["/og-image.jpg"],
@@ -81,7 +81,7 @@ export const metadata: Metadata = {
     // icons: { ... } removed to use Next.js file-based icon generation (src/app/icon.jpg)
     manifest: "/site.webmanifest",
     alternates: {
-        canonical: "https://theblackbarbershop.site",
+        canonical: "https://theathenabarbershopshop.site",
     },
 };
 

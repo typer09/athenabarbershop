@@ -6,13 +6,13 @@ import { MapPin, Clock, ArrowLeft } from "lucide-react";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-    title: "Contact & Book | The Black Barbershop Da Nang",
+    title: "Contact & Book | Athena Barber Shop Da Nang",
     description:
-        "Book your appointment at The Black Barbershop Da Nang. Call +84 36 969 2729 or WhatsApp. Located in An Thuong, Da Nang, Vietnam. Open daily 9:00 AM - 9:30 PM.",
+        "Book your appointment at Athena Barber Shop Da Nang. Call +84 36 969 2729 or WhatsApp. Located in An Thuong, Da Nang, Vietnam. Open daily 9:00 AM - 9:30 PM.",
     openGraph: {
-        title: "Book Your Appointment | The Black Barbershop Da Nang",
+        title: "Book Your Appointment | Athena Barber Shop Da Nang",
         description:
-            "Contact The Black Barbershop in An Thuong, Da Nang. Call, WhatsApp, or book online.",
+            "Contact Athena Barber Shop in An Thuong, Da Nang. Call, WhatsApp, or book online.",
     },
 };
 
@@ -32,7 +32,7 @@ export default function ContactPage() {
                 <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
                     <div>
                         <h1 className="font-heading text-4xl font-bold text-white md:text-5xl lg:text-6xl mb-4">
-                            Contact The Black Barbershop Da Nang
+                            Contact Athena Barber Shop Da Nang
                         </h1>
                         <p className="text-neutral-400 max-w-lg text-lg">
                             The quickest way to book is via WhatsApp or a direct call.
@@ -113,7 +113,7 @@ export default function ContactPage() {
                                     allowFullScreen
                                     loading="lazy"
                                     referrerPolicy="no-referrer-when-downgrade"
-                                    title="The Black Barbershop Da Nang Location"
+                                    title="Athena Barber Shop Da Nang Location"
                                     className="grayscale hover:grayscale-0 transition-all duration-500"
                                 ></iframe>
                             </div>

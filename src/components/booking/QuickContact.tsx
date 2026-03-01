@@ -53,7 +53,7 @@ export function QuickContact() {
                     </div>
                     <div>
                         <h4 className="font-bold text-neutral-200 group-hover:text-blue-500 uppercase text-xs tracking-wider">Messenger</h4>
-                        <p className="text-[10px] text-neutral-500">The Black Barbershop</p>
+                        <p className="text-[10px] text-neutral-500">Athena Barber Shop</p>
                     </div>
                 </a>
             </div>

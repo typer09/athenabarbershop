@@ -23,7 +23,7 @@ export async function getGalleryImages(): Promise<GalleryImage[]> {
                     images.push({
                         src: `/images/gallery/${cat}/${file}`,
                         category: cat,
-                        alt: `${cat} style haircut - The Black Barber Da Nang`,
+                        alt: `${cat} style haircut - Athena Barber Shop Da Nang`,
                     });
                 }
             });

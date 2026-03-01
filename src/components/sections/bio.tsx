@@ -59,7 +59,7 @@ export function Bio() {
 
                             {/* Shop Bio */}
                             <BlurText
-                                text="Since 2025, The Black Barber has set the standard for masculine grooming in An Thượng where every cut is a craft."
+                                text="Since 2025, Athena Barber Shop has set the standard for masculine grooming in An Thượng where every cut is a craft."
                                 delay={20}
                                 animateBy="words"
                                 direction="bottom"

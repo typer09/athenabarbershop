@@ -3,11 +3,11 @@ import type { MetadataRoute } from "next";
 /**
  * SITEMAP
  * Generates sitemap.xml for SEO
- * All pages for The Black Barbershop Da Nang
+ * All pages for Athena Barber Shop Da Nang
  */
 export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl =
-        process.env.NEXT_PUBLIC_SITE_URL || "https://theblackbarbershop.site";
+        process.env.NEXT_PUBLIC_SITE_URL || "https://theathenabarbershopshop.site";
 
     return [
         {

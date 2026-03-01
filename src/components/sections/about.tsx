@@ -26,7 +26,7 @@ export function About() {
 
                         <div className="space-y-6 text-lg text-neutral-400 leading-relaxed">
                             <p>
-                                Located in the localized An Thuong area (K38), The Black Barbershop brings a distinct
+                                Located in the localized An Thuong area (K38), Athena Barber Shop brings a distinct
                                 <span className="text-neutral-200 font-medium"> &quot;Innoir&quot;</span> atmosphere to Da Nang&apos;s grooming scene.
                                 We move away from the noise to focus purely on the craft.
                             </p>
@@ -57,7 +57,7 @@ export function About() {
                         <div className="relative h-full w-full overflow-hidden rounded-lg bg-neutral-900 shadow-2xl">
                             <Image
                                 src="/images/about/about-bg.jpg" // Ensure this maps to a real file or fallback
-                                alt="The Black Barbershop Interior"
+                                alt="Athena Barber Shop Interior"
                                 fill
                                 className="object-cover grayscale transition-all duration-700 hover:grayscale-0"
                                 sizes="(max-width: 1024px) 100vw, 50vw"

@@ -22,7 +22,7 @@ export function BookingForm() {
         setIsLoading(true);
 
         setTimeout(() => {
-            const message = `Hi The Black Barber 👋\nI just submitted a booking request via website.\n\nName: ${formData.name}\nPhone: ${formData.phone}\nService: ${formData.service}\nPreferred Time: ${formData.time}\nNotes: ${formData.notes}\n\nPlease confirm if this slot is available. Thank you!`;
+            const message = `Hi Athena Barber Shop 👋\nI just submitted a booking request via website.\n\nName: ${formData.name}\nPhone: ${formData.phone}\nService: ${formData.service}\nPreferred Time: ${formData.time}\nNotes: ${formData.notes}\n\nPlease confirm if this slot is available. Thank you!`;
             const whatsappUrl = `https://wa.me/${siteConfig.contact.phoneE164}?text=${encodeURIComponent(message)}`;
             window.location.href = whatsappUrl;
             setIsLoading(false);

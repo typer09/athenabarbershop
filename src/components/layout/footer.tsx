@@ -68,7 +68,7 @@ export function Footer() {
                                 className="text-sm text-neutral-400 hover:text-white flex gap-2 transition-colors"
                             >
                                 <Facebook size={16} className="text-primary-500 shrink-0" />
-                                Facebook: The Blackbarbershop
+                                Facebook: Athena Barber Shop
                             </a>
                         </address>
                     </div>
@@ -76,7 +76,7 @@ export function Footer() {
 
                 {/* Bottom Area */}
                 <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-neutral-900 text-xs text-neutral-600">
-                    <p>© {new Date().getFullYear()} The Black Barbershop. All rights reserved.</p>
+                    <p>© {new Date().getFullYear()} Athena Barber Shop. All rights reserved.</p>
                     <div className="flex gap-6 mt-4 md:mt-0">
                         <Link href="#" className="hover:text-neutral-400">Privacy Policy</Link>
                         <Link href="#" className="hover:text-neutral-400">Terms of Service</Link>
@@ -87,7 +87,7 @@ export function Footer() {
             {/* BIG BACKGROUND TEXT */}
             <div className="absolute bottom-0 left-1/2 -translate-x-1/2 select-none pointer-events-none opacity-[0.03]">
                 <span className="text-[12vw] md:text-[14vw] font-heading font-black whitespace-nowrap text-white leading-none">
-                    BLACK BARBER
+                    ATHENA BARBER SHOP
                 </span>
             </div>
         </footer>

@@ -9,13 +9,13 @@ import { Separator } from "@/components/ui/separator";
 import TextType from "@/components/ui/text-type";
 
 export const metadata: Metadata = {
-    title: "About The Black Barbershop Da Nang | Our Story",
+    title: "About Athena Barber Shop Da Nang | Our Story",
     description:
-        "Learn about The Black Barbershop Da Nang - from Hoi An origins to Da Nang's premier barber shop. Professional men's grooming in An Thuong, Da Nang, Vietnam.",
+        "Learn about Athena Barber Shop Da Nang - from Hoi An origins to Da Nang's premier barber shop. Professional men's grooming in An Thuong, Da Nang, Vietnam.",
     openGraph: {
-        title: "About The Black Barbershop Da Nang",
+        title: "About Athena Barber Shop Da Nang",
         description:
-            "From Hoi An to Da Nang - the story of The Black Barbershop. Premium barber services in An Thuong.",
+            "From Hoi An to Da Nang - the story of Athena Barber Shop. Premium barber services in An Thuong.",
     },
 };
 
@@ -85,7 +85,7 @@ export default function AboutUsPage() {
                                     Mai Duc began his career in the heritage city of Hoi An. Surrounded by timeless architecture and a slow-paced lifestyle, he developed a deep appreciation for craftsmanship.
                                 </p>
                                 <p>
-                                    Working with a diverse range of international clients, he honed his skills in classic barbering while understanding the unique needs of different hair textures and face shapes. It was here that the foundation of <strong>The Black Barber</strong> philosophy was built: <em className="text-neutral-300">Precision above all else.</em>
+                                    Working with a diverse range of international clients, he honed his skills in classic barbering while understanding the unique needs of different hair textures and face shapes. It was here that the foundation of <strong>Athena Barber Shop</strong> philosophy was built: <em className="text-neutral-300">Precision above all else.</em>
                                 </p>
                             </div>
                         </div>
@@ -108,7 +108,7 @@ export default function AboutUsPage() {
                             </div>
                             <div className="space-y-6 text-neutral-400 text-lg leading-relaxed">
                                 <p>
-                                    Returning to Da Nang, Mai Duc established <strong>The Black Barbershop</strong> with a singular vision: to create a space that blends the raw, masculine energy of a traditional shop with the refined service of a modern studio.
+                                    Returning to Da Nang, Mai Duc established <strong>Athena Barber Shop</strong> with a singular vision: to create a space that blends the raw, masculine energy of a traditional shop with the refined service of a modern studio.
                                 </p>
                                 <p>
                                     Located in An Thuong, the shop is designed for the modern man. Minimalist, dark, and focused. We don't just cut hair; we mold style and shape character.
@@ -121,7 +121,7 @@ export default function AboutUsPage() {
                                 <div className="absolute inset-0 bg-neutral-950/20 group-hover:bg-transparent transition-colors duration-500 z-10" />
                                 <Image
                                     src="/images/2025.jpg"
-                                    alt="The Black Barber 2025"
+                                    alt="Athena Barber Shop 2025"
                                     fill
                                     className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100"
                                 />

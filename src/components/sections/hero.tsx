@@ -85,7 +85,7 @@ export function Hero() {
                     <div className="absolute inset-0 z-10 bg-gradient-to-b from-neutral-950/60 via-neutral-950/40 to-neutral-950" />
                     <Image
                         src="/images/hero/hero-bg.jpg" // Ensure this exists or fallback
-                        alt="The Black Barbershop Interior"
+                        alt="Athena Barber Shop Interior"
                         fill
                         priority
                         className="object-cover"

@@ -6,11 +6,11 @@
  */
 
 export const siteConfig = {
-    name: "The Black Barbershop Da Nang",
-    short_name: "The Black Barber",
+    name: "Athena Barber Shop Da Nang",
+    short_name: "Athena Barber Shop",
     description:
         "Premium barbering in An Thuong, Da Nang. Precision fades, cold towel shaves, and the distinct Innoir atmosphere.",
-    url: process.env.NEXT_PUBLIC_SITE_URL || "https://theblackbarbershop.site",
+    url: process.env.NEXT_PUBLIC_SITE_URL || "https://theathenabarbershopshop.site",
 
     // Contact Information
     contact: {

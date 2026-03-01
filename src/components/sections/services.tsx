@@ -173,7 +173,7 @@ export function Services() {
 
                 <div className="mt-20 text-center border-t border-neutral-900 pt-8 max-w-md mx-auto">
                     <p className="text-xs text-neutral-600 uppercase tracking-widest font-semibold">
-                        The Black Barber Da Nang
+                        Athena Barber Shop Da Nang
                     </p>
                 </div>
             </div>
