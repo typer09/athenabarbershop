@@ -14,19 +14,19 @@ export const siteConfig = {
 
     // Contact Information
     contact: {
-        phone: "036 969 2729", // Display format
-        phoneIntl: "+84 36 969 2729", // Href format
-        phoneE164: "84369692729", // WhatsApp format
-        email: "theblackbabershop@gmail.com",
-        facebook: "https://www.facebook.com/profile.php?id=61583002566642",
-        founder: "Mai Duc",
-        founderProfile: "https://www.facebook.com/mai.uc.770348"
+        phone: "0 78 502 8805", // Display format
+        phoneIntl: "+84 78 502 8805", // Href format
+        phoneE164: "84785028805", // WhatsApp format
+        email: "chaugiang2304@gmail.com",
+        facebook: "https://www.facebook.com/profile.php?id=100083368424144",
+        founder: "Duy Phong (Spinn)",
+        founderProfile: "https://www.facebook.com/phongxoay97"
     },
 
     // Physical Address
     address: {
-        street: "D29, An Thượng 34, Bắc Mỹ Phú",
-        city: "Ngũ Hành Sơn",
+        street: "89 Hùng Vương",
+        city: "Hải Châu",
         state: "Da Nang",
         zip: "556920",
         country: "Vietnam",
@@ -50,7 +50,7 @@ export const siteConfig = {
     social: {
         facebook: "https://www.facebook.com/profile.php?id=61583002566642",
         instagram: "#",
-        whatsapp: "https://wa.me/84369692729",
+        whatsapp: "https://wa.me/84785028805",
     },
 
     // Navigation Links

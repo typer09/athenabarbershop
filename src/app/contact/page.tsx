@@ -8,7 +8,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
     title: "Contact & Book | Athena Barber Shop Da Nang",
     description:
-        "Book your appointment at Athena Barber Shop Da Nang. Call +84 36 969 2729 or WhatsApp. Located in An Thuong, Da Nang, Vietnam. Open daily 9:00 AM - 9:30 PM.",
+        "Book your appointment at Athena Barber Shop Da Nang. Call +84 78 502 8805 or WhatsApp. Located in An Thuong, Da Nang, Vietnam. Open daily 9:00 AM - 9:30 PM.",
     openGraph: {
         title: "Book Your Appointment | Athena Barber Shop Da Nang",
         description:
