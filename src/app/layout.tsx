@@ -29,7 +29,7 @@ export const metadata: Metadata = {
         template: "%s | Athena Barber Shop Da Nang",
     },
     description:
-        "Athena Barber Shop Da Nang - Premium barber shop in An Thuong, Da Nang, Vietnam. Professional men's haircut, hot towel shaving, and grooming services. Book your appointment today.",
+        "Athena Barber Shop Da Nang - Premium barber shop in Hai Chau, Da Nang, Vietnam. Professional men's haircut, hot towel shaving, and grooming services. Book your appointment today.",
     keywords: [
         "athena barber shop da nang",
         "athena barber shop da nang",
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
         "barber da nang vietnam",
         "shaving da nang",
         "men grooming da nang",
-        "an thuong barber",
+        "hai chau barber",
         "haircut vietnam",
     ],
     authors: [{ name: "Athena Barber Shop Da Nang" }],
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
         siteName: "Athena Barber Shop Da Nang",
         title: "Athena Barber Shop Da Nang | Professional Barber Shop in Da Nang",
         description:
-            "Premium barber shop in An Thuong, Da Nang. Professional men's haircut, hot towel shaving, and grooming services.",
+            "Premium barber shop in Hai Chau, Da Nang. Professional men's haircut, hot towel shaving, and grooming services.",
         images: [
             {
                 url: "/og-image.jpg",

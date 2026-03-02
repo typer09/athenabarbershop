@@ -4,7 +4,7 @@ import { Services } from "@/components/sections/services";
 export const metadata: Metadata = {
     title: "Barber Services in Da Nang | Haircut, Shaving & Grooming",
     description:
-        "Professional barber services in Da Nang - haircut (150,000đ), hot towel shaving (80,000đ), and combo packages. Athena Barber Shop Da Nang, An Thuong.",
+        "Professional barber services in Da Nang - haircut (150,000đ), hot towel shaving (80,000đ), and combo packages. Athena Barber Shop Da Nang, Hai Chau.",
     openGraph: {
         title: "Barber Services & Pricing | Athena Barber Shop Da Nang",
         description:

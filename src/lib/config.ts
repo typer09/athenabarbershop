@@ -9,7 +9,7 @@ export const siteConfig = {
     name: "Athena Barber Shop Da Nang",
     short_name: "Athena Barber Shop",
     description:
-        "Premium barbering in Hai Chau  , Da Nang. Precision fades, cold towel shaves, and the distinct Innoir atmosphere.",
+        "Premium barbering in Hai Chau, Da Nang. Precision fades, cold towel shaves, and the distinct Innoir atmosphere.",
     url: process.env.NEXT_PUBLIC_SITE_URL || "https://theathenabarbershopshop.site",
 
     // Contact Information
@@ -32,13 +32,13 @@ export const siteConfig = {
         country: "Vietnam",
         full: "89 Hùng Vương, Hải Châu, Đà Nẵng 550000, Vietnam",
         googleMapLink: "https://maps.app.goo.gl/EK2ahKCfz7FfHtKY9",
-        googleMapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3835.3699686894196!2d108.24239687573127!3d16.04967698396434!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x314219c8e1e4e1e1%3A0x1e1e1e1e1e1e1e1e!2sThe%20Black%20Barbershop!5e0!3m2!1sen!2s!4v1000000000000!5m2!1sen!2s",
+        googleMapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1917.6!2d108.2191642!3d16.0682212!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3142190d421a7a63%3A0xed79659dc82c9ae!2sATHENA%20BARBER%20SHOP!5e0!3m2!1sen!2s!4v1709000000000!5m2!1sen!2s",
     },
 
     // Geolocation (for maps and local SEO)
     geo: {
-        lat: 16.04967695751448,
-        lng: 108.24461553374563,
+        lat: 16.0682212,
+        lng: 108.2191642,
     },
 
     // Business Hours

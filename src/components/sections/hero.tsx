@@ -107,7 +107,7 @@ export function Hero() {
                         </span>
                     </h1>
                     <p className="hero-text-element mt-8 max-w-xl font-body text-lg text-neutral-300 sm:text-xl">
-                        Premium grooming services in An Thuong, Da Nang.
+                        Premium grooming services in Hai Chau, Da Nang.
                         Where classic technique meets modern dark aesthetic.
                     </p>
 

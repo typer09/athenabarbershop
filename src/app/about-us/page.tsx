@@ -11,11 +11,11 @@ import TextType from "@/components/ui/text-type";
 export const metadata: Metadata = {
     title: "About Athena Barber Shop Da Nang | Our Story",
     description:
-        "Learn about Athena Barber Shop Da Nang - from Hoi An origins to Da Nang's premier barber shop. Professional men's grooming in An Thuong, Da Nang, Vietnam.",
+        "Learn about Athena Barber Shop Da Nang - from Hoi An origins to Da Nang's premier barber shop. Professional men's grooming in Hai Chau, Da Nang, Vietnam.",
     openGraph: {
         title: "About Athena Barber Shop Da Nang",
         description:
-            "From Hoi An to Da Nang - the story of Athena Barber Shop. Premium barber services in An Thuong.",
+            "From Hoi An to Da Nang - the story of Athena Barber Shop. Premium barber services in Hai Chau.",
     },
 };
 
@@ -111,7 +111,7 @@ export default function AboutUsPage() {
                                     Returning to Da Nang, Mai Duc established <strong>Athena Barber Shop</strong> with a singular vision: to create a space that blends the raw, masculine energy of a traditional shop with the refined service of a modern studio.
                                 </p>
                                 <p>
-                                    Located in An Thuong, the shop is designed for the modern man. Minimalist, dark, and focused. We don't just cut hair; we mold style and shape character.
+                                    Located in Hai Chau, the shop is designed for the modern man. Minimalist, dark, and focused. We don't just cut hair; we mold style and shape character.
                                 </p>
 
                             </div>

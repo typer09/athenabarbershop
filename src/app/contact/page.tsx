@@ -8,11 +8,11 @@ import Link from "next/link";
 export const metadata: Metadata = {
     title: "Contact & Book | Athena Barber Shop Da Nang",
     description:
-        "Book your appointment at Athena Barber Shop Da Nang. Call +84 78 502 8805 or WhatsApp. Located in An Thuong, Da Nang, Vietnam. Open daily 9:00 AM - 9:30 PM.",
+        "Book your appointment at Athena Barber Shop Da Nang. Call +84 78 502 8805 or WhatsApp. Located in Hai Chau, Da Nang, Vietnam. Open daily 9:00 AM - 9:30 PM.",
     openGraph: {
         title: "Book Your Appointment | Athena Barber Shop Da Nang",
         description:
-            "Contact Athena Barber Shop in An Thuong, Da Nang. Call, WhatsApp, or book online.",
+            "Contact Athena Barber Shop in Hai Chau, Da Nang. Call, WhatsApp, or book online.",
     },
 };
 
@@ -102,11 +102,11 @@ export default function ContactPage() {
                         <section className="rounded-sm overflow-hidden border border-white/5">
                             <div className="mb-4 flex items-center gap-3 px-1">
                                 <span className="h-px w-8 bg-primary-500"></span>
-                                <h2 className="text-sm font-bold uppercase tracking-widest text-primary-500">Find Us in An Thuong, Da Nang</h2>
+                                <h2 className="text-sm font-bold uppercase tracking-widest text-primary-500">Find Us in Hai Chau, Da Nang</h2>
                             </div>
                             <div className="aspect-video w-full">
                                 <iframe
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3835.369!2d108.2424!3d16.0497!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x314219c8e1e4e1e1%3A0x1e1e1e1e1e1e1e1e!2sThe%20Black%20Barbershop!5e0!3m2!1sen!2s!4v1706000000000!5m2!1sen!2s"
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1917.6!2d108.2191642!3d16.0682212!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3142190d421a7a63%3A0xed79659dc82c9ae!2sATHENA%20BARBER%20SHOP!5e0!3m2!1sen!2s!4v1709000000000!5m2!1sen!2s"
                                     width="100%"
                                     height="100%"
                                     style={{ border: 0 }}
