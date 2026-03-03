@@ -95,7 +95,7 @@ export function Bio() {
                             <div className="absolute inset-0 bg-neutral-950/20 z-10 hover:bg-transparent transition-colors duration-500" />
 
                             <Image
-                                src="/images/gallery/crop/owner.png"
+                                src="/images/gallery/fade/founder.jpg"
                                 alt="Duy Phong (Spinn) - Master Barber"
                                 fill
                                 className="object-cover object-[50%_20%] grayscale hover:grayscale-0 transition-all duration-700"
