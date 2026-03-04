@@ -44,7 +44,7 @@ export function Bio() {
                             >
                                 <span className="h-px w-12 bg-primary-500" />
                                 <span className="font-heading font-bold tracking-[0.2em] uppercase text-sm text-neutral-300">
-                                    EST. BY <span className="text-primary-500">MAI DUC</span>
+                                    EST. BY <span className="text-primary-500">DUY PHONG (SPINN)</span>
                                 </span>
                             </motion.div>
 
@@ -59,7 +59,7 @@ export function Bio() {
 
                             {/* Shop Bio */}
                             <BlurText
-                                text="Since 2025, Athena Barber Shop has set the standard for masculine grooming in An Thượng where every cut is a craft."
+                                text="Since 2022, Athena Barber Shop has set the standard for masculine grooming in Hải Châu where every cut is a craft."
                                 delay={20}
                                 animateBy="words"
                                 direction="bottom"
