@@ -44,7 +44,7 @@ export function BookingForm() {
         <form onSubmit={handleSubmit} className="flex flex-col gap-6">
             {/* Name Input */}
             <div className="space-y-2">
-                <label className="text-xs font-bold uppercase tracking-widest text-neutral-500 ml-1">Full Name</label>
+                <label className="text-xs font-bold uppercase tracking-widest text-neutral-200 ml-1">Full Name</label>
                 <input
                     required
                     name="name"
@@ -59,7 +59,7 @@ export function BookingForm() {
 
             {/* Phone Input */}
             <div className="space-y-2">
-                <label className="text-xs font-bold uppercase tracking-widest text-neutral-500 ml-1">Phone Number (Optional)</label>
+                <label className="text-xs font-bold uppercase tracking-widest text-neutral-200 ml-1">Phone Number (Optional)</label>
                 <input
                     name="phone"
                     type="tel"
@@ -74,7 +74,7 @@ export function BookingForm() {
             {/* Service & Time Row */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                    <label className="text-xs font-bold uppercase tracking-widest text-neutral-500 ml-1">Service</label>
+                    <label className="text-xs font-bold uppercase tracking-widest text-neutral-200 ml-1">Service</label>
                     <div className="relative">
                         <select
                             name="service"
@@ -96,7 +96,7 @@ export function BookingForm() {
                     </div>
                 </div>
                 <div className="space-y-2">
-                    <label className="text-xs font-bold uppercase tracking-widest text-neutral-500 ml-1">Preferred Time</label>
+                    <label className="text-xs font-bold uppercase tracking-widest text-neutral-200 ml-1">Preferred Time</label>
                     <div className="relative">
                         <select
                             name="time"
@@ -120,7 +120,7 @@ export function BookingForm() {
 
             {/* Notes Input */}
             <div className="space-y-2">
-                <label className="text-xs font-bold uppercase tracking-widest text-neutral-500 ml-1">Notes (Optional)</label>
+                <label className="text-xs font-bold uppercase tracking-widest text-neutral-200 ml-1">Notes (Optional)</label>
                 <textarea
                     name="notes"
                     rows={3}
@@ -135,7 +135,7 @@ export function BookingForm() {
             {/* Helper Text */}
             <div className="rounded-sm bg-neutral-950/50 p-3 border border-neutral-800/50 flex items-start gap-3">
                 <CheckCircle2 size={16} className="text-primary-500 mt-0.5 shrink-0" />
-                <p className="text-xs text-neutral-400 leading-relaxed">
+                <p className="text-xs text-neutral-200 leading-relaxed">
                     Submitting will open <strong>WhatsApp</strong> with your details pre-filled. You can edit the message before sending.
                 </p>
             </div>
@@ -144,7 +144,7 @@ export function BookingForm() {
             <button
                 type="submit"
                 disabled={isLoading}
-                className="group relative w-full overflow-hidden rounded-sm bg-primary-500 py-4 text-sm font-bold uppercase tracking-widest text-neutral-950 transition-all hover:bg-primary-400 hover:shadow-[0_0_40px_rgba(212,168,83,0.3)] active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed"
+                className="group relative w-full overflow-hidden rounded-sm bg-primary-500 py-4 text-sm font-bold uppercase tracking-widest text-white transition-all hover:bg-primary-600 hover:shadow-[0_0_40px_rgba(196,106,43,0.35)] active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed"
             >
                 <div className="relative z-10 flex items-center justify-center gap-2">
                     {isLoading ? (

@@ -59,8 +59,8 @@ export function Gallery({ images }: GalleryProps) {
             <div className="section-container flex-1">
                 <div className="mb-16 text-center">
                     <p className="text-primary-500 font-bold tracking-widest uppercase mb-4 text-sm">Portfolio</p>
-                    <h2 className="heading-xl text-neutral-50 mb-6">Masterpieces <br /><span className="text-neutral-500">In The Dark</span></h2>
-                    <p className="text-neutral-400 max-w-2xl mx-auto font-body text-lg">
+                    <h2 className="heading-xl text-neutral-50 mb-6">Masterpieces <br /><span className="text-neutral-100">In The Dark</span></h2>
+                    <p className="text-neutral-100 max-w-2xl mx-auto font-body text-lg">
                         Precision in every detail. Explore our collection of refined cuts and styles.
                     </p>
                 </div>
@@ -105,7 +105,7 @@ export function Gallery({ images }: GalleryProps) {
                             <span>Next</span>
                             <span className="text-transparent text-stroke-1 text-stroke-white transition-all duration-500 group-hover:text-white group-hover:text-stroke-0">Guest?</span>
                         </h3>
-                        <p className="text-neutral-400 max-w-lg text-xl font-light leading-relaxed">
+                        <p className="text-neutral-100 max-w-lg text-xl font-light leading-relaxed">
                             Your transformation awaits. <br />
                             <span className="text-primary-500 font-bold">Claim your legacy.</span>
                         </p>

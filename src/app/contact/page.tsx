@@ -34,7 +34,7 @@ export default function ContactPage() {
                         <h1 className="font-heading text-4xl font-bold text-white md:text-5xl lg:text-6xl mb-4">
                             Contact Athena Barber Shop Da Nang
                         </h1>
-                        <p className="text-neutral-400 max-w-lg text-lg">
+                        <p className="text-neutral-100 max-w-lg text-lg">
                             The quickest way to book is via WhatsApp or a direct call.
                         </p>
                     </div>
@@ -61,10 +61,10 @@ export default function ContactPage() {
                                 {/* Location */}
                                 <div className="flex-1 space-y-4">
                                     <div className="flex items-center gap-3">
-                                        <MapPin size={18} className="text-neutral-400" />
+                                        <MapPin size={18} className="text-primary-500" />
                                         <h3 className="font-heading text-lg font-bold text-white">Visit Us in Da Nang</h3>
                                     </div>
-                                    <p className="text-sm text-neutral-400 leading-relaxed">
+                                    <p className="text-sm text-neutral-100 leading-relaxed">
                                         {siteConfig.address.full}
                                     </p>
                                     <a
@@ -83,13 +83,13 @@ export default function ContactPage() {
                                 {/* Hours */}
                                 <div className="flex-1 space-y-4">
                                     <div className="flex items-center gap-3">
-                                        <Clock size={18} className="text-neutral-400" />
+                                        <Clock size={18} className="text-primary-500" />
                                         <h3 className="font-heading text-lg font-bold text-white">Hours</h3>
                                     </div>
                                     <ul className="space-y-2">
                                         {siteConfig.hours.map((h, i) => (
                                             <li key={i} className="flex justify-between text-sm">
-                                                <span className="text-neutral-500">{h.day}</span>
+                                                <span className="text-neutral-200">{h.day}</span>
                                                 <span className="text-neutral-300 font-medium">{h.opens} - {h.closes}</span>
                                             </li>
                                         ))}
@@ -128,7 +128,7 @@ export default function ContactPage() {
 
                             <div className="mb-8">
                                 <h2 className="font-heading text-2xl font-bold text-white mb-2">Book Your Haircut in Da Nang</h2>
-                                <p className="text-sm text-neutral-500">
+                                <p className="text-sm text-neutral-200">
                                     Fill out this form to prepare your booking request.
                                 </p>
                             </div>

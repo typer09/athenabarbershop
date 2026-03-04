@@ -50,7 +50,7 @@ export default function AboutUsPage() {
                             deletingSpeed={30}
                             pauseDuration={2000}
                             cursorCharacter="_"
-                            className="text-xl text-neutral-400 max-w-2xl leading-relaxed font-light block"
+                            className="text-xl text-neutral-100 max-w-2xl leading-relaxed font-light block"
                         />
                     </div>
                 </div>
@@ -80,12 +80,12 @@ export default function AboutUsPage() {
                                 <BlurText text="2022." className="text-primary-500" delay={50} />
                                 <BlurText text="The Beginning" className="text-white" delay={150} />
                             </div>
-                            <div className="space-y-6 text-neutral-400 text-lg leading-relaxed">
+                            <div className="space-y-6 text-neutral-100 text-lg leading-relaxed font-medium">
                                 <p>
                                     Mai Duc began his career in the heritage city of Hoi An. Surrounded by timeless architecture and a slow-paced lifestyle, he developed a deep appreciation for craftsmanship.
                                 </p>
                                 <p>
-                                    Working with a diverse range of international clients, he honed his skills in classic barbering while understanding the unique needs of different hair textures and face shapes. It was here that the foundation of <strong>Athena Barber Shop</strong> philosophy was built: <em className="text-neutral-300">Precision above all else.</em>
+                                    Working with a diverse range of international clients, he honed his skills in classic barbering while understanding the unique needs of different hair textures and face shapes. It was here that the foundation of <strong>Athena Barber Shop</strong> philosophy was built: <em className="text-white font-semibold">Precision above all else.</em>
                                 </p>
                             </div>
                         </div>
@@ -106,7 +106,7 @@ export default function AboutUsPage() {
                                 <BlurText text="2025." className="text-primary-500" delay={50} />
                                 <BlurText text="The Evolution" className="text-white" delay={150} />
                             </div>
-                            <div className="space-y-6 text-neutral-400 text-lg leading-relaxed">
+                            <div className="space-y-6 text-neutral-100 text-lg leading-relaxed font-medium">
                                 <p>
                                     Returning to Da Nang, Mai Duc established <strong>Athena Barber Shop</strong> with a singular vision: to create a space that blends the raw, masculine energy of a traditional shop with the refined service of a modern studio.
                                 </p>
