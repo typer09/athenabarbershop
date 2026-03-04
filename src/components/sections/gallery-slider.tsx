@@ -132,16 +132,16 @@ export function GallerySlider({ images }: GallerySliderProps) {
                     {loopImages.map((img, index) => (
                         <div
                             key={index}
-                            className="relative aspect-[3/4] w-[280px] md:w-[350px] shrink-0 overflow-hidden rounded-lg bg-neutral-900 group"
+                            className="relative aspect-[3/4] w-[280px] md:w-[350px] shrink-0 overflow-hidden rounded-lg bg-[#1A1A1A] group ring-1 ring-transparent hover:ring-primary-500 transition-all duration-[250ms]"
                         >
                             <Image
                                 src={img.src}
                                 alt={img.alt}
                                 fill
-                                className="object-cover transition-transform duration-700 group-hover:scale-110 pointer-events-none"
+                                className="object-cover transition-transform duration-700 group-hover:scale-105 pointer-events-none"
                                 sizes="(max-width: 768px) 280px, 350px"
                             />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-all duration-300" />
                         </div>
                     ))}
                 </motion.div>

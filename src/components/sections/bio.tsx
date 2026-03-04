@@ -3,96 +3,34 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { StrongButton } from "@/components/ui/strong-button";
-import BlurText from "@/components/ui/blur-text";
+import { siteConfig } from "@/lib/config";
+import { ArrowRight } from "lucide-react";
 
 export function Bio() {
     return (
-        <section className="relative bg-neutral-950 py-24 border-b border-neutral-900 overflow-hidden">
+        <section className="relative bg-[#121212] py-24 border-b border-[#262626] overflow-hidden">
+
+            {/* Subtle copper glow top-right */}
+            <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-primary-500/5 blur-[150px] pointer-events-none" />
+
             <div className="section-container">
-                <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-center">
+                <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
-                    {/* LEFT: CONTENT (The "Razor Brothers" Molding Style) */}
-                    <div className="relative z-10 order-2 lg:order-1">
-                        {/* Headers */}
-                        <div className="mb-8 pl-6 border-l-4 border-primary-500">
-                            <BlurText
-                                text="MOLDING STYLE."
-                                delay={50}
-                                animateBy="words"
-                                direction="bottom"
-                                className="text-4xl md:text-5xl lg:text-6xl font-heading font-black text-white leading-[0.9] tracking-tighter block mb-2"
-                            />
-                            <BlurText
-                                text="SHAPING CHARACTER."
-                                delay={50}
-                                animateBy="words"
-                                direction="bottom"
-                                className="text-4xl md:text-5xl lg:text-6xl font-heading font-black text-neutral-600 leading-[0.9] tracking-tighter"
-                            />
-                        </div>
-
-                        {/* Founder Intro */}
-                        <div className="space-y-6 max-w-lg mb-10">
-                            {/* Founder Name */}
-                            <motion.div
-                                initial={{ opacity: 0, x: -20 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: 0.2 }}
-                                className="flex items-center gap-3"
-                            >
-                                <span className="h-px w-12 bg-primary-500" />
-                                <span className="font-heading font-bold tracking-[0.2em] uppercase text-sm text-neutral-300">
-                                    EST. BY <span className="text-primary-500">DUY PHONG (SPINN)</span>
-                                </span>
-                            </motion.div>
-
-                            {/* Short Bio */}
-                            <BlurText
-                                text="Master barber with 15+ years of experience specializing in modern fades, classic cuts, and beard sculpting. Trained in traditional techniques with a vision to bring premium grooming to Da Nang."
-                                delay={20}
-                                animateBy="words"
-                                direction="bottom"
-                                className="text-neutral-400 text-lg leading-relaxed font-light text-center lg:text-left"
-                            />
-
-                            {/* Shop Bio */}
-                            <BlurText
-                                text="Since 2022, Athena Barber Shop has set the standard for masculine grooming in Hải Châu where every cut is a craft."
-                                delay={20}
-                                animateBy="words"
-                                direction="bottom"
-                                className="text-neutral-500 text-base leading-relaxed text-center lg:text-left"
-                            />
-                        </div>
-
-                        {/* Strong Action Button */}
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: 0.4 }}
-                        >
-                            <Link href="/about-us">
-                                <StrongButton variant="outline" className="h-14 px-10 text-base">
-                                    OUR STORY &gt;
-                                </StrongButton>
-                            </Link>
-                        </motion.div>
-                    </div>
-
-                    {/* RIGHT: IMAGE (Fixed Aspect Ratio / Unbroken) */}
-                    <div className="order-1 lg:order-2">
+                    {/* LEFT: IMAGE */}
+                    <div className="order-1 relative">
                         <motion.div
                             initial={{ opacity: 0, scale: 0.95 }}
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 1, ease: "easeOut" }}
-                            className="relative w-full aspect-[4/3] rounded-sm overflow-hidden bg-neutral-900"
+                            transition={{ duration: 0.8, ease: "easeOut" }}
+                            className="relative w-full aspect-[4/3] rounded-sm overflow-hidden bg-[#1A1A1A]"
                         >
-                            {/* Dark Overlay for "Framer" vibe */}
-                            <div className="absolute inset-0 bg-neutral-950/20 z-10 hover:bg-transparent transition-colors duration-500" />
+                            {/* Decorative copper corner */}
+                            <div className="absolute top-0 left-0 w-10 h-10 border-t-2 border-l-2 border-primary-500 z-20" />
+                            <div className="absolute bottom-0 right-0 w-10 h-10 border-b-2 border-r-2 border-primary-500 z-20" />
+
+                            {/* Dark Overlay */}
+                            <div className="absolute inset-0 bg-[#0A0A0A]/20 z-10 hover:bg-transparent transition-colors duration-500" />
 
                             <Image
                                 src="/images/gallery/fade/founder.jpg"
@@ -101,9 +39,91 @@ export function Bio() {
                                 className="object-cover object-[50%_20%] grayscale hover:grayscale-0 transition-all duration-700"
                                 sizes="(max-width: 768px) 100vw, 50vw"
                             />
+                        </motion.div>
 
-                            {/* Corner Cut Effect (CSS clip-path could be used, but keeping simple for now) */}
-                            <div className="absolute bottom-0 right-0 w-12 h-12 bg-neutral-950 z-20" style={{ clipPath: "polygon(100% 0, 0 100%, 100% 100%)" }} />
+                        {/* Floating stat badge */}
+                        <motion.div
+                            initial={{ opacity: 0, x: 20 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.4, duration: 0.6 }}
+                            className="absolute -bottom-5 -right-3 md:right-4 bg-[#1A1A1A] border border-[#262626] rounded-lg p-4 flex items-center gap-3"
+                        >
+                            <div className="text-center">
+                                <p className="font-heading font-black text-3xl text-primary-500">15+</p>
+                                <p className="text-xs text-neutral-100 font-medium tracking-wider uppercase">Years of<br />Experience</p>
+                            </div>
+                        </motion.div>
+                    </div>
+
+                    {/* RIGHT: CONTENT */}
+                    <div className="order-2 relative z-10">
+                        {/* Label */}
+                        <motion.p
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.5 }}
+                            className="text-xs font-bold tracking-[0.25em] text-primary-500 uppercase mb-5"
+                        >
+                            Our Identity
+                        </motion.p>
+
+                        {/* Heading */}
+                        <motion.h2
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.5, delay: 0.05 }}
+                            className="font-heading text-4xl md:text-5xl font-black text-white leading-tight tracking-tight uppercase mb-6"
+                        >
+                            Classic Barber<br />
+                            <span className="text-neutral-300">Craft.</span>
+                        </motion.h2>
+
+                        {/* Copper border quote */}
+                        <motion.div
+                            initial={{ opacity: 0, x: -20 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.1 }}
+                            className="pl-5 border-l-4 border-primary-500 mb-8"
+                        >
+                            <p className="font-heading text-base italic text-neutral-300">
+                                EST. BY <span className="text-primary-500">DUY PHONG (SPINN)</span>
+                            </p>
+                        </motion.div>
+
+                        {/* Description */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.15 }}
+                            className="space-y-4 text-base text-neutral-100 leading-relaxed mb-10"
+                        >
+                            <p>
+                                Athena Barber Shop blends traditional barber techniques with modern style. Our experienced barbers focus on <span className="text-white font-semibold">precision, comfort, and premium grooming</span> experiences.
+                            </p>
+                            <p>
+                                Since 2022, we have set the standard for masculine grooming in Hải Châu — where every cut is a craft.
+                            </p>
+                        </motion.div>
+
+                        {/* CTA */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.2 }}
+                        >
+                            <Link
+                                href="/about-us"
+                                className="group inline-flex items-center gap-3 border border-[#262626] hover:border-primary-500 text-white font-heading font-bold tracking-widest uppercase px-8 py-4 rounded-lg text-sm transition-all duration-[250ms] hover:bg-primary-950"
+                            >
+                                Learn More
+                                <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
+                            </Link>
                         </motion.div>
                     </div>
 

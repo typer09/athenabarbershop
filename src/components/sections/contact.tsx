@@ -90,7 +90,7 @@ export function Contact() {
                             href={siteConfig.address.googleMapLink}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="absolute bottom-4 right-4 flex items-center gap-2 bg-primary-500 hover:bg-primary-400 text-neutral-950 px-4 py-2 rounded-sm font-bold text-xs uppercase tracking-wider transition-all shadow-lg hover:shadow-xl active:scale-95"
+                            className="absolute bottom-4 right-4 flex items-center gap-2 bg-primary-500 hover:bg-primary-600 text-white px-4 py-2 rounded-sm font-bold text-xs uppercase tracking-wider transition-all duration-[250ms] shadow-lg hover:shadow-xl active:scale-95"
                         >
                             <MapPin size={16} />
                             <span>Get Directions</span>

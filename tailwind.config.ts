@@ -7,35 +7,35 @@ const config: Config = {
     ],
     theme: {
         extend: {
-            // Barber shop aesthetic: Classic, masculine, premium
+            // Barber shop aesthetic: Dark luxury, masculine, premium copper
             colors: {
-                // Primary: Deep black & warm gold
+                // Primary: Copper bronze accent
                 primary: {
-                    50: "#fefce8",
-                    100: "#fef9c3",
-                    200: "#fef08a",
-                    300: "#fde047",
-                    400: "#facc15",
-                    500: "#d4a853", // Main gold accent
-                    600: "#b8942e",
-                    700: "#92720c",
-                    800: "#713f12",
-                    900: "#422006",
-                    950: "#1c0a02",
+                    50: "#fdf4ec",
+                    100: "#fae5cc",
+                    200: "#f5c899",
+                    300: "#eda96a",
+                    400: "#E0A36C", // Accent light
+                    500: "#C46A2B", // Main copper accent
+                    600: "#B45A1F", // Hover accent
+                    700: "#8f4317",
+                    800: "#6b3011",
+                    900: "#4a200b",
+                    950: "#2A1A12", // Soft accent background
                 },
-                // Neutral: Warm grays for a classic feel
+                // Neutral: True dark spectrum for luxury dark theme
                 neutral: {
-                    50: "#fafafa",
-                    100: "#f5f5f4",
-                    200: "#e7e5e4",
-                    300: "#d6d3d1",
-                    400: "#a8a29e",
-                    500: "#78716c",
-                    600: "#57534e",
-                    700: "#44403c",
-                    800: "#292524",
-                    900: "#1c1917",
-                    950: "#0c0a09",
+                    50: "#FFFFFF",  // Primary text
+                    100: "#B3B3B3", // Secondary text
+                    200: "#7A7A7A", // Muted text
+                    300: "#4a4a4a",
+                    400: "#333333",
+                    500: "#262626", // Border subtle
+                    600: "#1A1A1A", // Card background
+                    700: "#121212", // Secondary background
+                    800: "#0D0D0D",
+                    900: "#0A0A0A", // Primary background
+                    950: "#050505",
                 },
             },
             fontFamily: {

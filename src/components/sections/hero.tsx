@@ -7,9 +7,7 @@ import { siteConfig } from "@/lib/config";
 import { motion } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ChevronsRight } from "lucide-react";
-// import { Phone, MapPin, Facebook } from "lucide-react"; // Unused
-
+import { ArrowDown } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -39,7 +37,7 @@ export function Hero() {
                     opacity: 0,
                     filter: "blur(10px)",
                     duration: 1,
-                    stagger: 0.2,
+                    stagger: 0.15,
                     ease: "power3.out",
                 },
                 "-=1"
@@ -76,15 +74,15 @@ export function Hero() {
     return (
         <section
             ref={containerRef}
-            className="relative flex min-h-[100dvh] items-center justify-center overflow-hidden pt-20"
+            className="relative flex min-h-[100dvh] items-center justify-center overflow-hidden"
         >
             {/* Background Image */}
             <div className="absolute inset-0 z-0">
                 <div ref={imageRef} className="relative h-full w-full">
-                    {/* Overlay gradient */}
-                    <div className="absolute inset-0 z-10 bg-gradient-to-b from-neutral-950/60 via-neutral-950/40 to-neutral-950" />
+                    {/* Hero overlay: rgba(0,0,0,0.65) per spec */}
+                    <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/65 via-black/55 to-black/85" />
                     <Image
-                        src="/images/hero/hero-bg.jpg" // Ensure this exists or fallback
+                        src="/images/hero/hero-bg.jpg"
                         alt="Athena Barber Shop Interior"
                         fill
                         priority
@@ -94,51 +92,73 @@ export function Hero() {
                 </div>
             </div>
 
+            {/* Subtle copper ambient glow */}
+            <div className="absolute inset-0 z-10 pointer-events-none">
+                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] rounded-full bg-primary-500/8 blur-[160px]" />
+            </div>
+
             {/* Content */}
-            <div ref={textRef} className="section-container relative z-20 w-full">
+            <div ref={textRef} className="section-container relative z-20 w-full pt-20">
                 <div className="flex flex-col items-center text-center">
-                    <p className="hero-text-element font-body text-sm font-medium tracking-widest text-primary-500 uppercase">
-                        Est. 2022 Hoi An/ 2025 Da Nang
+
+                    {/* Small label */}
+                    <p className="hero-text-element font-body text-xs font-bold tracking-[0.3em] text-primary-500 uppercase mb-6">
+                        Est. 2022 Hoi An / 2025 Da Nang
                     </p>
-                    <h1 className="hero-text-element mt-4 font-heading text-5xl font-bold leading-none text-neutral-50 sm:text-7xl md:text-8xl lg:text-9xl uppercase">
-                        Athena <br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-neutral-200 to-neutral-500">
-                            Barber Shop
+
+                    {/* Main heading */}
+                    <h1 className="hero-text-element font-heading font-black leading-none text-white uppercase tracking-tight">
+                        <span className="block text-6xl sm:text-8xl md:text-9xl lg:text-[11rem]">
+                            ATHENA
+                        </span>
+                        <span className="block text-5xl sm:text-7xl md:text-8xl lg:text-9xl text-transparent bg-clip-text bg-gradient-to-r from-neutral-200 via-neutral-100 to-neutral-400">
+                            BARBER SHOP
                         </span>
                     </h1>
-                    <p className="hero-text-element mt-8 max-w-xl font-body text-lg text-neutral-300 sm:text-xl">
-                        Premium grooming services in Hai Chau, Da Nang.
+
+                    {/* Divider */}
+                    <div className="hero-text-element flex items-center gap-4 my-8 w-full max-w-xs">
+                        <span className="h-px flex-1 bg-primary-500/40" />
+                        <span className="text-primary-500 text-xs tracking-widest">✦</span>
+                        <span className="h-px flex-1 bg-primary-500/40" />
+                    </div>
+
+                    {/* Subtitle */}
+                    <p className="hero-text-element max-w-lg font-body text-base md:text-lg text-neutral-300 mb-10 leading-relaxed">
+                        Premium grooming services in Hai Chau, Da Nang.<br />
                         Where classic technique meets modern dark aesthetic.
                     </p>
 
-                    <div className="hero-text-element mt-12 flex justify-center">
-                        {/* PRIMARY: Book Now */}
-                        <Link href="/contact" className="w-auto">
+                    {/* CTA Buttons */}
+                    <div className="hero-text-element flex flex-col sm:flex-row items-center gap-4">
+                        {/* Primary: BOOK NOW */}
+                        <Link href="/contact">
                             <motion.button
-                                className="group relative w-auto overflow-hidden font-heading font-black tracking-widest uppercase bg-primary-500 text-neutral-950 border border-primary-500 h-14 px-12 text-sm transition-all duration-300 hover:text-white hover:shadow-[0_0_20px_rgba(234,179,8,0.3)]"
-                                animate={{ scale: [1, 1.05, 1] }}
-                                transition={{
-                                    duration: 2,
-                                    repeat: Infinity,
-                                    ease: "easeInOut",
-                                }}
-                                whileHover={{ scale: 1.1 }}
+                                className="group relative overflow-hidden font-heading font-black tracking-widest uppercase bg-primary-500 text-white px-9 py-4 rounded-lg text-sm transition-all duration-[250ms] hover:bg-primary-600 hover:shadow-[0_8px_30px_rgba(196,106,43,0.35)] hover:-translate-y-0.5"
+                                whileHover={{ scale: 1.02 }}
+                                whileTap={{ scale: 0.98 }}
                             >
-                                {/* Background Fill Animation */}
-                                <span className="absolute inset-0 bg-neutral-950 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out z-0" />
-                                <span className="relative z-10">BOOK NOW</span>
+                                BOOK NOW
                             </motion.button>
+                        </Link>
+
+                        {/* Secondary: Our Services */}
+                        <Link
+                            href="/services"
+                            className="font-body text-sm font-semibold tracking-widest text-neutral-300 hover:text-primary-500 transition-colors duration-200 border-b border-neutral-700 hover:border-primary-500 pb-1 uppercase"
+                        >
+                            View Services
                         </Link>
                     </div>
 
-                    <div className="hero-text-element mt-10">
-                        <Link
-                            href="#about"
-                            className="font-body text-sm font-medium tracking-widest text-neutral-400 hover:text-primary-500 transition-colors border-b border-transparent hover:border-primary-500 pb-1"
-                        >
-                            SCROLL TO EXPLORE
-                        </Link>
-                    </div>
+                    {/* Scroll hint */}
+                    <motion.div
+                        className="hero-text-element mt-16"
+                        animate={{ y: [0, 6, 0] }}
+                        transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+                    >
+                        <ArrowDown size={20} className="text-neutral-600" />
+                    </motion.div>
                 </div>
             </div>
         </section>

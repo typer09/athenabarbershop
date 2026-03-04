@@ -32,7 +32,7 @@ export function Header() {
             className={cn(
                 "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
                 isScrolled || isMobileMenuOpen
-                    ? "bg-neutral-950/80 backdrop-blur-md border-b border-neutral-800 py-4"
+                    ? "bg-[rgba(10,10,10,0.85)] backdrop-blur-md border-b border-neutral-800 py-4"
                     : "bg-transparent py-6"
             )}
         >
@@ -61,10 +61,10 @@ export function Header() {
                                 key={link.href}
                                 href={link.href}
                                 className={cn(
-                                    "text-sm font-medium tracking-wide transition-colors relative",
+                                    "text-sm font-medium tracking-wide transition-colors duration-200 relative",
                                     isActive
-                                        ? "text-white"
-                                        : "text-neutral-400 hover:text-white"
+                                        ? "text-primary-500"
+                                        : "text-neutral-300 hover:text-primary-400"
                                 )}
                             >
                                 {link.label}
@@ -81,12 +81,12 @@ export function Header() {
 
                 {/* RIGHT: PHONE PILL & TOGGLE */}
                 <div className="flex items-center gap-4">
-                    {/* Phone Pill CTA */}
+                    {/* Phone Pill CTA — copper border, hover fill */}
                     <a
                         href={`tel:${siteConfig.contact.phone}`}
-                        className="hidden md:flex items-center gap-2 rounded-full border border-neutral-700 bg-neutral-900/50 px-4 py-2 text-sm font-medium text-neutral-300 transition-all hover:bg-neutral-800 hover:text-white hover:border-primary-500/50"
+                        className="hidden md:flex items-center gap-2 rounded-full border border-primary-500 bg-transparent px-5 py-2 text-sm font-semibold text-white transition-all duration-[250ms] hover:bg-primary-500"
                     >
-                        <Phone size={14} className="text-primary-500" />
+                        <Phone size={14} />
                         <span>{siteConfig.contact.phone}</span>
                     </a>
 
@@ -108,14 +108,14 @@ export function Header() {
                         initial={{ opacity: 0, y: -20 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -20 }}
-                        className="absolute inset-x-0 top-full h-[calc(100vh-80px)] bg-neutral-950 border-t border-neutral-800 md:hidden flex flex-col p-8"
+                        className="absolute inset-x-0 top-full h-[calc(100vh-80px)] bg-[#0A0A0A] border-t border-neutral-800 md:hidden flex flex-col p-8"
                     >
                         <nav className="flex flex-col gap-6 text-2xl font-heading font-bold text-center">
                             {siteConfig.navLinks.map((link) => (
                                 <Link
                                     key={link.href}
                                     href={link.href}
-                                    className="text-neutral-300 hover:text-primary-500 transition-colors"
+                                    className="text-neutral-300 hover:text-primary-500 transition-colors duration-200"
                                 >
                                     {link.label}
                                 </Link>
@@ -123,9 +123,9 @@ export function Header() {
                             <div className="h-px bg-neutral-800 w-full my-4" />
                             <a
                                 href={`tel:${siteConfig.contact.phone}`}
-                                className="flex items-center justify-center gap-3 text-primary-500"
+                                className="inline-flex items-center justify-center gap-3 rounded-full border border-primary-500 bg-transparent px-6 py-3 text-base font-semibold text-white hover:bg-primary-500 transition-all duration-[250ms] mx-auto"
                             >
-                                <Phone size={24} />
+                                <Phone size={20} />
                                 {siteConfig.contact.phone}
                             </a>
                         </nav>

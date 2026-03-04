@@ -17,7 +17,7 @@ export const StrongButton = React.forwardRef<HTMLButtonElement, StrongButtonProp
 
         // Variants
         const variants = {
-            primary: "bg-primary-500 text-neutral-950 border-primary-500 hover:text-neutral-950",
+            primary: "bg-primary-500 text-white border-primary-500 hover:text-white",
             outline: "bg-transparent text-white border-white hover:text-neutral-950 hover:border-primary-500",
             ghost: "bg-transparent text-neutral-400 border-transparent hover:text-white",
         };
@@ -37,7 +37,7 @@ export const StrongButton = React.forwardRef<HTMLButtonElement, StrongButtonProp
                     transition={{ duration: 0.3, ease: "easeInOut" }}
                     className={cn(
                         "absolute inset-0 z-0",
-                        variant === "primary" ? "bg-white" : "bg-primary-500"
+                        variant === "primary" ? "bg-primary-600" : "bg-primary-500"
                     )}
                 />
 

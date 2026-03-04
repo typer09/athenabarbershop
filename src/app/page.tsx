@@ -1,35 +1,38 @@
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import { Hero } from "@/components/sections/hero";
 import { Bio } from "@/components/sections/bio";
 import { GallerySlider } from "@/components/sections/gallery-slider";
 import { Contact } from "@/components/sections/contact";
 import { Services } from "@/components/sections/services";
 import { ToolLoop } from "@/components/sections/tool-loop";
+import { BookingCta } from "@/components/sections/booking-cta";
 import { getGalleryImages } from "@/lib/gallery-server";
-import { siteConfig } from "@/lib/config";
 
 export default async function HomePage() {
     const galleryImages = await getGalleryImages();
 
     return (
         <>
+            {/* 1. HERO — full screen */}
             <Hero />
 
-            {/* MAI DUC BIO SECTION */}
+            {/* 2. BIO / ABOUT — Classic Barber Craft */}
             <div id="about">
                 <Bio />
             </div>
 
-            {/* TOOLS / PARTNERS LOOP */}
+            {/* 3. TOOLS LOOP — brand ambient strip */}
             <ToolLoop />
 
-            {/* SERVICES LIST SECTION */}
+            {/* 4. SERVICES & PRICE */}
             <Services />
 
+            {/* 5. GALLERY SLIDER */}
             <GallerySlider images={galleryImages} />
 
-            {/* CONTACT SECTION ON HOME */}
+            {/* 6. BOOKING CTA */}
+            <BookingCta />
+
+            {/* 7. CONTACT / MAP */}
             <div id="contact">
                 <Contact />
             </div>
