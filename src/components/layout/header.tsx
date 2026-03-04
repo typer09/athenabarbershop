@@ -38,7 +38,7 @@ export function Header() {
         >
             <div className="section-container flex items-center justify-between">
                 {/* LEFT: LOGO */}
-                <Link href="/" className="relative z-50 flex items-center gap-3 group">
+                <Link href="/" className="relative z-50 flex items-center group">
                     <div className="relative h-10 w-10 overflow-hidden rounded-full border border-neutral-800 transition-transform group-hover:scale-105">
                         <Image
                             src="/images/logo.jpg"
@@ -47,8 +47,9 @@ export function Header() {
                             className="object-cover"
                         />
                     </div>
-                    <span className="font-heading text-xl font-bold tracking-tight hidden sm:block text-neutral-100">
-                        ATHENA <span className="text-primary-500">BARBER SHOP</span>
+                    <span className="ml-[12px] font-cinzel font-semibold tracking-[0.08em] uppercase hidden sm:block text-xl">
+                        <span className="text-white">ATHENA</span>{" "}
+                        <span className="text-[#c27a36]">BARBER SHOP</span>
                     </span>
                 </Link>
 
