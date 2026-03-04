@@ -1,6 +1,6 @@
 # The Black Barber - Landing Page
 
-A premium barbershop landing page built with **Next.js 15**, **TypeScript**, and **Tailwind CSS**.
+A premium barbershop landing pa ge built with **Next.js 15**, **TypeScript**, and **Tailwind CSS**.
 
 ## 🏗️ Project Structure
 
@@ -46,7 +46,7 @@ theblackbarber/
 │   │   └── seo/              # SEO components
 │   │       └── local-business-schema.tsx
 │   │
-│   ├── lib/                   # Utilities & helpers
+│   ├── lib/                   # Utilities & helpers    
 │   │   ├── utils.ts          # cn(), formatCurrency()
 │   │   └── config.ts         # Site configuration
 │   │
