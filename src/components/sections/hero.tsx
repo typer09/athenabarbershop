@@ -124,7 +124,7 @@ export function Hero() {
                     </div>
 
                     {/* Subtitle */}
-                    <p className="hero-text-element max-w-lg font-body text-base md:text-lg text-neutral-300 mb-10 leading-relaxed">
+                    <p className="hero-text-element max-w-lg font-body text-base md:text-lg text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)] mb-10 leading-relaxed">
                         Premium grooming services in Hai Chau, Da Nang.<br />
                         Where classic technique meets modern dark aesthetic.
                     </p>

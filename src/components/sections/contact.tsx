@@ -12,7 +12,7 @@ export function Contact() {
                     {/* Info Side */}
                     <div className="flex flex-col justify-center">
                         <h2 className="heading-lg mb-6 text-neutral-50">Visit Us</h2>
-                        <p className="mb-8 text-neutral-400">
+                        <p className="mb-8 text-neutral-100">
                             Walk-ins welcome, appointments recommended. Come experience the best cut in Da Nang.
                         </p>
 
@@ -24,7 +24,7 @@ export function Contact() {
                                 </div>
                                 <div>
                                     <h3 className="font-bold text-neutral-200">Address</h3>
-                                    <p className="text-neutral-400">{siteConfig.address.full}</p>
+                                    <p className="text-neutral-100">{siteConfig.address.full}</p>
                                 </div>
                             </div>
 
@@ -35,7 +35,7 @@ export function Contact() {
                                 </div>
                                 <div>
                                     <h3 className="font-bold text-neutral-200">Phone</h3>
-                                    <p className="text-neutral-400">{siteConfig.contact.phone}</p>
+                                    <p className="text-neutral-100">{siteConfig.contact.phone}</p>
                                 </div>
                             </div>
 
@@ -46,7 +46,7 @@ export function Contact() {
                                 </div>
                                 <div>
                                     <h3 className="font-bold text-neutral-200">Opening Hours</h3>
-                                    <p className="text-neutral-400">Everyday: 9:00 AM - 8:00 PM</p>
+                                    <p className="text-neutral-100">Everyday: 9:00 AM - 8:00 PM</p>
                                 </div>
                             </div>
                         </div>
