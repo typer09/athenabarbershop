@@ -64,34 +64,171 @@ export const siteConfig = {
 
     // Services List - OFFICIAL PRICING
     services: [
+        // ── CRAFT ──
         {
-            id: "haircut",
-            name: "Haircut",
-            description: "Haircut + Shampoo + Styling",
+            id: "craft",
+            name: "CRAFT",
             price: 150000,
-            category: "Core"
+            category: "Craft",
+            includes: [
+                "Welcome drink",
+                "Consultation",
+                "Haircut",
+                "Hair wash",
+                "Using wax/pomade",
+                "Styling",
+            ],
+        },
+        // ── BEARD GROOM ──
+        {
+            id: "beard-groom",
+            name: "BEARD GROOM",
+            price: 200000,
+            category: "Beard Groom",
+            includes: [
+                "Personal groom advice",
+                "Apply hot towel",
+                "Shaving – foam",
+                "Face/Hairline shave",
+                "Beard trim",
+                "Apply cold towel",
+                "Using alum block",
+                "Shaving cream",
+            ],
+        },
+        // ── HEAD SHAVE ──
+        {
+            id: "head-shave",
+            name: "HEAD SHAVE",
+            price: 200000,
+            category: "Head Shave",
+            includes: [
+                "Apply hot towel",
+                "Head shave",
+                "Apply cold towel",
+            ],
+        },
+        // ── ELITE ──
+        {
+            id: "elite",
+            name: "ELITE",
+            price: 200000,
+            category: "Elite",
+            includes: [
+                "Welcome drink",
+                "Consultation",
+                "Haircut",
+                "Face wash – massage",
+                "Face mask",
+                "Hair washing",
+                "Head massage",
+                "Neck & shoulder massage",
+                "Using wax/pomade",
+                "Styling",
+            ],
+        },
+        // ── LUXE ──
+        {
+            id: "luxe",
+            name: "LUXE",
+            price: 300000,
+            category: "Luxe",
+            includes: [
+                "Welcome drink",
+                "Consultation",
+                "Haircut",
+                "Face wash – massage",
+                "Skin exfoliation",
+                "Nose acne clean",
+                "Face mask",
+                "Hair washing",
+                "Head massage",
+                "Neck & shoulder massage",
+                "Using wax/pomade",
+                "Styling",
+            ],
+        },
+        // ── EXTRA: Styling ──
+        {
+            id: "extra-styling",
+            name: "Styling",
+            price: 50000,
+            category: "Extra Service",
+            includes: [],
         },
         {
-            id: "shaving",
-            name: "Shaving",
-            description: "Professional calmness",
+            id: "extra-nose-wax",
+            name: "Nose wax",
+            price: 70000,
+            category: "Extra Service",
+            includes: [],
+        },
+        // ── EXTRA: Cleaning ──
+        {
+            id: "extra-ear-cleaning",
+            name: "Ear cleaning",
+            price: 70000,
+            category: "Cleaning",
+            includes: [],
+        },
+        {
+            id: "extra-face-mask",
+            name: "Face mask",
+            price: 50000,
+            category: "Cleaning",
+            includes: [],
+        },
+        {
+            id: "extra-nose-acne",
+            name: "Nose acne clean",
+            price: 50000,
+            category: "Cleaning",
+            includes: [],
+        },
+        // ── EXTRA: Hair Wash ──
+        {
+            id: "extra-hairwash-man",
+            name: "Hair Wash – Man",
+            price: 50000,
+            category: "Hair Wash",
+            includes: [],
+        },
+        {
+            id: "extra-hairwash-women",
+            name: "Hair Wash – Women",
             price: 80000,
-            category: "Core"
+            category: "Hair Wash",
+            includes: [],
         },
         {
-            id: "combo",
-            name: "Combo",
-            description: "Haircut + Hot Towel Shave + Shampoo + Styling",
-            price: 250000,
-            category: "Combo"
+            id: "extra-hairwash-herbal",
+            name: "Therapy herbal wash",
+            price: 200000,
+            category: "Hair Wash",
+            includes: [],
+        },
+        // ── EXTRA: Massage ──
+        {
+            id: "extra-massage-face",
+            name: "Face massage",
+            price: 50000,
+            category: "Massage",
+            includes: [],
         },
         {
-            id: "on-location",
-            name: "Private Grooming",
-            description: "On-location haircut service at resorts/hotels (Upon Request)",
-            price: 0, // Contact for price
-            category: "Private"
-        }
+            id: "extra-massage-head",
+            name: "Head massage",
+            price: 50000,
+            category: "Massage",
+            includes: [],
+        },
+        {
+            id: "extra-massage-neck",
+            name: "Neck & shoulder massage",
+            price: 80000,
+            category: "Massage",
+            includes: [],
+        },
     ]
 } as const;
 

@@ -12,7 +12,7 @@ export function BookingForm() {
     const [formData, setFormData] = useState({
         name: "",
         phone: "",
-        service: "Haircut (150k)",
+        service: "CRAFT (150k)",
         time: "Today",
         notes: "",
     });
@@ -84,10 +84,11 @@ export function BookingForm() {
                             onChange={handleChange}
                             value={formData.service}
                         >
-                            <option value="Haircut (150k)">Haircut (150k)</option>
-                            <option value="Shaving (80k)">Shaving (80k)</option>
-                            <option value="Combo (250k)">Combo (250k)</option>
-                            <option value="Private Service">Private Service</option>
+                            <option value="CRAFT (150k)">CRAFT (150k)</option>
+                            <option value="BEARD GROOM (200k)">BEARD GROOM (200k)</option>
+                            <option value="HEAD SHAVE (200k)">HEAD SHAVE (200k)</option>
+                            <option value="ELITE (200k)">ELITE (200k)</option>
+                            <option value="LUXE (300k)">LUXE (300k)</option>
                         </select>
                         <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-neutral-500">
                             <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
