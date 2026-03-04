@@ -16,7 +16,7 @@ export function Header() {
 
     useEffect(() => {
         const handleScroll = () => {
-            setIsScrolled(window.scrollY > 20);
+            setIsScrolled(window.scrollY > 60);
         };
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
@@ -30,10 +30,10 @@ export function Header() {
     return (
         <header
             className={cn(
-                "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+                "fixed top-0 left-0 right-0 z-[100] transition-all duration-300",
                 isScrolled || isMobileMenuOpen
-                    ? "bg-[rgba(10,10,10,0.85)] backdrop-blur-[10px] border-b border-neutral-800 py-4"
-                    : "bg-transparent py-6"
+                    ? "bg-[rgba(0,0,0,0.75)] backdrop-blur-[10px] py-[14px] shadow-[0_8px_30px_rgba(0,0,0,0.35)]"
+                    : "bg-transparent py-[24px]"
             )}
         >
             <div className="section-container flex items-center justify-between">
@@ -62,17 +62,17 @@ export function Header() {
                                 key={link.href}
                                 href={link.href}
                                 className={cn(
-                                    "text-sm font-medium tracking-wide transition-colors duration-200 relative",
+                                    "text-sm font-medium tracking-wide transition-colors duration-300 relative",
                                     isActive
-                                        ? "text-primary-500"
-                                        : "text-neutral-300 hover:text-primary-400"
+                                        ? "text-[#c27a36]"
+                                        : "text-white/70 hover:text-white"
                                 )}
                             >
                                 {link.label}
                                 {isActive && (
                                     <motion.div
                                         layoutId="navbar-indicator"
-                                        className="absolute -bottom-1 left-0 right-0 h-px bg-primary-500"
+                                        className="absolute -bottom-1 left-0 right-0 h-px bg-[#c27a36]"
                                     />
                                 )}
                             </Link>
@@ -85,7 +85,7 @@ export function Header() {
                     {/* Phone Pill CTA — copper border, hover fill */}
                     <a
                         href={`tel:${siteConfig.contact.phone}`}
-                        className="hidden md:flex items-center gap-2 rounded-full border border-primary-500 bg-transparent px-5 py-2 text-sm font-semibold text-white transition-all duration-[250ms] hover:bg-primary-500"
+                        className="hidden md:flex items-center gap-2 rounded-[30px] border border-[#c27a36] bg-transparent px-[18px] py-[8px] text-sm font-semibold text-white transition-all duration-300 hover:bg-[#c27a36] hover:text-black"
                     >
                         <Phone size={14} />
                         <span>{siteConfig.contact.phone}</span>
