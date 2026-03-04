@@ -117,11 +117,11 @@ export function Hero() {
                     </p>
 
                     {/* Main heading */}
-                    <h1 className="hero-title-reveal font-cinzel font-bold leading-none uppercase tracking-[0.15em] text-white">
-                        <span className="block text-[44px] sm:text-[64px] lg:text-[88px] xl:text-[96px]">
+                    <h1 className="hero-title-reveal font-cinzel font-bold leading-none uppercase tracking-[0.12em] drop-shadow-[0_4px_4px_rgba(0,0,0,0.5)]">
+                        <span className="block bg-clip-text text-transparent bg-gradient-to-b from-[#f5d08a] via-[#c27a36] to-[#8a5a22] text-[44px] sm:text-[64px] lg:text-[88px] xl:text-[96px] pb-1">
                             ATHENA
                         </span>
-                        <span className="block text-[24px] sm:text-[40px] lg:text-[56px] xl:text-[64px] opacity-70 mt-2">
+                        <span className="block bg-clip-text text-transparent bg-gradient-to-b from-[#f5d08a] via-[#c27a36] to-[#8a5a22] text-[24px] sm:text-[40px] lg:text-[56px] xl:text-[64px] mt-2 pb-1">
                             BARBER SHOP
                         </span>
                     </h1>
