@@ -68,7 +68,7 @@ export function Gallery({ images }: GalleryProps) {
                 {/* MASONRY GRID */}
                 <motion.div
                     layout
-                    className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-5 mb-24"
+                    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-24"
                 >
                     <AnimatePresence>
                         {images.map((img, index) => (

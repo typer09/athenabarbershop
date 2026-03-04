@@ -80,7 +80,7 @@ export function Hero() {
             <div className="absolute inset-0 z-0">
                 <div ref={imageRef} className="relative h-full w-full">
                     {/* Hero overlay: rgba(0,0,0,0.65) per spec */}
-                    <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/65 via-black/55 to-black/85" />
+                    <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/65 to-black/90" />
                     <Image
                         src="/images/hero/hero-bg.jpg"
                         alt="Athena Barber Shop Interior"
@@ -108,10 +108,10 @@ export function Hero() {
 
                     {/* Main heading */}
                     <h1 className="hero-text-element font-heading font-black leading-none text-white uppercase tracking-tight">
-                        <span className="block text-6xl sm:text-8xl md:text-9xl lg:text-[11rem]">
+                        <span className="block text-[40px] sm:text-[56px] lg:text-[88px] xl:text-[96px]">
                             ATHENA
                         </span>
-                        <span className="block text-5xl sm:text-7xl md:text-8xl lg:text-9xl text-transparent bg-clip-text bg-gradient-to-r from-neutral-200 via-neutral-100 to-neutral-400">
+                        <span className="block text-[32px] sm:text-[44px] lg:text-[72px] xl:text-[80px] text-transparent bg-clip-text bg-gradient-to-r from-neutral-200 via-neutral-100 to-neutral-400">
                             BARBER SHOP
                         </span>
                     </h1>
@@ -134,7 +134,7 @@ export function Hero() {
                         {/* Primary: BOOK NOW */}
                         <Link href="/contact">
                             <motion.button
-                                className="group relative overflow-hidden font-heading font-black tracking-widest uppercase bg-primary-500 text-white px-9 py-4 rounded-lg text-sm transition-all duration-[250ms] hover:bg-primary-600 hover:shadow-[0_8px_30px_rgba(196,106,43,0.35)] hover:-translate-y-0.5"
+                                className="group relative overflow-hidden font-heading font-black tracking-widest uppercase bg-primary-500 text-white px-9 py-[14px] rounded-lg text-sm transition-all duration-[250ms] hover:bg-primary-600 hover:shadow-[0_8px_30px_rgba(196,106,43,0.35)] hover:-translate-y-0.5"
                                 whileHover={{ scale: 1.02 }}
                                 whileTap={{ scale: 0.98 }}
                             >

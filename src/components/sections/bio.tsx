@@ -17,7 +17,7 @@ export function Bio() {
                 <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
                     {/* LEFT: IMAGE */}
-                    <div className="order-1 relative">
+                    <div className="order-1 relative pb-6 pr-4">
                         <motion.div
                             initial={{ opacity: 0, scale: 0.95 }}
                             whileInView={{ opacity: 1, scale: 1 }}
@@ -25,9 +25,9 @@ export function Bio() {
                             transition={{ duration: 0.8, ease: "easeOut" }}
                             className="relative w-full aspect-[4/3] rounded-sm overflow-hidden bg-[#1A1A1A]"
                         >
-                            {/* Decorative copper corner */}
+                            {/* Top-left copper corner (inside image) */}
+                            {/* Decorative copper corners (inside image, no overflow) */}
                             <div className="absolute top-0 left-0 w-10 h-10 border-t-2 border-l-2 border-primary-500 z-20" />
-                            <div className="absolute bottom-0 right-0 w-10 h-10 border-b-2 border-r-2 border-primary-500 z-20" />
 
                             {/* Dark Overlay */}
                             <div className="absolute inset-0 bg-[#0A0A0A]/20 z-10 hover:bg-transparent transition-colors duration-500" />
@@ -41,18 +41,16 @@ export function Bio() {
                             />
                         </motion.div>
 
-                        {/* Floating stat badge */}
+                        {/* Floating stat badge — sits at bottom-right outside image, within padded parent */}
                         <motion.div
                             initial={{ opacity: 0, x: 20 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.4, duration: 0.6 }}
-                            className="absolute -bottom-5 -right-3 md:right-4 bg-[#1A1A1A] border border-[#262626] rounded-lg p-4 flex items-center gap-3"
+                            className="absolute bottom-0 right-0 bg-[#1A1A1A] border border-[#262626] rounded-lg p-4 text-center shadow-[0_8px_30px_rgba(0,0,0,0.5)]"
                         >
-                            <div className="text-center">
-                                <p className="font-heading font-black text-3xl text-primary-500">15+</p>
-                                <p className="text-xs text-neutral-100 font-medium tracking-wider uppercase">Years of<br />Experience</p>
-                            </div>
+                            <p className="font-heading font-black text-3xl text-primary-500 leading-none">15+</p>
+                            <p className="text-xs text-neutral-100 font-medium tracking-wider uppercase mt-1">Years of<br />Experience</p>
                         </motion.div>
                     </div>
 

@@ -32,12 +32,12 @@ function PackageCard({ service, variants }: { service: Service; variants: Varian
             variants={variants}
             className="group relative flex flex-col p-6 md:p-8 bg-[#1A1A1A] border border-[#262626] rounded-[10px] hover:border-primary-500 transition-all duration-[250ms] hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(0,0,0,0.4)]"
         >
-            {/* Header row */}
-            <div className="flex items-start justify-between gap-4 mb-5">
-                <h4 className="font-heading text-xl md:text-2xl font-bold text-neutral-50 group-hover:text-white transition-colors tracking-wider">
+            {/* Header col */}
+            <div className="flex flex-col gap-2 mb-5">
+                <h4 className="font-heading text-xl md:text-2xl font-bold text-neutral-50 group-hover:text-white transition-colors tracking-wider leading-tight">
                     {service.name}
                 </h4>
-                <div className="text-right flex-shrink-0">
+                <div>
                     <span className="font-heading font-black text-2xl md:text-3xl text-primary-500">
                         {formatPrice(service.price)}
                     </span>
@@ -134,7 +134,7 @@ export function Services() {
                     {/* ── Main Packages ── */}
                     <div className="mb-20">
                         <SectionDivider label="Packages" />
-                        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+                        <div className="grid gap-5 grid-cols-1 md:grid-cols-2 xl:grid-cols-4">
                             {mainPackages.map((service) => (
                                 <PackageCard key={service.id} service={service} variants={itemVariants} />
                             ))}
