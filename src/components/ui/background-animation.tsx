@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
 
 export function BackgroundGrain() {
     return (
-        <div className="pointer-events-none fixed inset-0 z-[1] opacity-20 mix-blend-overlay">
+        <div className="pointer-events-none fixed inset-0 z-[1] opacity-5 mix-blend-overlay">
             <div className="absolute inset-0 bg-repeat [background-image:url('https://framerusercontent.com/images/rR6HYXBrMmX4cRpXfXUOvpvpB0.png')] animate-grain" />
             <style jsx global>{`
                 @keyframes grain {

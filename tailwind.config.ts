@@ -42,6 +42,7 @@ const config: Config = {
                 // Classic serif for headings, clean sans for body
                 heading: ["var(--font-oswald)", "sans-serif"],
                 body: ["var(--font-montserrat)", "sans-serif"],
+                cinzel: ["var(--font-cinzel)", "serif"],
             },
             animation: {
                 "fade-in": "fadeIn 0.5s ease-out forwards",

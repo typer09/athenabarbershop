@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Oswald, Montserrat } from "next/font/google"; // Strong, Old School Modern
+import { Oswald, Montserrat, Cinzel } from "next/font/google"; // Strong, Old School Modern
 import "./globals.css";
 
 // ============================================
@@ -15,6 +15,12 @@ const montserrat = Montserrat({
     subsets: ["latin"],
     display: "swap",
     variable: "--font-montserrat",
+});
+
+const cinzel = Cinzel({
+    subsets: ["latin"],
+    display: "swap",
+    variable: "--font-cinzel",
 });
 
 // ============================================
@@ -111,7 +117,7 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="vi" className={`${oswald.variable} ${montserrat.variable}`}>
+        <html lang="vi" className={`${oswald.variable} ${montserrat.variable} ${cinzel.variable}`}>
             <head>
                 <LocalBusinessJsonLd />
             </head>

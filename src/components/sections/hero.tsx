@@ -21,31 +21,41 @@ export function Hero() {
             // INTRO ANIMATION
             const tl = gsap.timeline();
 
-            // Background image reveal (scale down + fade in)
+            // Background image reveal
             tl.from(imageRef.current, {
-                scale: 1.2,
+                scale: 1.1,
                 opacity: 0,
                 duration: 1.5,
-                ease: "power3.out",
+                ease: "power2.out",
             });
 
-            // Text stagger reveal (blur + slide up)
-            tl.from(
-                ".hero-text-element",
-                {
-                    y: 50,
-                    opacity: 0,
-                    filter: "blur(10px)",
-                    duration: 1,
-                    stagger: 0.15,
-                    ease: "power3.out",
-                },
-                "-=1"
+            // Title Reveal: opacity 0 -> 1, translateY 20px -> 0, duration 0.8s, delay 0.2s, easing ease-out
+            tl.fromTo(
+                ".hero-title-reveal",
+                { y: 20, opacity: 0 },
+                { y: 0, opacity: 1, duration: 0.8, delay: 0.2, ease: "power2.out", stagger: 0.1 },
+                0
             );
 
-            // SCROLL PARALLAX
+            // Divider Animation: scaleX 0 -> 1, duration 0.6s, delay 0.4s
+            tl.fromTo(
+                ".hero-divider-line",
+                { scaleX: 0 },
+                { scaleX: 1, duration: 0.6, delay: 0.4, ease: "power2.out", transformOrigin: "center" },
+                0
+            );
+
+            // Other Texts
+            tl.fromTo(
+                ".hero-other-reveal",
+                { y: 20, opacity: 0 },
+                { y: 0, opacity: 1, duration: 0.8, delay: 0.5, ease: "power2.out", stagger: 0.1 },
+                0
+            );
+
+            // SCROLL PARALLAX (ratio approx 0.5)
             gsap.to(imageRef.current, {
-                yPercent: 30,
+                yPercent: 50,
                 ease: "none",
                 scrollTrigger: {
                     trigger: containerRef.current,
@@ -79,8 +89,8 @@ export function Hero() {
             {/* Background Image */}
             <div className="absolute inset-0 z-0">
                 <div ref={imageRef} className="relative h-full w-full">
-                    {/* Hero overlay: rgba(0,0,0,0.65) per spec */}
-                    <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/65 to-black/90" />
+                    {/* Hero overlay gradient */}
+                    <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/80 via-black/40 to-black/90" />
                     <Image
                         src="/images/hero/hero-bg.jpg"
                         alt="Athena Barber Shop Interior"
@@ -102,41 +112,41 @@ export function Hero() {
                 <div className="flex flex-col items-center text-center">
 
                     {/* Small label */}
-                    <p className="hero-text-element font-body text-xs font-bold tracking-[0.3em] text-primary-500 uppercase mb-6">
+                    <p className="hero-other-reveal font-body text-xs font-bold tracking-[0.3em] text-primary-500 uppercase mb-6">
                         Est. 2022 Hoi An / 2025 Da Nang
                     </p>
 
                     {/* Main heading */}
-                    <h1 className="hero-text-element font-heading font-black leading-none text-white uppercase tracking-tight">
-                        <span className="block text-[40px] sm:text-[56px] lg:text-[88px] xl:text-[96px]">
+                    <h1 className="hero-title-reveal font-cinzel font-bold leading-none uppercase tracking-[0.15em] text-white">
+                        <span className="block text-[44px] sm:text-[64px] lg:text-[88px] xl:text-[96px]">
                             ATHENA
                         </span>
-                        <span className="block text-[32px] sm:text-[44px] lg:text-[72px] xl:text-[80px] text-transparent bg-clip-text bg-gradient-to-r from-neutral-200 via-neutral-100 to-neutral-400">
+                        <span className="block text-[24px] sm:text-[40px] lg:text-[56px] xl:text-[64px] opacity-70 mt-2">
                             BARBER SHOP
                         </span>
                     </h1>
 
                     {/* Divider */}
-                    <div className="hero-text-element flex items-center gap-4 my-8 w-full max-w-xs">
-                        <span className="h-px flex-1 bg-primary-500/40" />
-                        <span className="text-primary-500 text-xs tracking-widest">✦</span>
-                        <span className="h-px flex-1 bg-primary-500/40" />
+                    <div className="flex items-center gap-4 my-8 w-full max-w-xs opacity-80">
+                        <span className="hero-divider-line h-px flex-1 bg-primary-500/50" />
+                        <span className="hero-other-reveal text-primary-500 text-lg">♦</span>
+                        <span className="hero-divider-line h-px flex-1 bg-primary-500/50" />
                     </div>
 
                     {/* Subtitle */}
-                    <p className="hero-text-element max-w-lg font-body text-base md:text-lg text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)] mb-10 leading-relaxed">
+                    <p className="hero-other-reveal max-w-[600px] font-body text-[18px] text-white/85 leading-[1.6] text-center drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)] mb-10">
                         Premium grooming services in Hai Chau, Da Nang.<br />
                         Where classic technique meets modern dark aesthetic.
                     </p>
 
                     {/* CTA Buttons */}
-                    <div className="hero-text-element flex flex-col sm:flex-row items-center gap-4">
+                    <div className="hero-other-reveal flex flex-col sm:flex-row items-center gap-4">
                         {/* Primary: BOOK NOW */}
                         <Link href="/contact">
                             <motion.button
-                                className="group relative overflow-hidden font-heading font-black tracking-widest uppercase bg-primary-500 text-white px-9 py-[14px] rounded-lg text-sm transition-all duration-[250ms] hover:bg-primary-600 hover:shadow-[0_8px_30px_rgba(196,106,43,0.35)] hover:-translate-y-0.5"
-                                whileHover={{ scale: 1.02 }}
-                                whileTap={{ scale: 0.98 }}
+                                className="group relative overflow-hidden font-heading font-black tracking-widest uppercase bg-primary-500 text-white px-9 py-[14px] rounded-lg text-sm transition-all duration-[200ms] hover:bg-primary-600 hover:shadow-[0_0_20px_rgba(255,140,0,0.5)]"
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.97 }}
                             >
                                 BOOK NOW
                             </motion.button>
@@ -153,11 +163,14 @@ export function Hero() {
 
                     {/* Scroll hint */}
                     <motion.div
-                        className="hero-text-element mt-16"
-                        animate={{ y: [0, 6, 0] }}
+                        className="hero-other-reveal mt-16"
+                        animate={{ y: [0, 10, 0] }}
                         transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
                     >
-                        <ArrowDown size={20} className="text-neutral-600" />
+                        <div className="flex flex-col items-center gap-2 text-neutral-500 hover:text-primary-500 transition-colors cursor-default">
+                            <span className="font-heading text-xs tracking-[0.2em] uppercase">Scroll</span>
+                            <ArrowDown size={16} />
+                        </div>
                     </motion.div>
                 </div>
             </div>

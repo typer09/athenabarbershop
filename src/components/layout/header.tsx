@@ -32,7 +32,7 @@ export function Header() {
             className={cn(
                 "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
                 isScrolled || isMobileMenuOpen
-                    ? "bg-[rgba(10,10,10,0.85)] backdrop-blur-md border-b border-neutral-800 py-4"
+                    ? "bg-[rgba(10,10,10,0.85)] backdrop-blur-[10px] border-b border-neutral-800 py-4"
                     : "bg-transparent py-6"
             )}
         >
