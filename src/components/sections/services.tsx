@@ -8,7 +8,7 @@ import { motion, useInView, type Variants } from "framer-motion";
 type Service = (typeof siteConfig.services)[number];
 
 // Main package categories (full cards with includes list)
-const MAIN_PACKAGES = ["Craft", "Beard Groom", "Head Shave", "Elite", "Luxe"] as const;
+const MAIN_PACKAGES = ["Craft", "Beard Groom", "Head Shave", "Elite", "Luxe", "Therapy"] as const;
 
 // Extra service sub-categories (compact rows, grouped)
 const EXTRA_CATEGORIES = [
@@ -26,18 +26,23 @@ function formatPrice(price: number) {
 // ── Sub-components ─────────────────────────────────────────────────
 
 /** Full card for a main service package */
-function PackageCard({ service, variants }: { service: Service; variants: Variants }) {
+function PackageCard({ service, variants, className = "" }: { service: Service; variants: Variants; className?: string }) {
     return (
         <motion.div
             variants={variants}
-            className="group relative flex flex-col p-6 md:p-8 bg-[#1A1A1A] border border-[#262626] rounded-[10px] hover:border-primary-500 transition-all duration-[250ms] hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(0,0,0,0.4)]"
+            className={`group relative flex flex-col p-6 md:p-8 bg-[#1A1A1A] border border-[#262626] rounded-[10px] hover:border-primary-500 transition-all duration-[250ms] hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(0,0,0,0.4)] ${className}`}
         >
             {/* Header col */}
             <div className="flex flex-col gap-2 mb-5">
                 <h4 className="font-heading text-xl md:text-2xl font-bold text-neutral-50 group-hover:text-white transition-colors tracking-wider leading-tight">
                     {service.name}
                 </h4>
-                <div>
+                {"subtitle" in service && !!service.subtitle && (
+                    <p className="text-sm italic text-neutral-400 group-hover:text-neutral-300 transition-colors">
+                        {service.subtitle as string}
+                    </p>
+                )}
+                <div className="mt-1">
                     <span className="font-heading font-black text-2xl md:text-3xl text-primary-500">
                         {formatPrice(service.price)}
                     </span>
@@ -50,13 +55,22 @@ function PackageCard({ service, variants }: { service: Service; variants: Varian
 
             {/* Includes list */}
             {"includes" in service && Array.isArray(service.includes) && service.includes.length > 0 && (
-                <ul className="space-y-2 flex-1">
-                    {(service.includes as readonly string[]).map((item) => (
-                        <li key={item} className="flex items-center gap-2.5 text-sm text-neutral-100 group-hover:text-neutral-200 transition-colors">
-                            <span className="w-1 h-1 rounded-full bg-primary-500 flex-shrink-0" />
-                            {item}
-                        </li>
-                    ))}
+                <ul className="space-y-3 flex-1">
+                    {(service.includes as readonly string[]).map((item) => {
+                        const splitIdx = item.indexOf(":");
+                        const hasDesc = splitIdx !== -1;
+                        const title = hasDesc ? item.substring(0, splitIdx).trim() : item;
+                        const desc = hasDesc ? item.substring(splitIdx + 1).trim() : "";
+                        return (
+                            <li key={item} className={`flex ${hasDesc ? 'items-start' : 'items-center'} gap-2.5 text-sm text-neutral-100 group-hover:text-neutral-200 transition-colors`}>
+                                <span className={`w-1 h-1 rounded-full bg-primary-500 flex-shrink-0 ${hasDesc ? 'mt-1.5' : ''}`} />
+                                <div className="flex flex-col">
+                                    <span className={hasDesc ? "font-semibold text-white" : ""}>{title}</span>
+                                    {hasDesc && <span className="text-sm text-neutral-200 mt-1 leading-relaxed">{desc}</span>}
+                                </div>
+                            </li>
+                        );
+                    })}
                 </ul>
             )}
 
@@ -135,9 +149,17 @@ export function Services() {
                     <div className="mb-20">
                         <SectionDivider label="Packages" />
                         <div className="grid gap-5 grid-cols-1 md:grid-cols-2 xl:grid-cols-4">
-                            {mainPackages.map((service) => (
-                                <PackageCard key={service.id} service={service} variants={itemVariants} />
-                            ))}
+                            {mainPackages.map((service, idx) => {
+                                const isExtendedCol = mainPackages.length === 6 && idx >= 4;
+                                return (
+                                    <PackageCard
+                                        key={service.id}
+                                        service={service}
+                                        variants={itemVariants}
+                                        className={isExtendedCol ? "xl:col-span-2" : ""}
+                                    />
+                                );
+                            })}
                         </div>
                     </div>
 

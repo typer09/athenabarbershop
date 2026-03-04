@@ -148,6 +148,25 @@ export const siteConfig = {
                 "Styling",
             ],
         },
+        // ── THERAPY HERBAL WASH ──
+        {
+            id: "therapy-herbal-wash",
+            name: "THERAPY HERBAL WASH",
+            price: 200000,
+            category: "Therapy",
+            subtitle: "Elevate your senses",
+            includes: [
+                "Welcome Herbal Tea: A warm cup of herbal tea to calm the senses and detoxify.",
+                "Warm Herbal Eye Compress: Gently soothes tired eyes, reduces tension, and promotes a sense of deep calm.",
+                "Makeup Removal & Facial Cleansing: A gentle cleanse to prepare the skin for nourishing care.",
+                "Facial Massage & Exfoliation: Revives dull skin and releases facial tension for a radiant glow.",
+                "Nourishing Facial Mask: Restores moisture and revitalizes the skin using natural herbal blends.",
+                "First Hair Wash & Scalp Exfoliation: Detoxifies the scalp, stimulates follicles, and refreshes the roots.",
+                "Second Hair Wash & Deep Conditioning: Thorough cleansing followed by a nutrient-rich mask to restore hair health and shine.",
+                "Head Meridian Massage: Focuses on pressure points to relieve mental fatigue and improve circulation.",
+                "Deep Neck – Shoulder – Back Massage: Relieves muscle tension, boosts blood flow, and restores energy balance.",
+            ],
+        },
         // ── EXTRA: Styling ──
         {
             id: "extra-styling",
@@ -197,13 +216,6 @@ export const siteConfig = {
             id: "extra-hairwash-women",
             name: "Hair Wash – Women",
             price: 80000,
-            category: "Hair Wash",
-            includes: [],
-        },
-        {
-            id: "extra-hairwash-herbal",
-            name: "Therapy herbal wash",
-            price: 200000,
             category: "Hair Wash",
             includes: [],
         },
