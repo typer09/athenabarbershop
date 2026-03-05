@@ -117,21 +117,36 @@ export function Hero() {
                     </p>
 
                     {/* Main heading */}
-                    <h1 className="hero-title-reveal font-cinzel font-bold leading-none uppercase tracking-[0.12em] drop-shadow-[0_4px_4px_rgba(0,0,0,0.5)]">
-                        <span className="block bg-clip-text text-transparent bg-gradient-to-b from-[#f5d08a] via-[#c27a36] to-[#8a5a22] text-[44px] sm:text-[64px] lg:text-[88px] xl:text-[96px] pb-1">
-                            ATHENA
+                    <h1 className="hero-title-reveal font-cinzel leading-none uppercase text-center">
+                        {/* ATHENA — main brand title with optical spacing */}
+                        <span
+                            className="block text-white font-bold text-[72px] sm:text-[96px] lg:text-[120px] xl:text-[140px]"
+                            style={{
+                                textShadow: "0 8px 30px rgba(0,0,0,0.45)",
+                                letterSpacing: "0",
+                            }}
+                            aria-label="ATHENA"
+                        >
+                            {/* Optical kerning: A–T tighter, H–E wider, N–A tighter */}
+                            <span style={{ marginRight: "0.06em" }}>A</span>
+                            <span style={{ marginRight: "0.09em" }}>T</span>
+                            <span style={{ marginRight: "0.12em" }}>H</span>
+                            <span style={{ marginRight: "0.08em" }}>E</span>
+                            <span style={{ marginRight: "0.05em" }}>N</span>
+                            <span>A</span>
                         </span>
-                        <span className="block bg-clip-text text-transparent bg-gradient-to-b from-[#f5d08a] via-[#c27a36] to-[#8a5a22] text-[24px] sm:text-[40px] lg:text-[56px] xl:text-[64px] mt-2 pb-1">
+
+                        {/* BARBER SHOP — brand descriptor ~57% of ATHENA */}
+                        <span
+                            className="block text-[#c27a36] font-semibold text-[41px] sm:text-[55px] lg:text-[68px] xl:text-[80px] tracking-[0.22em]"
+                            style={{ marginTop: "12px" }}
+                        >
                             BARBER SHOP
                         </span>
                     </h1>
 
-                    {/* Divider */}
-                    <div className="flex items-center gap-4 my-8 w-full max-w-xs opacity-80">
-                        <span className="hero-divider-line h-px flex-1 bg-primary-500/50" />
-                        <span className="hero-other-reveal text-primary-500 text-lg">♦</span>
-                        <span className="hero-divider-line h-px flex-1 bg-primary-500/50" />
-                    </div>
+                    {/* Spacing after heading */}
+                    <div style={{ marginTop: "28px" }} />
 
                     {/* Subtitle */}
                     <p className="hero-other-reveal max-w-[600px] font-body text-[18px] text-white/85 leading-[1.6] text-center drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)] mb-10">
