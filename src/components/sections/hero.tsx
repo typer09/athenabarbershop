@@ -89,8 +89,6 @@ export function Hero() {
             {/* Background Image */}
             <div className="absolute inset-0 z-0">
                 <div ref={imageRef} className="relative h-full w-full">
-                    {/* Hero overlay gradient */}
-                    <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/80 via-black/40 to-black/90" />
                     <Image
                         src="/images/hero/hero-bg.jpg"
                         alt="Athena Barber Shop Interior"
@@ -99,12 +97,39 @@ export function Hero() {
                         className="object-cover"
                         sizes="100vw"
                     />
+                    {/* Hero overlay gradient - top/bottom dark */}
+                    <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/90 via-black/30 to-black/90" />
+                    {/* Vignette radial - all edges dark */}
+                    <div
+                        className="absolute inset-0 z-10 pointer-events-none"
+                        style={{
+                            background:
+                                "radial-gradient(ellipse 60% 80% at 50% 50%, transparent 20%, rgba(0,0,0,0.92) 100%)",
+                        }}
+                    />
+                    {/* Extra left dark strip */}
+                    <div
+                        className="absolute inset-0 z-10 pointer-events-none"
+                        style={{
+                            background:
+                                "linear-gradient(to right, rgba(0,0,0,0.85) 0%, transparent 35%, transparent 65%, rgba(0,0,0,0.85) 100%)",
+                        }}
+                    />
                 </div>
             </div>
 
-            {/* Subtle copper ambient glow */}
+            {/* Ambient glow layers */}
             <div className="absolute inset-0 z-10 pointer-events-none">
-                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] rounded-full bg-primary-500/8 blur-[160px]" />
+                {/* Warm copper center glow */}
+                <div
+                    className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] rounded-full blur-[140px]"
+                    style={{ background: "rgba(194, 122, 54, 0.10)" }}
+                />
+                {/* Soft white highlight behind text */}
+                <div
+                    className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[200px] rounded-full blur-[100px]"
+                    style={{ background: "rgba(255, 255, 255, 0.04)" }}
+                />
             </div>
 
             {/* Content */}
@@ -128,17 +153,17 @@ export function Hero() {
                             aria-label="ATHENA"
                         >
                             {/* Optical kerning: A–T tighter, H–E wider, N–A tighter */}
-                            <span style={{ marginRight: "0.06em" }}>A</span>
-                            <span style={{ marginRight: "0.09em" }}>T</span>
-                            <span style={{ marginRight: "0.12em" }}>H</span>
-                            <span style={{ marginRight: "0.08em" }}>E</span>
-                            <span style={{ marginRight: "0.05em" }}>N</span>
+                            <span style={{ marginRight: "0.01em" }}>A</span>
+                            <span style={{ marginRight: "0.03em" }}>T</span>
+                            <span style={{ marginRight: "0.05em" }}>H</span>
+                            <span style={{ marginRight: "0.02em" }}>E</span>
+                            <span style={{ marginRight: "-0.01em" }}>N</span>
                             <span>A</span>
                         </span>
 
                         {/* BARBER SHOP — brand descriptor ~57% of ATHENA */}
                         <span
-                            className="block text-[#c27a36] font-semibold text-[41px] sm:text-[55px] lg:text-[68px] xl:text-[80px] tracking-[0.22em]"
+                            className="block text-[#c27a36] font-semibold text-[41px] sm:text-[55px] lg:text-[68px] xl:text-[80px] tracking-[0.06em]"
                             style={{ marginTop: "12px" }}
                         >
                             BARBER SHOP
