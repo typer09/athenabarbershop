@@ -163,7 +163,7 @@ export function Hero() {
 
                         {/* BARBER SHOP — brand descriptor ~57% of ATHENA */}
                         <span
-                            className="block text-[#c27a36] font-semibold text-[41px] sm:text-[55px] lg:text-[68px] xl:text-[80px] tracking-[0.06em]"
+                            className="block text-[#c27a36] font-bold text-[41px] sm:text-[55px] lg:text-[68px] xl:text-[80px] tracking-[0.06em]"
                             style={{ marginTop: "12px" }}
                         >
                             BARBER SHOP
