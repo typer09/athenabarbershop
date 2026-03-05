@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ProductsHero } from "@/components/sections/products-hero";
+import { ToolLoop } from "@/components/sections/tool-loop";
 import { ProductsGrid } from "@/components/sections/products-grid";
 import { ProductsCta } from "@/components/sections/products-cta";
 
@@ -19,6 +20,7 @@ export default function ProductsPage() {
     return (
         <main>
             <ProductsHero />
+            <ToolLoop />
             <ProductsGrid />
             <ProductsCta />
         </main>

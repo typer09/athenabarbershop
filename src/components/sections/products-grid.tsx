@@ -10,18 +10,25 @@ const CATEGORIES = [
         id: "reuzel",
         label: "REUZEL",
         products: [
-            { id: "r1", name: "Reuzel Pink Pomade", price: "350,000₫" },
-            { id: "r2", name: "Reuzel Blue Pomade", price: "350,000₫" },
-            { id: "r3", name: "Reuzel Fiber", price: "380,000₫" },
-            { id: "r4", name: "Reuzel Clay", price: "380,000₫" },
+            { id: "r1", name: "Blue Strong Hold Reuzel", price: "550,000₫" },
+            { id: "r2", name: "Pink Heavy Hold Reuzel", price: "550,000₫" },
+            { id: "r3", name: "Green Medium Hold Reuzel", price: "550,000₫" },
+            { id: "r4", name: "Gold Concrete Hold Reuzel", price: "550,000₫" },
+            { id: "r5", name: "Silver Severed Head Reuzel", price: "550,000₫" },
+            { id: "r6", name: "Tonic Reuzel", price: "250,000₫" },
         ],
     },
     {
         id: "shape",
         label: "SHAPE POMADE",
         products: [
-            { id: "s1", name: "Shape Original Hold", price: "280,000₫" },
-            { id: "s2", name: "Shape Strong Hold", price: "280,000₫" },
+            { id: "s1", name: "Atlas Soft Clay 100g", price: "350,000₫" },
+            { id: "s2", name: "Atlas Soft Clay 10g", price: "250,000₫" },
+            { id: "s3", name: "Siren Aqua Hold 100g", price: "350,000₫" },
+            { id: "s4", name: "Siren Aqua Hold 50g", price: "250,000₫" },
+            { id: "s5", name: "Roug Matt Clay", price: "290,000₫" },
+            { id: "s6", name: "Athena Alum Block", price: "250,000₫" },
+            { id: "s7", name: "Trixie Powder", price: "300,000₫" },
         ],
     },
 ];
@@ -98,8 +105,8 @@ export function ProductsGrid() {
                             key={cat.id}
                             onClick={() => setActiveCategory(cat.id)}
                             className={`px-6 py-2.5 rounded-full text-xs font-bold tracking-widest uppercase border transition-all duration-250 ${activeCategory === cat.id
-                                    ? "bg-[#c27a36] border-[#c27a36] text-white"
-                                    : "bg-transparent border-neutral-700 text-neutral-400 hover:border-[#c27a36]/50 hover:text-neutral-200"
+                                ? "bg-[#c27a36] border-[#c27a36] text-white"
+                                : "bg-transparent border-neutral-700 text-neutral-300 hover:border-[#c27a36]/50 hover:text-white"
                                 }`}
                         >
                             {cat.label}
