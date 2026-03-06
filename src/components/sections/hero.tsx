@@ -137,8 +137,8 @@ export function Hero() {
                 <div className="flex flex-col items-center text-center">
 
                     {/* Small label */}
-                    <p className="hero-other-reveal font-body text-xs font-bold tracking-[0.3em] text-primary-500 uppercase mb-6">
-                        Est. 2022 Hoi An / 2025 Da Nang
+                    <p className="hero-other-reveal font-body text-xs font-black tracking-[0.3em] text-primary-500 uppercase mb-6">
+                        Est. 2021 Hai Chau  / 2025 Da Nang
                     </p>
 
                     {/* Main heading */}
@@ -163,8 +163,8 @@ export function Hero() {
 
                         {/* BARBER SHOP — brand descriptor ~57% of ATHENA */}
                         <span
-                            className="block text-[#c27a36] font-bold text-[41px] sm:text-[55px] lg:text-[68px] xl:text-[80px] tracking-[0.06em]"
-                            style={{ marginTop: "12px" }}
+                            className="inline-block text-[#c27a36] font-bold text-[41px] sm:text-[55px] lg:text-[68px] xl:text-[80px] tracking-[0.06em]"
+                            style={{ marginTop: "12px", transform: "scaleX(1.3)", transformOrigin: "center" }}
                         >
                             BARBER SHOP
                         </span>
