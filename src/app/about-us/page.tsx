@@ -33,7 +33,7 @@ export default function AboutUsPage() {
 
                 <div className="section-container relative z-10">
                     <BlurText
-                        text="THE JOURNEY."
+                        text="OUR STORY."
                         delay={50}
                         animateBy="words"
                         direction="bottom"
@@ -43,7 +43,7 @@ export default function AboutUsPage() {
                         <TextType
                             text={[
                                 "From the historic streets of Hoi An to the vibrant heart of Da Nang.",
-                                "A story of passion, precision, and the relentless pursuit of grooming perfection.",
+                                "A legacy of dedication, mastery, and the uncompromising pursuit of barbering excellence.",
                                 "Quality without compromise."
                             ]}
                             typingSpeed={40}
