@@ -13,7 +13,7 @@ const REVIEWS = [
         avatar: "/images/logo.jpg",
         content: "Great cut. Very professional group. They also make great cocktails in house.",
         services: "Razor cut, Scissor cut, Straight razor shave, Beard trim, Hot towel shave",
-        image: "/images/2025.jpg"
+        image: "/images/reviews/2025.jpg"
     },
     {
         id: 2,
@@ -22,7 +22,7 @@ const REVIEWS = [
         avatar: "/images/logo.jpg", // Kept generic for now
         content: "I love the hair cut, great barber. I highly recommend this place for anyone who's looking for a good haircut.",
         services: null, 
-        image: "/images/hoian.jpg"
+        image: "/images/reviews/johnnie-t.jpg"
     }
 ];
 
@@ -102,49 +102,50 @@ export function Testimonials() {
                             </div>
 
                             {/* Right Content Box */}
-                            <div className="w-full lg:w-[60%] bg-white mt-[-20px] lg:mt-0 lg:absolute lg:right-0 lg:top-1/2 lg:-translate-y-1/2 p-8 md:p-14 lg:p-20 z-20 shadow-2xl">
-                                {/* Quote graphic */}
-                                <div className="absolute right-4 md:right-10 bottom-0 text-[120px] md:text-[250px] leading-none text-neutral-100 font-serif opacity-80 select-none pointer-events-none">
-                                    "
-                                </div>
-
-                                <div className="relative z-10">
-                                    {/* Profile Info */}
-                                    <div className="flex flex-col sm:flex-row sm:items-center gap-6 mb-8 md:mb-12">
-                                        <div className="flex gap-4">
+                            <div className="w-full lg:w-[60%] bg-[#1A1A1A] mt-[-20px] lg:mt-0 lg:absolute lg:right-0 lg:top-1/2 lg:-translate-y-1/2 p-10 md:p-14 lg:p-20 z-20 shadow-[-20px_0_40px_rgba(0,0,0,0.5)] border-l-4 border-[#D4AF37]">
+                                <div className="relative z-10 flex flex-col justify-between h-full min-h-[300px]">
+                                    {/* Profile Info & Stars */}
+                                    <div className="mb-8">
+                                        <div className="flex items-center gap-6 mb-6">
                                             <div className="w-16 h-16 relative overflow-hidden rounded-full border-2 border-[#D4AF37]">
                                                 <Image src={REVIEWS[currentIndex].avatar} alt={REVIEWS[currentIndex].name} fill className="object-cover" />
                                             </div>
+                                            <div>
+                                                <h4 className="text-xl md:text-2xl font-black text-white tracking-wider uppercase mb-1">
+                                                    {REVIEWS[currentIndex].name}
+                                                </h4>
+                                                <p className="text-sm md:text-md text-[#D4AF37] font-bold uppercase tracking-widest">
+                                                    {REVIEWS[currentIndex].title}
+                                                </p>
+                                            </div>
                                         </div>
-                                        <div>
-                                            <h4 className="text-lg md:text-xl font-bold text-neutral-900 tracking-wide uppercase">
-                                                {REVIEWS[currentIndex].name}
-                                            </h4>
-                                            <p className="text-sm md:text-base text-[#D4AF37] font-semibold uppercase tracking-wider mt-1">
-                                                {REVIEWS[currentIndex].title}
-                                            </p>
+
+                                        <div className="flex gap-1.5 text-[#D4AF37]">
+                                            {[...Array(5)].map((_, i) => (
+                                                <Star key={i} size={22} fill="currentColor" strokeWidth={0} />
+                                            ))}
                                         </div>
                                     </div>
 
-                                    {/* Stars */}
-                                    <div className="flex gap-1.5 mb-8 text-[#D4AF37]">
-                                        {[...Array(5)].map((_, i) => (
-                                            <Star key={i} size={24} fill="currentColor" strokeWidth={0} />
-                                        ))}
+                                    {/* Text and large quotes wrapper */}
+                                    <div className="relative mt-auto">
+                                        <p className="text-lg md:text-2xl text-neutral-200 leading-relaxed font-medium md:pr-16 relative z-10">
+                                            "{REVIEWS[currentIndex].content}"
+                                        </p>
+                                        
+                                        {/* Quote graphic - moved to the right side of the text */}
+                                        <div className="absolute top-[-20px] md:top-auto bottom-[-60px] md:bottom-[-20px] right-0 md:-right-4 text-[120px] md:text-[180px] leading-none text-neutral-800 font-serif opacity-50 select-none pointer-events-none z-0">
+                                            "
+                                        </div>
                                     </div>
-
-                                    {/* Text */}
-                                    <p className="text-lg md:text-2xl text-neutral-800 leading-relaxed font-medium mb-6">
-                                        "{REVIEWS[currentIndex].content}"
-                                    </p>
                                     
                                     {/* Services block based on the Google Review */}
                                     {REVIEWS[currentIndex].services && (
-                                        <div className="mt-8 pt-8 border-t border-neutral-200">
-                                            <p className="text-sm md:text-base text-neutral-500">
-                                                <strong className="text-neutral-900 inline-block mb-2">Services:</strong>
+                                        <div className="mt-8 pt-6 border-t border-neutral-800 relative z-10">
+                                            <p className="text-sm md:text-base text-neutral-400">
+                                                <strong className="text-white inline-block mb-1 uppercase tracking-wider text-xs">Services</strong>
                                                 <br />
-                                                {REVIEWS[currentIndex].services}
+                                                <span className="font-medium text-neutral-500">{REVIEWS[currentIndex].services}</span>
                                             </p>
                                         </div>
                                     )}
