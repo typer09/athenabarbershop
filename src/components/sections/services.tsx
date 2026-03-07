@@ -16,6 +16,9 @@ const EXTRA_CATEGORIES = [
     { key: "Cleaning", label: "Cleaning" },
     { key: "Hair Wash", label: "Hair Wash" },
     { key: "Massage", label: "Massage" },
+    { key: "Perm", label: "Perm" },
+    { key: "Dyed", label: "Dyed" },
+    { key: "Hairdress", label: "Hairdress" },
 ] as const;
 
 // ── Helper ─────────────────────────────────────────────────────────
@@ -30,43 +33,45 @@ function PackageCard({ service, variants, className = "" }: { service: Service; 
     return (
         <motion.div
             variants={variants}
-            className={`group relative flex flex-col p-6 md:p-8 bg-[#1A1A1A] border border-[#262626] rounded-[10px] hover:border-primary-500 transition-all duration-[250ms] hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(0,0,0,0.4)] ${className}`}
+            className={`group relative flex flex-col p-4 md:p-5 bg-[#1A1A1A] border border-[#262626] rounded-[10px] hover:border-primary-500 transition-all duration-[250ms] hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(0,0,0,0.4)] ${className}`}
         >
             {/* Header col */}
-            <div className="flex flex-col gap-2 mb-5">
-                <h4 className="font-heading text-xl md:text-2xl font-bold text-neutral-50 group-hover:text-white transition-colors tracking-wider leading-tight">
+            <div className="flex flex-col gap-1.5 mb-4">
+                <h4 className="font-heading text-lg md:text-xl font-bold text-neutral-50 group-hover:text-white transition-colors tracking-wider leading-tight uppercase">
                     {service.name}
                 </h4>
                 {"subtitle" in service && !!service.subtitle && (
-                    <p className="text-sm italic text-neutral-400 group-hover:text-neutral-300 transition-colors">
+                    <p className="text-xs italic text-neutral-400 group-hover:text-neutral-300 transition-colors">
                         {service.subtitle as string}
                     </p>
                 )}
-                <div className="mt-1">
-                    <span className="font-heading font-black text-2xl md:text-3xl text-primary-500">
-                        {formatPrice(service.price)}
-                    </span>
-                    <span className="text-sm ml-1 text-neutral-200 font-bold">₫</span>
+                <div className="mt-0 grid grid-rows-[0fr] opacity-0 group-hover:grid-rows-[1fr] group-hover:opacity-100 group-hover:mt-1 transition-all duration-300 ease-out">
+                    <div className="overflow-hidden flex items-baseline">
+                        <span className="font-heading font-black text-xl md:text-2xl text-primary-500">
+                            {formatPrice(service.price)}
+                        </span>
+                        <span className="text-xs ml-1 text-neutral-200 font-bold mb-1">₫</span>
+                    </div>
                 </div>
             </div>
 
             {/* Divider */}
-            <div className="h-px bg-[#262626] group-hover:bg-primary-500/30 mb-4 transition-colors duration-300" />
+            <div className="h-px bg-[#262626] group-hover:bg-primary-500/30 mb-3 transition-colors duration-300" />
 
             {/* Includes list */}
             {"includes" in service && Array.isArray(service.includes) && service.includes.length > 0 && (
-                <ul className="space-y-3 flex-1">
+                <ul className="space-y-2 flex-1">
                     {(service.includes as readonly string[]).map((item) => {
                         const splitIdx = item.indexOf(":");
                         const hasDesc = splitIdx !== -1;
                         const title = hasDesc ? item.substring(0, splitIdx).trim() : item;
                         const desc = hasDesc ? item.substring(splitIdx + 1).trim() : "";
                         return (
-                            <li key={item} className={`flex ${hasDesc ? 'items-start' : 'items-center'} gap-2.5 text-sm text-neutral-100 group-hover:text-neutral-200 transition-colors`}>
-                                <span className={`w-1 h-1 rounded-full bg-primary-500 flex-shrink-0 ${hasDesc ? 'mt-1.5' : ''}`} />
+                            <li key={item} className={`flex ${hasDesc ? 'items-start' : 'items-center'} gap-2 text-xs text-neutral-100 group-hover:text-neutral-200 transition-colors`}>
+                                <span className={`w-1 h-1 rounded-full bg-primary-500 flex-shrink-0 ${hasDesc ? 'mt-1' : ''}`} />
                                 <div className="flex flex-col">
                                     <span className={hasDesc ? "font-semibold text-white" : ""}>{title}</span>
-                                    {hasDesc && <span className="text-sm text-neutral-200 mt-1 leading-relaxed">{desc}</span>}
+                                    {hasDesc && <span className="text-xs text-neutral-300 mt-0.5 leading-relaxed">{desc}</span>}
                                 </div>
                             </li>
                         );
@@ -87,12 +92,21 @@ function ExtraRow({ service, variants }: { service: Service; variants: Variants 
             variants={variants}
             className="group flex items-center justify-between py-3 border-b border-[#262626] last:border-0 hover:border-primary-500/40 transition-colors duration-200"
         >
-            <span className="text-sm font-medium text-neutral-100 group-hover:text-white transition-colors">
-                {service.name}
-            </span>
-            <span className="font-heading font-bold text-base text-primary-500 flex-shrink-0 ml-4">
-                {formatPrice(service.price)}
-                <span className="text-xs ml-0.5 text-neutral-300 font-bold">₫</span>
+            <div className="flex flex-col">
+                <span className="text-sm font-medium text-neutral-100 group-hover:text-white transition-colors">
+                    {service.name}
+                </span>
+                {"subtitle" in service && !!service.subtitle && (
+                    <span className="text-[10px] uppercase text-neutral-400 mt-0.5 max-w-[200px] sm:max-w-none">
+                        {service.subtitle as string}
+                    </span>
+                )}
+            </div>
+            <span className="font-heading font-bold text-base text-primary-500 flex-shrink-0 ml-4 whitespace-nowrap">
+                {"displayPrice" in service && !!service.displayPrice ?
+                    (service.displayPrice as string).replace(/\./g, ",") :
+                    formatPrice(service.price)}
+                <span className="text-xs ml-1 text-neutral-300 font-bold">₫</span>
             </span>
         </motion.div>
     );
