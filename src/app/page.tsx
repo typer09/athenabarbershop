@@ -3,6 +3,7 @@ import { Bio } from "@/components/sections/bio";
 import { GallerySlider } from "@/components/sections/gallery-slider";
 import { Contact } from "@/components/sections/contact";
 import { Services } from "@/components/sections/services";
+import { Testimonials } from "@/components/sections/testimonials";
 import { ToolLoop } from "@/components/sections/tool-loop";
 import { BookingCta } from "@/components/sections/booking-cta";
 import { getGalleryImages } from "@/lib/gallery-server";
@@ -26,7 +27,10 @@ export default async function HomePage() {
             {/* 4. SERVICES & PRICE */}
             <Services />
 
-            {/* 5. GALLERY SLIDER */}
+            {/* 5. TESTIMONIALS */}
+            <Testimonials />
+
+            {/* 6. GALLERY SLIDER */}
             <GallerySlider images={galleryImages} />
 
             {/* 6. BOOKING CTA */}
