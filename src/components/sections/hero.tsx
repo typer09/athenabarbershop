@@ -195,7 +195,7 @@ export function Hero() {
                         {/* Secondary: Our Services */}
                         <Link
                             href="/services"
-                            className="font-body text-sm font-semibold tracking-widest text-neutral-300 hover:text-primary-500 transition-colors duration-200 border-b border-neutral-700 hover:border-primary-500 pb-1 uppercase"
+                            className="font-body text-sm font-bold tracking-widest text-neutral-300 hover:text-primary-500 transition-colors duration-200 border-b border-neutral-700 hover:border-primary-500 pb-1 uppercase"
                         >
                             View Services
                         </Link>
@@ -208,7 +208,7 @@ export function Hero() {
                         transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
                     >
                         <div className="flex flex-col items-center gap-2 text-neutral-500 hover:text-primary-500 transition-colors cursor-default">
-                            <span className="font-heading text-xs tracking-[0.2em] uppercase">Scroll</span>
+                            <span className="font-heading text-xs font-bold tracking-[0.2em] uppercase">Scroll</span>
                             <ArrowDown size={16} />
                         </div>
                     </motion.div>
