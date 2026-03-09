@@ -77,7 +77,7 @@ export function LocalBusinessJsonLd() {
                     itemOffered: {
                         "@type": "Service",
                         name: service.name,
-                        description: service.description,
+                        description: service.name,
                     },
                     price: service.price,
                     priceCurrency: "VND",
