@@ -41,7 +41,7 @@ export function Header() {
                 <Link href="/" className="relative z-50 flex items-center group">
                     <div className="relative h-10 w-10 overflow-hidden rounded-full border border-neutral-800 transition-transform group-hover:scale-105">
                         <Image
-                            src="/images/logo.jpg"
+                            src="/images/athena-logo.jpg"
                             alt="Athena Barber Shop Logo"
                             fill
                             className="object-cover"

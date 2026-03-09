@@ -10,7 +10,7 @@ const REVIEWS = [
         id: 1,
         name: "Food Bohemians",
         title: "Local Guide",
-        avatar: "/images/logo.jpg",
+        avatar: "/images/athena-logo.jpg",
         content: "Great cut. Very professional group. They also make great cocktails in house.",
         services: "Razor cut, Scissor cut, Straight razor shave, Beard trim, Hot towel shave",
         image: "/images/reviews/2025.jpg"
@@ -19,7 +19,7 @@ const REVIEWS = [
         id: 2,
         name: "Johnnie T",
         title: "8 reviews",
-        avatar: "/images/logo.jpg", // Kept generic for now
+        avatar: "/images/athena-logo.jpg", // Kept generic for now
         content: "I love the hair cut, great barber. I highly recommend this place for anyone who's looking for a good haircut.",
         services: null,
         image: "/images/reviews/johnnie-t.jpg"

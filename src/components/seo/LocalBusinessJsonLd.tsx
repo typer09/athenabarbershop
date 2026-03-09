@@ -20,7 +20,7 @@ export function LocalBusinessJsonLd() {
         telephone: siteConfig.contact.phoneIntl,
         email: siteConfig.contact.email,
         image: "https://theathenabarbershopshop.site/og-image.jpg",
-        logo: "https://theathenabarbershopshop.site/images/logo.png",
+        logo: "https://theathenabarbershopshop.site/images/athena-logo.jpg",
         priceRange: "$$",
         currenciesAccepted: "VND",
         paymentAccepted: "Cash, Credit Card",
