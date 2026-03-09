@@ -102,12 +102,12 @@ export function Gallery({ images }: GalleryProps) {
 
                     <div className="relative z-10 flex flex-col items-center gap-8">
                         <h3 className="flex flex-wrap justify-center items-baseline gap-x-3 text-6xl md:text-8xl font-heading font-black text-white uppercase tracking-tighter leading-none">
-                            <span>Next</span>
-                            <span className="text-transparent text-stroke-1 text-stroke-white transition-all duration-500 group-hover:text-white group-hover:text-stroke-0">Guest?</span>
+                            <span>Your</span>
+                            <span className="text-transparent text-stroke-1 text-stroke-white transition-all duration-500 group-hover:text-white group-hover:text-stroke-0">Turn.</span>
                         </h3>
                         <p className="text-neutral-100 max-w-lg text-xl font-light leading-relaxed">
-                            Your transformation awaits. <br />
-                            <span className="text-primary-500 font-bold">Claim your legacy.</span>
+                            The chair is waiting for you. <br />
+                            <span className="text-primary-500 font-bold">Book your signature look.</span>
                         </p>
                         <Link href="/contact">
                             <StrongButton className="h-16 px-12 text-lg tracking-widest">
