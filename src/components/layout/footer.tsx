@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { siteConfig } from "@/lib/config";
-import { Facebook, Phone, Mail, MapPin, Clock } from "lucide-react";
+import { Facebook, Phone, Mail, MapPin, Clock, MessageCircle } from "lucide-react";
 
 export function Footer() {
     const currentYear = new Date().getFullYear();
@@ -26,15 +26,26 @@ export function Footer() {
                             Premium barbering in Hải Châu, Đà Nẵng. Precision cuts, classic techniques, modern luxury aesthetic.
                         </p>
                         {/* Social pill */}
-                        <a
-                            href={siteConfig.social.facebook}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="inline-flex items-center gap-2 border border-[#262626] hover:border-primary-500 text-neutral-300 hover:text-white px-4 py-2 rounded-full text-sm transition-all duration-[250ms]"
-                        >
-                            <Facebook size={14} />
-                            Facebook
-                        </a>
+                        <div className="flex flex-wrap gap-3">
+                            <a
+                                href={siteConfig.social.facebook}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="inline-flex items-center gap-2 border border-neutral-600 hover:border-primary-500 text-neutral-200 font-medium hover:text-white px-4 py-2 rounded-full text-sm transition-all duration-[250ms]"
+                            >
+                                <Facebook size={14} />
+                                Facebook
+                            </a>
+                            <a
+                                href={siteConfig.social.whatsapp}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="inline-flex items-center gap-2 border border-neutral-600 hover:border-[#25D366] text-neutral-200 font-medium hover:text-white px-4 py-2 rounded-full text-sm transition-all duration-[250ms]"
+                            >
+                                <MessageCircle size={14} />
+                                WhatsApp
+                            </a>
+                        </div>
                     </div>
 
                     {/* Column 2: Quick Links */}
