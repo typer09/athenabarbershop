@@ -21,7 +21,7 @@ const REVIEWS = [
         title: "8 reviews",
         avatar: "/images/logo.jpg", // Kept generic for now
         content: "I love the hair cut, great barber. I highly recommend this place for anyone who's looking for a good haircut.",
-        services: null, 
+        services: null,
         image: "/images/reviews/johnnie-t.jpg"
     }
 ];
@@ -56,20 +56,20 @@ export function Testimonials() {
                 <div className="mb-12 flex flex-col sm:flex-row sm:items-end justify-between gap-6 relative z-30">
                     <div>
                         <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight uppercase">
-                            What Clients Say
+                            What Clients Say?
                         </h2>
                     </div>
-                    
+
                     {/* Navigation Buttons */}
                     <div className="flex gap-4">
-                        <button 
+                        <button
                             onClick={prevReview}
                             className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white hover:text-black transition-colors"
                             aria-label="Previous review"
                         >
                             <ChevronLeft size={24} />
                         </button>
-                        <button 
+                        <button
                             onClick={nextReview}
                             className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white hover:text-black transition-colors"
                             aria-label="Next review"
@@ -81,7 +81,7 @@ export function Testimonials() {
 
                 <div className="relative">
                     <AnimatePresence mode="wait">
-                        <motion.div 
+                        <motion.div
                             key={currentIndex}
                             initial={{ opacity: 0, x: 20 }}
                             animate={{ opacity: 1, x: 0 }}
@@ -132,13 +132,13 @@ export function Testimonials() {
                                         <p className="text-lg md:text-2xl text-neutral-200 leading-relaxed font-medium md:pr-16 relative z-10">
                                             "{REVIEWS[currentIndex].content}"
                                         </p>
-                                        
+
                                         {/* Quote graphic - moved to the right side of the text */}
                                         <div className="absolute top-[-20px] md:top-auto bottom-[-60px] md:bottom-[-20px] right-0 md:-right-4 text-[120px] md:text-[180px] leading-none text-neutral-800 font-serif opacity-50 select-none pointer-events-none z-0">
                                             "
                                         </div>
                                     </div>
-                                    
+
                                     {/* Services block based on the Google Review */}
                                     {REVIEWS[currentIndex].services && (
                                         <div className="mt-8 pt-6 border-t border-neutral-800 relative z-10">
@@ -156,7 +156,7 @@ export function Testimonials() {
                 </div>
 
                 {/* Dots indicator */}
-                 <div className="flex justify-center gap-2 mt-12 md:mt-16 relative z-30">
+                <div className="flex justify-center gap-2 mt-12 md:mt-16 relative z-30">
                     {REVIEWS.map((_, idx) => (
                         <button
                             key={idx}
@@ -164,9 +164,8 @@ export function Testimonials() {
                                 setCurrentIndex(idx);
                                 setIsAutoPlay(false);
                             }}
-                            className={`h-2 rounded-full transition-all duration-300 ${
-                                currentIndex === idx ? "w-8 bg-[#D4AF37]" : "w-2 bg-neutral-600"
-                            }`}
+                            className={`h-2 rounded-full transition-all duration-300 ${currentIndex === idx ? "w-8 bg-[#D4AF37]" : "w-2 bg-neutral-600"
+                                }`}
                             aria-label={`Go to review ${idx + 1}`}
                         />
                     ))}

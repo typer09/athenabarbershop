@@ -81,7 +81,7 @@ export function BookingCta() {
                     {/* Secondary: Call */}
                     <a
                         href={`tel:${siteConfig.contact.phone}`}
-                        className="inline-flex items-center gap-3 border border-neutral-700 text-neutral-300 font-heading font-bold tracking-widest uppercase px-10 py-4 rounded-lg text-sm transition-all duration-[250ms] hover:border-primary-500 hover:text-white"
+                        className="inline-flex items-center gap-3 border border-neutral-600 text-neutral-100 font-heading font-black tracking-widest uppercase px-10 py-4 rounded-lg text-sm transition-all duration-[250ms] hover:border-primary-500 hover:text-white"
                     >
                         CALL US
                     </a>
