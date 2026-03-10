@@ -10,30 +10,30 @@ const CATEGORIES = [
         id: "reuzel",
         label: "REUZEL",
         products: [
-            { id: "r1", name: "Blue Strong Hold Reuzel", price: "550,000₫" },
-            { id: "r2", name: "Pink Heavy Hold Reuzel", price: "550,000₫" },
-            { id: "r3", name: "Green Medium Hold Reuzel", price: "550,000₫" },
-            { id: "r4", name: "Gold Concrete Hold Reuzel", price: "550,000₫" },
-            { id: "r5", name: "Silver Severed Head Reuzel", price: "550,000₫" },
-            { id: "r6", name: "Tonic Reuzel", price: "250,000₫" },
+            { id: "r1", name: "Blue Strong Hold Reuzel", price: "550,000₫", image: "/images/products/reuzel-blue.jpg" },
+            { id: "r2", name: "Pink Heavy Hold Reuzel", price: "550,000₫", image: "/images/products/reuzel-pink.jpg" },
+            { id: "r3", name: "Green Medium Hold Reuzel", price: "550,000₫", image: "/images/products/reuzel-green.jpg" },
+            { id: "r4", name: "Gold Concrete Hold Reuzel", price: "550,000₫", image: "/images/products/reuzel-gold.jpg" },
+            { id: "r5", name: "Silver Severed Head Reuzel", price: "550,000₫", image: "/images/products/reuzel-silver.jpg" },
+            { id: "r6", name: "Tonic Reuzel", price: "250,000₫", image: "/images/products/reuzel-tonic.jpg" },
         ],
     },
     {
         id: "shape",
         label: "SHAPE POMADE",
         products: [
-            { id: "s1", name: "Atlas Soft Clay 100g", price: "350,000₫" },
-            { id: "s2", name: "Atlas Soft Clay 10g", price: "250,000₫" },
-            { id: "s3", name: "Siren Aqua Hold 100g", price: "350,000₫" },
-            { id: "s4", name: "Siren Aqua Hold 50g", price: "250,000₫" },
-            { id: "s5", name: "Roug Matt Clay", price: "290,000₫" },
-            { id: "s6", name: "Athena Alum Block", price: "250,000₫" },
-            { id: "s7", name: "Trixie Powder", price: "300,000₫" },
+            { id: "s1", name: "Atlas Soft Clay 100g", price: "350,000₫", image: "/images/products/atlas-100g.jpg" },
+            { id: "s2", name: "Atlas Soft Clay 10g", price: "250,000₫", image: "/images/products/atlas-10g.jpg" },
+            { id: "s3", name: "Siren Aqua Hold 100g", price: "350,000₫", image: "/images/products/siren-100g.jpg" },
+            { id: "s4", name: "Siren Aqua Hold 50g", price: "250,000₫", image: "/images/products/siren-50g.jpg" },
+            { id: "s5", name: "Roug Matt Clay", price: "290,000₫", image: "/images/products/roug-clay.jpg" },
+            { id: "s6", name: "Athena Alum Block", price: "250,000₫", image: "/images/products/alum-block.jpg" },
+            { id: "s7", name: "Trixie Powder", price: "300,000₫", image: "/images/products/trixie-powder.jpg" },
         ],
     },
 ];
 
-function ProductCard({ name, price, index }: { name: string; price: string; index: number }) {
+function ProductCard({ name, price, image, index }: { name: string; price: string; image?: string; index: number }) {
     return (
         <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -42,14 +42,29 @@ function ProductCard({ name, price, index }: { name: string; price: string; inde
             transition={{ duration: 0.45, delay: index * 0.07 }}
             className="group flex flex-col bg-[#141414] border border-neutral-800 rounded-xl overflow-hidden hover:border-[#c27a36]/40 transition-colors duration-300"
         >
-            {/* Image placeholder */}
+            {/* Image container */}
             <div className="relative aspect-square bg-neutral-900 flex items-center justify-center overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-neutral-800 to-neutral-900" />
-                {/* Placeholder icon */}
-                <div className="relative z-10 flex flex-col items-center gap-2 text-neutral-700 group-hover:text-neutral-500 transition-colors duration-300">
-                    <ShoppingBag size={40} strokeWidth={1} />
-                    <span className="text-xs tracking-widest uppercase font-medium">Product Image</span>
+                {image ? (
+                    /* Actual product image */
+                    <img 
+                        src={image} 
+                        alt={name}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        onError={(e) => {
+                            // If image fails to load, show placeholder
+                            (e.target as HTMLImageElement).style.display = 'none';
+                            (e.target as HTMLImageElement).parentElement?.querySelector('.placeholder')?.classList.remove('hidden');
+                        }}
+                    />
+                ) : null}
+
+                {/* Placeholder icon (shown if no image or if image fails to load) */}
+                <div className={`placeholder ${image ? 'hidden' : ''} absolute inset-0 flex flex-col items-center justify-center gap-2 text-neutral-700 group-hover:text-neutral-500 transition-colors duration-300`}>
+                    <div className="absolute inset-0 bg-gradient-to-br from-neutral-800 to-neutral-900" />
+                    <ShoppingBag size={40} strokeWidth={1} className="relative z-10" />
+                    <span className="relative z-10 text-xs tracking-widest uppercase font-medium">Product Image</span>
                 </div>
+                
                 {/* Subtle copper overlay on hover */}
                 <div className="absolute inset-0 bg-[#c27a36]/0 group-hover:bg-[#c27a36]/4 transition-all duration-300" />
             </div>
@@ -122,6 +137,7 @@ export function ProductsGrid() {
                                 key={product.id}
                                 name={product.name}
                                 price={product.price}
+                                image={product.image}
                                 index={i}
                             />
                         ))}
