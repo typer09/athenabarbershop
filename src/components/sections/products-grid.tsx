@@ -151,10 +151,10 @@ export function ProductsGrid() {
                         className="text-center py-20"
                     >
                         <ShoppingBag size={48} className="mx-auto mb-4 text-neutral-700" strokeWidth={1} />
-                        <p className="text-neutral-500 text-sm tracking-wide uppercase">
+                        <p className="text-neutral-300 text-sm font-semibold tracking-wide uppercase">
                             Premium grooming products available at our shop.
                         </p>
-                        <p className="text-neutral-600 text-xs mt-1 tracking-wide">
+                        <p className="text-neutral-400 text-xs font-medium mt-1 tracking-wide">
                             Products will be updated soon.
                         </p>
                     </motion.div>
@@ -166,7 +166,7 @@ export function ProductsGrid() {
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: 0.3 }}
-                    className="text-center text-neutral-600 text-xs tracking-widest uppercase mt-12"
+                    className="text-center text-neutral-400 text-xs font-bold tracking-widest uppercase mt-12"
                 >
                     More products coming soon · Hair Tonic · Clay / Wax · Athena Products
                 </motion.p>

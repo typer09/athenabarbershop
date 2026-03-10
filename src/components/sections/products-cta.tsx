@@ -43,7 +43,7 @@ export function ProductsCta() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: 0.13 }}
-                    className="text-neutral-400 text-base mb-10 max-w-sm mx-auto"
+                    className="text-neutral-200 text-base font-semibold mb-10 max-w-sm mx-auto"
                 >
                     to experience premium grooming products.
                 </motion.p>
@@ -80,7 +80,7 @@ export function ProductsCta() {
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: 0.28 }}
-                    className="mt-8 text-sm text-neutral-600"
+                    className="mt-8 text-sm text-neutral-400 font-medium"
                 >
                     {siteConfig.address.street}, {siteConfig.address.city} · {siteConfig.contact.phone}
                 </motion.p>
