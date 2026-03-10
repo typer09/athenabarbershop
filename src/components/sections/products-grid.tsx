@@ -166,7 +166,7 @@ export function ProductsGrid() {
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: 0.3 }}
-                    className="text-center text-neutral-400 text-xs font-bold tracking-widest uppercase mt-12"
+                    className="text-center text-neutral-300 text-xs font-extrabold tracking-widest uppercase mt-12"
                 >
                     More products coming soon · Hair Tonic · Clay / Wax · Athena Products
                 </motion.p>

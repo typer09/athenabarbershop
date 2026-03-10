@@ -68,7 +68,7 @@ export function ProductsCta() {
 
                     <Link
                         href="/services"
-                        className="inline-flex items-center gap-2 border border-neutral-700 text-neutral-400 font-heading font-bold tracking-widest uppercase px-10 py-4 rounded-lg text-sm transition-all duration-[250ms] hover:border-primary-500 hover:text-white"
+                        className="inline-flex items-center gap-2 border border-neutral-700 text-neutral-200 font-heading font-bold tracking-widest uppercase px-10 py-4 rounded-lg text-sm transition-all duration-[250ms] hover:border-primary-500 hover:text-white"
                     >
                         View Services
                     </Link>
@@ -80,7 +80,7 @@ export function ProductsCta() {
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: 0.28 }}
-                    className="mt-8 text-sm text-neutral-400 font-medium"
+                    className="mt-8 text-sm text-neutral-300 font-bold"
                 >
                     {siteConfig.address.street}, {siteConfig.address.city} · {siteConfig.contact.phone}
                 </motion.p>
