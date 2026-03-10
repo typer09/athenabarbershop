@@ -46,13 +46,13 @@ export function QuickContact() {
                     href={siteConfig.social.facebook}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group flex items-center gap-3 rounded-sm bg-neutral-900 border border-neutral-800 px-4 py-4 transition-all hover:border-blue-500/50 hover:bg-neutral-800/50 active:scale-[0.98]"
+                    className="group flex items-center gap-3 rounded-sm bg-neutral-900 border border-neutral-800 px-4 py-4 transition-all hover:border-[#1877F2]/50 hover:bg-[#1877F2]/10 active:scale-[0.98]"
                 >
-                    <div className="shrink-0 text-neutral-200 group-hover:text-blue-500 transition-colors">
+                    <div className="shrink-0 text-neutral-200 group-hover:text-[#1877F2] transition-colors">
                         <Facebook size={20} />
                     </div>
                     <div>
-                        <h4 className="font-bold text-neutral-200 group-hover:text-blue-500 uppercase text-xs tracking-wider">Messenger</h4>
+                        <h4 className="font-bold text-neutral-200 group-hover:text-[#1877F2] uppercase text-xs tracking-wider">Messenger</h4>
                         <p className="text-[10px] text-neutral-200">Athena Barber Shop</p>
                     </div>
                 </a>

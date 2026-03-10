@@ -31,9 +31,9 @@ export function Footer() {
                                 href={siteConfig.social.facebook}
                                 target="_blank"
                                 rel="noreferrer"
-                                className="inline-flex items-center gap-2 border border-neutral-600 hover:border-primary-500 text-neutral-200 font-medium hover:text-white px-4 py-2 rounded-full text-sm transition-all duration-[250ms]"
+                                className="inline-flex items-center gap-2 border border-neutral-600 hover:border-[#1877F2] text-neutral-200 font-medium hover:text-white px-4 py-2 rounded-full text-sm transition-all duration-[250ms] hover:bg-[#1877F2]/10"
                             >
-                                <Facebook size={14} />
+                                <Facebook size={14} className="group-hover:text-[#1877F2]" />
                                 Facebook
                             </a>
                             <a
