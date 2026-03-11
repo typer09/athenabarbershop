@@ -49,7 +49,7 @@ export function Header() {
                     </div>
                     <span className="ml-[12px] font-cinzel font-semibold tracking-[0.08em] uppercase hidden sm:block text-xl">
                         <span className="text-white">ATHENA</span>{" "}
-                        <span className="text-[#c27a36]">BARBER SHOP</span>
+                        <span className="text-[#c27a36] font-black" style={{ WebkitTextStroke: '0.5px #c27a36' }}>BARBER SHOP</span>
                     </span>
                 </Link>
 
