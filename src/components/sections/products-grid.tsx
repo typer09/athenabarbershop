@@ -40,8 +40,11 @@ function ProductCard({ name, price, image, index }: { name: string; price: strin
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.45, delay: index * 0.07 }}
-            className="group flex flex-col bg-[#141414] border border-neutral-800 rounded-xl overflow-hidden hover:border-[#c27a36]/40 transition-colors duration-300"
+            className="group relative flex flex-col bg-[#141414] border border-neutral-800 rounded-xl overflow-hidden hover:border-[#c27a36]/40 transition-colors duration-300"
         >
+            {/* Shimmer / Shine effect overlay */}
+            <div className="absolute top-0 -left-[150%] h-full w-full z-20 pointer-events-none skew-x-[-25deg] bg-gradient-to-r from-transparent via-white/10 to-transparent group-hover:left-[150%] transition-all duration-[1200ms] ease-in-out" />
+
             {/* Image container */}
             <div className="relative aspect-square bg-neutral-900 flex items-center justify-center overflow-hidden">
                 {image ? (
@@ -71,7 +74,7 @@ function ProductCard({ name, price, image, index }: { name: string; price: strin
 
             {/* Card body */}
             <div className="flex flex-col gap-1 p-5">
-                <h3 className="font-heading font-bold text-white text-sm tracking-wide uppercase leading-snug">
+                <h3 className="font-heading font-bold text-white group-hover:text-[#c27a36] transition-colors duration-300 text-sm tracking-wide uppercase leading-snug">
                     {name}
                 </h3>
                 <p className="font-body text-[#c27a36] text-sm font-semibold">{price}</p>
