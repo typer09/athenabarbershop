@@ -170,24 +170,24 @@ export function Team() {
                             </div>
 
                             {/* Info Card — overlaps the image bottom */}
-                            <div className="relative -mt-6 mx-3 bg-white shadow-xl px-4 py-4 z-10 rounded-sm">
+                            <div className="relative -mt-6 mx-3 bg-neutral-950 shadow-xl px-4 py-4 z-10 rounded-sm border border-primary-500">
                                 {/* Role */}
-                                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary-600 mb-1">
+                                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary-400 mb-1">
                                     {barber.role}
                                 </p>
 
                                 {/* Name */}
-                                <h3 className="text-base font-black uppercase text-neutral-900 leading-tight mb-1">
+                                <h3 className="text-base font-black uppercase text-white leading-tight mb-1">
                                     {barber.name}
                                 </h3>
 
                                 {/* Specialty */}
-                                <p className="text-[11px] text-neutral-500 font-medium mb-3 leading-tight">
+                                <p className="text-[11px] text-neutral-300 font-medium mb-3 leading-tight">
                                     {barber.specialty}
                                 </p>
 
                                 {/* Divider */}
-                                <div className="h-px bg-neutral-200 mb-3" />
+                                <div className="h-px bg-neutral-700 mb-3" />
 
                                 {/* Social Icons */}
                                 <div className="flex items-center gap-3">
@@ -196,7 +196,7 @@ export function Team() {
                                             href={barber.socials.facebook}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="text-neutral-400 hover:text-primary-500 transition-colors duration-200"
+                                            className="text-neutral-400 hover:text-primary-400 transition-colors duration-200"
                                             aria-label={`${barber.name} Facebook`}
                                         >
                                             <Facebook size={14} />
@@ -207,7 +207,7 @@ export function Team() {
                                             href={barber.socials.twitter}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="text-neutral-400 hover:text-primary-500 transition-colors duration-200"
+                                            className="text-neutral-400 hover:text-primary-400 transition-colors duration-200"
                                             aria-label={`${barber.name} Twitter`}
                                         >
                                             <Twitter size={14} />
