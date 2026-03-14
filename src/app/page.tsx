@@ -6,6 +6,7 @@ import { Services } from "@/components/sections/services";
 import { Testimonials } from "@/components/sections/testimonials";
 import { ToolLoop } from "@/components/sections/tool-loop";
 import { BookingCta } from "@/components/sections/booking-cta";
+import { Team } from "@/components/sections/team";
 import { getGalleryImages } from "@/lib/gallery-server";
 
 export default async function HomePage() {
@@ -33,7 +34,10 @@ export default async function HomePage() {
             {/* 6. GALLERY SLIDER */}
             <GallerySlider images={galleryImages} />
 
-            {/* 6. BOOKING CTA */}
+            {/* 7. TEAM */}
+            <Team />
+
+            {/* 8. BOOKING CTA */}
             <BookingCta />
 
             {/* 7. CONTACT / MAP */}
