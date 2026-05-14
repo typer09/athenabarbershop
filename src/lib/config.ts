@@ -14,9 +14,9 @@ export const siteConfig = {
 
     // Contact Information
     contact: {
-        phone: "0 78 502 8805", // Display format
-        phoneIntl: "+84 78 502 8805", // Href format
-        phoneE164: "84785028805", // WhatsApp format
+        phone: "0764214263", // Display format
+        phoneIntl: "+84 764 214 263", // Href format
+        phoneE164: "84764214263", // WhatsApp format    
         email: "athenabarbershop89hungvuong@gmail.com",
         facebook: "https://www.facebook.com/profile.php?id=100083368424144",
         founder: "Duy Phong (Spinn)",
@@ -50,7 +50,7 @@ export const siteConfig = {
     social: {
         facebook: "https://www.facebook.com/profile.php?id=100083368424144",
         instagram: "#",
-        whatsapp: "https://wa.me/84785028805",
+        whatsapp: "https://wa.me/84764214263",
     },
 
     // Navigation Links
