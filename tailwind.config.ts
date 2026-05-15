@@ -43,6 +43,7 @@ const config: Config = {
                 heading: ["var(--font-oswald)", "sans-serif"],
                 body: ["var(--font-montserrat)", "sans-serif"],
                 cinzel: ["var(--font-cinzel)", "serif"],
+                signature: ["var(--font-great-vibes)", "cursive"],
             },
             animation: {
                 "fade-in": "fadeIn 0.5s ease-out forwards",

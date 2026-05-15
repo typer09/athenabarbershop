@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Oswald, Montserrat, Cinzel } from "next/font/google"; // Strong, Old School Modern
+import { Oswald, Montserrat, Cinzel, Great_Vibes } from "next/font/google"; // Strong, Old School Modern
 import "./globals.css";
 
 // ============================================
@@ -21,6 +21,13 @@ const cinzel = Cinzel({
     subsets: ["latin"],
     display: "swap",
     variable: "--font-cinzel",
+});
+
+const greatVibes = Great_Vibes({
+    subsets: ["latin"],
+    weight: "400",
+    display: "swap",
+    variable: "--font-great-vibes",
 });
 
 // ============================================
@@ -117,7 +124,7 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="vi" className={`${oswald.variable} ${montserrat.variable} ${cinzel.variable}`}>
+        <html lang="vi" className={`${oswald.variable} ${montserrat.variable} ${cinzel.variable} ${greatVibes.variable}`}>
             <head>
                 <LocalBusinessJsonLd />
             </head>

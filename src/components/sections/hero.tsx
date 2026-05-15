@@ -3,7 +3,6 @@
 import { useRef, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { siteConfig } from "@/lib/config";
 import { motion } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -174,9 +173,9 @@ export function Hero() {
                     <div style={{ marginTop: "28px" }} />
 
                     {/* Subtitle */}
-                    <p className="hero-other-reveal max-w-[600px] font-body text-[18px] text-white/85 leading-[1.6] text-center drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)] mb-10">
-                        Premium grooming services in Hai Chau, Da Nang.<br />
-                        Where classic technique meets modern dark aesthetic.
+                    <p className="hero-other-reveal max-w-[760px] font-signature text-[34px] sm:text-[42px] md:text-[50px] text-white/90 leading-[1.15] text-center drop-shadow-[0_3px_12px_rgba(0,0,0,0.9)] mb-10">
+                        Premium Grooming services in Da Nang.<br />
+                        Where self-care becomes a destination.
                     </p>
 
                     {/* CTA Buttons */}
