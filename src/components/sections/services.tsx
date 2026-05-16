@@ -8,7 +8,14 @@ import { motion, useInView, type Variants } from "framer-motion";
 type Service = (typeof siteConfig.services)[number];
 
 // Main package categories (full cards with includes list)
-const MAIN_PACKAGES = ["Craft", "Beard Groom", "Head Shave", "Elite", "Luxe", "Therapy"] as const;
+const MAIN_PACKAGES = ["Craft", "Beard Groom", "Elite", "Luxe", "Therapy", "Gentlemen Groom & Sip"] as const;
+
+// Chemical services (Perm, Dyed, Hairdress)
+const CHEMICAL_CATEGORIES = [
+    { key: "Perm", label: "Perm" },
+    { key: "Dyed", label: "Dyed" },
+    { key: "Hairdress", label: "Hairdress" },
+] as const;
 
 // Extra service sub-categories (compact rows, grouped)
 const EXTRA_CATEGORIES = [
@@ -16,9 +23,6 @@ const EXTRA_CATEGORIES = [
     { key: "Cleaning", label: "Cleaning" },
     { key: "Hair Wash", label: "Hair Wash" },
     { key: "Massage", label: "Massage" },
-    { key: "Perm", label: "Perm" },
-    { key: "Dyed", label: "Dyed" },
-    { key: "Hairdress", label: "Hairdress" },
 ] as const;
 
 // ── Helper ─────────────────────────────────────────────────────────
@@ -41,7 +45,7 @@ function PackageCard({ service, variants, className = "" }: { service: Service; 
                     {service.name}
                 </h4>
                 {"subtitle" in service && !!service.subtitle && (
-                    <p className="text-xs italic text-neutral-400 group-hover:text-neutral-300 transition-colors">
+                    <p className="text-xs italic text-neutral-300 group-hover:text-neutral-200 transition-colors">
                         {service.subtitle as string}
                     </p>
                 )}
@@ -131,6 +135,11 @@ export function Services() {
         (cat) => siteConfig.services.find((s) => s.category === cat)!
     ).filter(Boolean);
 
+    const chemicalGroups = CHEMICAL_CATEGORIES.map(({ key, label }) => ({
+        label,
+        items: siteConfig.services.filter((s) => s.category === key),
+    })).filter((g) => g.items.length > 0);
+
     const extraGroups = EXTRA_CATEGORIES.map(({ key, label }) => ({
         label,
         items: siteConfig.services.filter((s) => s.category === key),
@@ -162,18 +171,35 @@ export function Services() {
                     {/* ── Main Packages ── */}
                     <div className="mb-20">
                         <SectionDivider label="Packages" />
-                        <div className="grid gap-5 grid-cols-1 md:grid-cols-2 xl:grid-cols-4">
-                            {mainPackages.map((service, idx) => {
-                                const isExtendedCol = mainPackages.length === 6 && idx >= 4;
-                                return (
-                                    <PackageCard
-                                        key={service.id}
-                                        service={service}
-                                        variants={itemVariants}
-                                        className={isExtendedCol ? "xl:col-span-2" : ""}
-                                    />
-                                );
-                            })}
+                        <div className="grid gap-5 grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
+                            {mainPackages.map((service) => (
+                                <PackageCard
+                                    key={service.id}
+                                    service={service}
+                                    variants={itemVariants}
+                                />
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* ── Chemical Services (DV Hoá Chất) ── */}
+                    <div className="mb-20">
+                        <SectionDivider label="Chemical Services" />
+                        <div className="grid md:grid-cols-2 gap-6">
+                            {chemicalGroups.map(({ label, items }) => (
+                                <motion.div
+                                    key={label}
+                                    variants={itemVariants}
+                                    className="bg-[#1A1A1A] border border-[#262626] rounded-[10px] p-6 hover:border-primary-500/40 transition-colors duration-[250ms]"
+                                >
+                                    <h4 className="text-xs font-bold tracking-[0.2em] text-primary-500 uppercase mb-4 pb-3 border-b border-[#262626]">
+                                        {label}
+                                    </h4>
+                                    {items.map((s) => (
+                                        <ExtraRow key={s.id} service={s} variants={itemVariants} />
+                                    ))}
+                                </motion.div>
+                            ))}
                         </div>
                     </div>
 

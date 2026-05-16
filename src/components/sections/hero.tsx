@@ -137,7 +137,7 @@ export function Hero() {
 
                     {/* Small label */}
                     <p className="hero-other-reveal font-body text-xs font-black tracking-[0.3em] text-primary-500 uppercase mb-6">
-                        Est. 2021 Hai Chau  / 2025 Da Nang
+                        Est. 2021 Hai Chau  / 2026 Da Nang
                     </p>
 
                     {/* Main heading */}

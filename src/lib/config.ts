@@ -168,6 +168,22 @@ export const siteConfig = {
                 "Deep Neck – Shoulder – Back Massage",
             ],
         },
+        // ── GENTLEMEN GROOM & SIP ──
+        {
+            id: "gentlemen-groom-sip",
+            name: "GENTLEMEN GROOM & SIP",
+            price: 500000,
+            category: "Gentlemen Groom & Sip",
+            subtitle: "Classic Cocktail – Liquor Shot – Premium Coffee",
+            includes: [
+                "Signature Beverage Selection",
+                "Haircut",
+                "Nose Waxing",
+                "Therapy Herbal Washing",
+                "Using Wax / Pomade",
+                "Styling",
+            ],
+        },
         // ── EXTRA: Styling ──
         {
             id: "extra-styling",
