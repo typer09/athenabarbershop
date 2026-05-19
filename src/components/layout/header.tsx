@@ -109,7 +109,7 @@ export function Header() {
                         initial={{ opacity: 0, y: -20 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -20 }}
-                        className="absolute inset-x-0 top-full h-[calc(100vh-80px)] bg-[#0A0A0A] border-t border-neutral-800 md:hidden flex flex-col p-8"
+                        className="absolute inset-x-0 top-full h-[calc(100dvh-70px)] bg-[#0A0A0A] border-t border-neutral-800 md:hidden flex flex-col p-8 overflow-y-auto"
                     >
                         <nav className="flex flex-col gap-6 text-2xl font-heading font-bold text-center">
                             {siteConfig.navLinks.map((link) => (

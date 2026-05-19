@@ -98,7 +98,7 @@
     }
 
     .section-padding {
-        @apply py-[70px] md:py-[90px] lg:py-[120px];
+        @apply py-14 sm:py-[70px] md:py-[90px] lg:py-[120px];
     }
 
     .heading-xl {

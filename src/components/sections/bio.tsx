@@ -8,13 +8,13 @@ import { ArrowRight } from "lucide-react";
 
 export function Bio() {
     return (
-        <section className="relative bg-[#121212] py-24 border-b border-[#262626] overflow-hidden">
+        <section className="relative bg-[#121212] py-16 sm:py-24 border-b border-[#262626] overflow-hidden">
 
             {/* Subtle copper glow top-right */}
             <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-primary-500/5 blur-[150px] pointer-events-none" />
 
             <div className="section-container">
-                <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                <div className="grid lg:grid-cols-2 gap-10 lg:gap-20 items-center">
 
                     {/* LEFT: IMAGE */}
                     <div className="order-1 relative pb-6 pr-4">
@@ -27,7 +27,7 @@ export function Bio() {
                         >
                             {/* Top-left copper corner (inside image) */}
                             {/* Decorative copper corners (inside image, no overflow) */}
-                            <div className="absolute top-0 left-0 w-10 h-10 border-t-2 border-l-2 border-primary-500 z-20" />
+                            <div className="absolute top-0 left-0 w-8 h-8 sm:w-10 sm:h-10 border-t-2 border-l-2 border-primary-500 z-20" />
 
                             {/* Dark Overlay */}
                             <div className="absolute inset-0 bg-[#0A0A0A]/20 z-10 hover:bg-transparent transition-colors duration-500" />
@@ -47,10 +47,10 @@ export function Bio() {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.4, duration: 0.6 }}
-                            className="absolute bottom-0 right-0 bg-[#1A1A1A] border border-[#262626] rounded-lg p-4 text-center shadow-[0_8px_30px_rgba(0,0,0,0.5)]"
+                            className="absolute bottom-0 right-0 bg-[#1A1A1A] border border-[#262626] rounded-lg p-3 sm:p-4 text-center shadow-[0_8px_30px_rgba(0,0,0,0.5)]"
                         >
-                            <p className="font-heading font-black text-3xl text-primary-500 leading-none">15+</p>
-                            <p className="text-xs text-neutral-100 font-medium tracking-wider uppercase mt-1">Years of<br />Experience</p>
+                            <p className="font-heading font-black text-2xl sm:text-3xl text-primary-500 leading-none">15+</p>
+                            <p className="text-[10px] sm:text-xs text-neutral-100 font-medium tracking-wider uppercase mt-1">Years of<br />Experience</p>
                         </motion.div>
                     </div>
 

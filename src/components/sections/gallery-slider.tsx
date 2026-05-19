@@ -82,12 +82,12 @@ export function GallerySlider({ images }: GallerySliderProps) {
     });
 
     return (
-        <section className="relative bg-neutral-950 py-24 overflow-hidden border-t border-neutral-900">
+        <section className="relative bg-neutral-950 py-16 sm:py-24 overflow-hidden border-t border-neutral-900">
             {/* Header */}
-            <div className="section-container mb-12 flex items-end justify-between">
+            <div className="section-container mb-8 sm:mb-12 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
                 <div>
                     <h2 className="heading-lg text-neutral-50 mb-2">Our Latest Work</h2>
-                    <p className="text-neutral-400">Precision cuts in every detail</p>
+                    <p className="text-neutral-400 text-sm sm:text-base">Precision cuts in every detail</p>
                 </div>
                 <Link
                     href="/gallery"
@@ -132,7 +132,7 @@ export function GallerySlider({ images }: GallerySliderProps) {
                     {loopImages.map((img, index) => (
                         <div
                             key={index}
-                            className="relative aspect-[3/4] w-[280px] md:w-[350px] shrink-0 overflow-hidden rounded-lg bg-[#1A1A1A] group ring-1 ring-transparent hover:ring-primary-500 transition-all duration-[250ms]"
+                            className="relative aspect-[3/4] w-[220px] sm:w-[280px] md:w-[350px] shrink-0 overflow-hidden rounded-lg bg-[#1A1A1A] group ring-1 ring-transparent hover:ring-primary-500 transition-all duration-[250ms]"
                         >
                             <Image
                                 src={img.src}

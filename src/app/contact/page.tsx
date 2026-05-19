@@ -18,9 +18,9 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
     return (
-        <main className="min-h-screen bg-neutral-950 pt-16 pb-20">
+        <main className="min-h-screen bg-neutral-950 pt-16 pb-16 sm:pb-20">
             {/* Header / Intro */}
-            <div className="section-container pt-8 pb-12">
+            <div className="section-container pt-6 sm:pt-8 pb-8 sm:pb-12">
                 <Link
                     href="/"
                     className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-neutral-500 hover:text-primary-500 transition-colors mb-8"
@@ -29,12 +29,12 @@ export default function ContactPage() {
                     <span>Back to Home</span>
                 </Link>
 
-                <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
+                <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 sm:gap-6">
                     <div>
-                        <h1 className="font-heading text-4xl font-bold text-white md:text-5xl lg:text-6xl mb-4">
+                        <h1 className="font-heading text-3xl sm:text-4xl font-bold text-white md:text-5xl lg:text-6xl mb-3 sm:mb-4">
                             Contact Athena Barber Shop Da Nang
                         </h1>
-                        <p className="text-neutral-100 max-w-lg text-lg">
+                        <p className="text-neutral-100 max-w-lg text-base sm:text-lg">
                             The quickest way to book is via WhatsApp or a direct call.
                         </p>
                     </div>
@@ -42,7 +42,7 @@ export default function ContactPage() {
             </div>
 
             <div className="section-container">
-                <div className="grid gap-12 lg:grid-cols-12 lg:gap-16 items-start">
+                <div className="grid gap-10 sm:gap-12 lg:grid-cols-12 lg:gap-16 items-start">
 
                     {/* LEFT COLUMN: PRIMARY CONTACT (Dominant) */}
                     <div className="lg:col-span-6 space-y-12">
@@ -122,12 +122,12 @@ export default function ContactPage() {
 
                     {/* RIGHT COLUMN: BOOKING FORM (Secondary) */}
                     <div className="lg:col-span-6">
-                        <div className="rounded-sm bg-neutral-900 border border-neutral-800 p-8 shadow-2xl relative overflow-hidden">
+                        <div className="rounded-sm bg-neutral-900 border border-neutral-800 p-5 sm:p-8 shadow-2xl relative overflow-hidden">
                             {/* Subtle top visual */}
                             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-neutral-700 to-transparent opacity-20" />
 
-                            <div className="mb-8">
-                                <h2 className="font-heading text-2xl font-bold text-white mb-2">Book Your Haircut in Da Nang</h2>
+                            <div className="mb-6 sm:mb-8">
+                                <h2 className="font-heading text-xl sm:text-2xl font-bold text-white mb-2">Book Your Haircut in Da Nang</h2>
                                 <p className="text-sm text-neutral-200">
                                     Fill out this form to prepare your booking request.
                                 </p>

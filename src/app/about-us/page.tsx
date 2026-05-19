@@ -28,7 +28,7 @@ export default function AboutUsPage() {
             </div>
 
             {/* HERO SECTION */}
-            <section className="relative pt-12 pb-24 md:pt-20 md:pb-32 px-6 border-b border-neutral-900 overflow-hidden">
+            <section className="relative pt-8 pb-16 sm:pt-12 sm:pb-24 md:pt-20 md:pb-32 px-4 sm:px-6 border-b border-neutral-900 overflow-hidden">
                 <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-neutral-900/20 to-transparent pointer-events-none" />
 
                 <div className="section-container relative z-10">
@@ -37,9 +37,9 @@ export default function AboutUsPage() {
                         delay={50}
                         animateBy="words"
                         direction="bottom"
-                        className="text-5xl md:text-7xl lg:text-8xl font-heading font-black text-white leading-[0.9] tracking-tighter mb-8"
+                        className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-heading font-black text-white leading-[0.9] tracking-tighter mb-6 sm:mb-8"
                     />
-                    <div className="min-h-[6em]">
+                    <div className="min-h-[5em] sm:min-h-[6em]">
                         <TextType
                             text={[
                                 "From the historic streets of Hoi An to the vibrant heart of Da Nang.",
@@ -50,7 +50,7 @@ export default function AboutUsPage() {
                             deletingSpeed={30}
                             pauseDuration={2000}
                             cursorCharacter="_"
-                            className="text-xl text-neutral-100 max-w-2xl leading-relaxed font-light block"
+                            className="text-base sm:text-xl text-neutral-100 max-w-2xl leading-relaxed font-light block"
                         />
                     </div>
                 </div>
@@ -59,7 +59,7 @@ export default function AboutUsPage() {
             {/* STORY SECTION 1: ORIGINS (HOI AN) */}
             <section className="section-padding">
                 <div className="section-container">
-                    <div className="grid md:grid-cols-2 gap-16 items-center">
+                    <div className="grid md:grid-cols-2 gap-10 sm:gap-16 items-center">
                         <div className="order-2 md:order-1 relative">
                             {/* Artistic Image Placeholder */}
                             <div className="aspect-[4/5] bg-neutral-900 rounded-sm overflow-hidden relative group">
@@ -100,7 +100,7 @@ export default function AboutUsPage() {
             {/* STORY SECTION 2: DA NANG (2025) */}
             <section className="section-padding">
                 <div className="section-container">
-                    <div className="grid md:grid-cols-2 gap-16 items-center">
+                    <div className="grid md:grid-cols-2 gap-10 sm:gap-16 items-center">
                         <div className="space-y-8">
                             <div className="heading-lg text-white flex flex-wrap gap-x-4 items-baseline">
                                 <BlurText text="2025." className="text-primary-500" delay={50} />

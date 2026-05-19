@@ -6,7 +6,7 @@ import { StrongButton } from "@/components/ui/strong-button";
 
 export function Contact() {
     return (
-        <section id="contact" className="section-padding bg-neutral-900">
+        <section id="contact" className="py-12 sm:py-[70px] md:py-[90px] lg:py-[120px] bg-neutral-900">
             <div className="section-container">
                 <div className="grid gap-8 lg:grid-cols-2">
                     {/* Info Side */}
@@ -73,7 +73,7 @@ export function Contact() {
                     </div>
 
                     {/* Map Side */}
-                    <div className="h-[400px] overflow-hidden rounded-2xl border border-neutral-800 bg-neutral-950 lg:h-auto relative">
+                    <div className="h-[300px] sm:h-[400px] overflow-hidden rounded-2xl border border-neutral-800 bg-neutral-950 lg:h-auto relative">
                         <iframe
                             title="Location Map"
                             src={siteConfig.address.googleMapEmbed}

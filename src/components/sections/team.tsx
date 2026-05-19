@@ -137,7 +137,7 @@ export function Team() {
                 </div>
 
                 {/* ---- BARBER GRID ---- */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+                <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-6">
                     {barbers.map((barber, i) => (
                         <motion.div
                             key={barber.id}
@@ -155,42 +155,42 @@ export function Team() {
                                     alt={`${barber.name} - ${barber.role}`}
                                     fill
                                     className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
-                                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 20vw"
+                                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 50vw, 20vw"
                                     unoptimized
                                 />
                                 {/* Hover overlay */}
                                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-500" />
 
                                 {/* Experience badge — top-right */}
-                                <div className="absolute top-3 right-3 bg-black/70 backdrop-blur-sm px-2 py-1 rounded-sm">
-                                    <p className="text-[10px] font-bold uppercase tracking-widest text-primary-400">
+                                <div className="absolute top-2 right-2 sm:top-3 sm:right-3 bg-black/70 backdrop-blur-sm px-1.5 py-0.5 sm:px-2 sm:py-1 rounded-sm">
+                                    <p className="text-[8px] sm:text-[10px] font-bold uppercase tracking-widest text-primary-400">
                                         {barber.experience}
                                     </p>
                                 </div>
                             </div>
 
                             {/* Info Card — overlaps the image bottom */}
-                            <div className="relative -mt-6 mx-3 bg-neutral-950 shadow-xl px-4 py-4 z-10 rounded-sm border border-primary-500">
+                            <div className="relative -mt-5 sm:-mt-6 mx-2 sm:mx-3 bg-neutral-950 shadow-xl px-3 py-3 sm:px-4 sm:py-4 z-10 rounded-sm border border-primary-500">
                                 {/* Role */}
-                                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary-400 mb-1">
+                                <p className="text-[8px] sm:text-[10px] font-bold uppercase tracking-[0.15em] sm:tracking-[0.2em] text-primary-400 mb-0.5 sm:mb-1">
                                     {barber.role}
                                 </p>
 
                                 {/* Name */}
-                                <h3 className="text-base font-black uppercase text-white leading-tight mb-1">
+                                <h3 className="text-xs sm:text-base font-black uppercase text-white leading-tight mb-0.5 sm:mb-1 truncate">
                                     {barber.name}
                                 </h3>
 
                                 {/* Specialty */}
-                                <p className="text-[11px] text-neutral-300 font-medium mb-3 leading-tight">
+                                <p className="text-[9px] sm:text-[11px] text-neutral-300 font-medium mb-2 sm:mb-3 leading-tight line-clamp-2">
                                     {barber.specialty}
                                 </p>
 
                                 {/* Divider */}
-                                <div className="h-px bg-neutral-700 mb-3" />
+                                <div className="h-px bg-neutral-700 mb-2 sm:mb-3" />
 
                                 {/* Social Icons */}
-                                <div className="flex items-center gap-3">
+                                <div className="flex items-center gap-2 sm:gap-3">
                                     {barber.socials.facebook && (
                                         <Link
                                             href={barber.socials.facebook}
@@ -199,7 +199,7 @@ export function Team() {
                                             className="text-neutral-400 hover:text-primary-400 transition-colors duration-200"
                                             aria-label={`${barber.name} Facebook`}
                                         >
-                                            <Facebook size={14} />
+                                            <Facebook size={12} className="sm:w-[14px] sm:h-[14px]" />
                                         </Link>
                                     )}
                                     {barber.socials.twitter && (
@@ -210,7 +210,7 @@ export function Team() {
                                             className="text-neutral-400 hover:text-primary-400 transition-colors duration-200"
                                             aria-label={`${barber.name} Twitter`}
                                         >
-                                            <Twitter size={14} />
+                                            <Twitter size={12} className="sm:w-[14px] sm:h-[14px]" />
                                         </Link>
                                     )}
                                 </div>

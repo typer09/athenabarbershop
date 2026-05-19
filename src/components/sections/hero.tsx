@@ -132,11 +132,11 @@ export function Hero() {
             </div>
 
             {/* Content */}
-            <div ref={textRef} className="section-container relative z-20 w-full pt-20">
-                <div className="flex flex-col items-center text-center">
+            <div ref={textRef} className="section-container relative z-20 w-full pt-16 sm:pt-20">
+                <div className="flex flex-col items-center text-center px-2 sm:px-0">
 
                     {/* Small label */}
-                    <p className="hero-other-reveal font-body text-xs font-black tracking-[0.3em] text-primary-500 uppercase mb-6">
+                    <p className="hero-other-reveal font-body text-[10px] sm:text-xs font-black tracking-[0.2em] sm:tracking-[0.3em] text-primary-500 uppercase mb-4 sm:mb-6">
                         Est. 2021 Hai Chau  / 2026 Da Nang
                     </p>
 
@@ -144,7 +144,7 @@ export function Hero() {
                     <h1 className="hero-title-reveal font-cinzel leading-none uppercase text-center">
                         {/* ATHENA — main brand title with optical spacing */}
                         <span
-                            className="block text-white font-bold text-[72px] sm:text-[96px] lg:text-[120px] xl:text-[140px]"
+                            className="block text-white font-bold text-[48px] sm:text-[72px] md:text-[96px] lg:text-[120px] xl:text-[140px]"
                             style={{
                                 textShadow: "0 8px 30px rgba(0,0,0,0.45)",
                                 letterSpacing: "0",
@@ -162,28 +162,28 @@ export function Hero() {
 
                         {/* BARBER SHOP — brand descriptor ~57% of ATHENA */}
                         <span
-                            className="inline-block text-[#c27a36] font-bold text-[41px] sm:text-[55px] lg:text-[68px] xl:text-[80px] tracking-[0.06em]"
-                            style={{ marginTop: "12px", transform: "scaleX(1.3)", transformOrigin: "center" }}
+                            className="inline-block text-[#c27a36] font-bold text-[26px] sm:text-[41px] md:text-[55px] lg:text-[68px] xl:text-[80px] tracking-[0.04em] sm:tracking-[0.06em]"
+                            style={{ marginTop: "8px", transform: "scaleX(1.3)", transformOrigin: "center" }}
                         >
                             BARBER SHOP
                         </span>
                     </h1>
 
                     {/* Spacing after heading */}
-                    <div style={{ marginTop: "28px" }} />
+                    <div className="mt-5 sm:mt-7" />
 
                     {/* Subtitle */}
-                    <p className="hero-other-reveal max-w-[760px] font-signature text-[34px] sm:text-[42px] md:text-[50px] text-white/90 leading-[1.15] text-center drop-shadow-[0_3px_12px_rgba(0,0,0,0.9)] mb-10">
-                        Premium Grooming services in Da Nang.<br />
-                        Where self-care becomes a destination.
+                    <p className="hero-other-reveal max-w-[760px] font-signature text-[22px] sm:text-[34px] md:text-[42px] lg:text-[50px] text-white/90 leading-[1.2] sm:leading-[1.15] text-center drop-shadow-[0_3px_12px_rgba(0,0,0,0.9)] mb-8 sm:mb-10 px-2">
+                        Premium Grooming services in Da Nang.<br className="hidden sm:block" />
+                        <span className="sm:hidden"> </span>Where self-care becomes a destination.
                     </p>
 
                     {/* CTA Buttons */}
-                    <div className="hero-other-reveal flex flex-col sm:flex-row items-center gap-4">
+                    <div className="hero-other-reveal flex flex-col sm:flex-row items-center gap-3 sm:gap-4 w-full sm:w-auto px-4 sm:px-0">
                         {/* Primary: BOOK NOW */}
-                        <Link href="/contact">
+                        <Link href="/contact" className="w-full sm:w-auto">
                             <motion.button
-                                className="group relative overflow-hidden font-heading font-black tracking-widest uppercase bg-primary-500 text-white px-9 py-[14px] rounded-lg text-sm transition-all duration-[200ms] hover:bg-primary-600 hover:shadow-[0_0_20px_rgba(255,140,0,0.5)]"
+                                className="group relative overflow-hidden font-heading font-black tracking-widest uppercase bg-primary-500 text-white px-9 py-[14px] rounded-lg text-sm transition-all duration-[200ms] hover:bg-primary-600 hover:shadow-[0_0_20px_rgba(255,140,0,0.5)] w-full sm:w-auto"
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.97 }}
                             >
@@ -202,7 +202,7 @@ export function Hero() {
 
                     {/* Scroll hint */}
                     <motion.div
-                        className="hero-other-reveal mt-16"
+                        className="hero-other-reveal mt-10 sm:mt-16"
                         animate={{ y: [0, 10, 0] }}
                         transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
                     >

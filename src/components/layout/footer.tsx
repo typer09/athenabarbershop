@@ -6,7 +6,7 @@ export function Footer() {
     const currentYear = new Date().getFullYear();
 
     return (
-        <footer className="relative bg-[#050505] pt-20 pb-10 overflow-hidden border-t border-[#262626]">
+        <footer className="relative bg-[#050505] pt-14 sm:pt-20 pb-8 sm:pb-10 overflow-hidden border-t border-[#262626]">
             {/* Subtle watermark */}
             <div className="absolute bottom-0 left-1/2 -translate-x-1/2 select-none pointer-events-none opacity-[0.025]">
                 <span className="text-[10vw] md:text-[12vw] font-heading font-black whitespace-nowrap text-white leading-none">
@@ -15,7 +15,7 @@ export function Footer() {
             </div>
 
             <div className="section-container relative z-10">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 mb-16">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8 mb-12 sm:mb-16">
 
                     {/* Column 1: Brand */}
                     <div className="space-y-5">

@@ -50,31 +50,31 @@ export function Testimonials() {
     }, [isAutoPlay]);
 
     return (
-        <section className="relative bg-neutral-950 py-24 overflow-hidden border-t border-neutral-900">
+        <section className="relative bg-neutral-950 py-16 sm:py-24 overflow-hidden border-t border-neutral-900">
             <div className="section-container relative">
                 {/* Heading & Navigation */}
-                <div className="mb-12 flex flex-col sm:flex-row sm:items-end justify-between gap-6 relative z-30">
+                <div className="mb-8 sm:mb-12 flex flex-col sm:flex-row sm:items-end justify-between gap-4 sm:gap-6 relative z-30">
                     <div>
-                        <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight uppercase">
+                        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight uppercase">
                             What Clients Say?
                         </h2>
                     </div>
 
                     {/* Navigation Buttons */}
-                    <div className="flex gap-4">
+                    <div className="flex gap-3 sm:gap-4">
                         <button
                             onClick={prevReview}
-                            className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white hover:text-black transition-colors"
+                            className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white hover:text-black transition-colors"
                             aria-label="Previous review"
                         >
-                            <ChevronLeft size={24} />
+                            <ChevronLeft size={20} className="sm:w-6 sm:h-6" />
                         </button>
                         <button
                             onClick={nextReview}
-                            className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white hover:text-black transition-colors"
+                            className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white hover:text-black transition-colors"
                             aria-label="Next review"
                         >
-                            <ChevronRight size={24} />
+                            <ChevronRight size={20} className="sm:w-6 sm:h-6" />
                         </button>
                     </div>
                 </div>
@@ -91,7 +91,7 @@ export function Testimonials() {
                         >
                             {/* Left Image */}
                             <div className="w-full lg:w-1/2 relative z-10 lg:min-h-[600px] flex items-center">
-                                <div className="relative aspect-[4/5] w-full max-w-[500px] lg:max-w-none mx-auto overflow-hidden shadow-2xl ring-1 ring-white/10">
+                                <div className="relative aspect-[4/5] sm:aspect-[4/5] w-full max-w-[320px] sm:max-w-[500px] lg:max-w-none mx-auto overflow-hidden shadow-2xl ring-1 ring-white/10">
                                     <Image
                                         src={REVIEWS[currentIndex].image}
                                         alt={REVIEWS[currentIndex].name}
@@ -102,50 +102,50 @@ export function Testimonials() {
                             </div>
 
                             {/* Right Content Box */}
-                            <div className="w-full lg:w-[60%] bg-[#1A1A1A] mt-[-20px] lg:mt-0 lg:absolute lg:right-0 lg:top-1/2 lg:-translate-y-1/2 p-10 md:p-14 lg:p-20 z-20 shadow-[-20px_0_40px_rgba(0,0,0,0.5)] border-l-4 border-[#D4AF37]">
-                                <div className="relative z-10 flex flex-col justify-between h-full min-h-[300px]">
+                            <div className="w-full lg:w-[60%] bg-[#1A1A1A] mt-[-20px] lg:mt-0 lg:absolute lg:right-0 lg:top-1/2 lg:-translate-y-1/2 p-6 sm:p-10 md:p-14 lg:p-20 z-20 shadow-[-20px_0_40px_rgba(0,0,0,0.5)] border-l-4 border-[#D4AF37]">
+                                <div className="relative z-10 flex flex-col justify-between h-full min-h-[250px] sm:min-h-[300px]">
                                     {/* Profile Info & Stars */}
-                                    <div className="mb-8">
-                                        <div className="flex items-center gap-6 mb-6">
-                                            <div className="w-16 h-16 relative overflow-hidden rounded-full border-2 border-[#D4AF37]">
+                                    <div className="mb-6 sm:mb-8">
+                                        <div className="flex items-center gap-4 sm:gap-6 mb-4 sm:mb-6">
+                                            <div className="w-12 h-12 sm:w-16 sm:h-16 relative overflow-hidden rounded-full border-2 border-[#D4AF37] shrink-0">
                                                 <Image src={REVIEWS[currentIndex].avatar} alt={REVIEWS[currentIndex].name} fill className="object-cover" />
                                             </div>
-                                            <div>
-                                                <h4 className="text-xl md:text-2xl font-black text-white tracking-wider uppercase mb-1">
+                                            <div className="min-w-0">
+                                                <h4 className="text-base sm:text-xl md:text-2xl font-black text-white tracking-wider uppercase mb-1 truncate">
                                                     {REVIEWS[currentIndex].name}
                                                 </h4>
-                                                <p className="text-sm md:text-md text-[#D4AF37] font-bold uppercase tracking-widest">
+                                                <p className="text-xs sm:text-sm md:text-md text-[#D4AF37] font-bold uppercase tracking-widest">
                                                     {REVIEWS[currentIndex].title}
                                                 </p>
                                             </div>
                                         </div>
 
-                                        <div className="flex gap-1.5 text-[#D4AF37]">
+                                        <div className="flex gap-1 sm:gap-1.5 text-[#D4AF37]">
                                             {[...Array(5)].map((_, i) => (
-                                                <Star key={i} size={22} fill="currentColor" strokeWidth={0} />
+                                                <Star key={i} size={18} fill="currentColor" strokeWidth={0} className="sm:w-[22px] sm:h-[22px]" />
                                             ))}
                                         </div>
                                     </div>
 
                                     {/* Text and large quotes wrapper */}
                                     <div className="relative mt-auto">
-                                        <p className="text-lg md:text-2xl text-neutral-200 leading-relaxed font-medium md:pr-16 relative z-10">
-                                            "{REVIEWS[currentIndex].content}"
+                                        <p className="text-base sm:text-lg md:text-2xl text-neutral-200 leading-relaxed font-medium md:pr-16 relative z-10">
+                                            &ldquo;{REVIEWS[currentIndex].content}&rdquo;
                                         </p>
 
-                                        {/* Quote graphic - moved to the right side of the text */}
-                                        <div className="absolute top-[-20px] md:top-auto bottom-[-60px] md:bottom-[-20px] right-0 md:-right-4 text-[120px] md:text-[180px] leading-none text-neutral-800 font-serif opacity-50 select-none pointer-events-none z-0">
-                                            "
+                                        {/* Quote graphic - hidden on very small screens */}
+                                        <div className="absolute hidden sm:block top-[-20px] md:top-auto bottom-[-60px] md:bottom-[-20px] right-0 md:-right-4 text-[100px] sm:text-[120px] md:text-[180px] leading-none text-neutral-800 font-serif opacity-50 select-none pointer-events-none z-0">
+                                            &ldquo;
                                         </div>
                                     </div>
 
                                     {/* Services block based on the Google Review */}
                                     {REVIEWS[currentIndex].services && (
-                                        <div className="mt-8 pt-6 border-t border-neutral-800 relative z-10">
-                                            <p className="text-sm md:text-base text-neutral-400">
+                                        <div className="mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-neutral-800 relative z-10">
+                                            <p className="text-xs sm:text-sm md:text-base text-neutral-400">
                                                 <strong className="text-white inline-block mb-1 uppercase tracking-wider text-xs">Services</strong>
                                                 <br />
-                                                <span className="font-medium text-neutral-500">{REVIEWS[currentIndex].services}</span>
+                                                <span className="font-medium text-neutral-500 line-clamp-2 sm:line-clamp-none">{REVIEWS[currentIndex].services}</span>
                                             </p>
                                         </div>
                                     )}

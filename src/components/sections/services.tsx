@@ -154,7 +154,7 @@ export function Services() {
 
             <div className="section-container relative z-10">
                 {/* Header */}
-                <div className="mb-20 text-center">
+                <div className="mb-12 sm:mb-20 text-center">
                     <span className="text-xs font-bold tracking-[0.25em] text-primary-500 uppercase block mb-4">
                         Our Menu
                     </span>
@@ -169,9 +169,9 @@ export function Services() {
                     className="mx-auto max-w-5xl"
                 >
                     {/* ── Main Packages ── */}
-                    <div className="mb-20">
+                    <div className="mb-12 sm:mb-20">
                         <SectionDivider label="Packages" />
-                        <div className="grid gap-5 grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
+                        <div className="grid gap-4 sm:gap-5 grid-cols-1 sm:grid-cols-2 xl:grid-cols-3">
                             {mainPackages.map((service) => (
                                 <PackageCard
                                     key={service.id}
@@ -183,9 +183,9 @@ export function Services() {
                     </div>
 
                     {/* ── Chemical Services (DV Hoá Chất) ── */}
-                    <div className="mb-20">
+                    <div className="mb-12 sm:mb-20">
                         <SectionDivider label="Chemical Services" />
-                        <div className="grid md:grid-cols-2 gap-6">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                             {chemicalGroups.map(({ label, items }) => (
                                 <motion.div
                                     key={label}
@@ -206,7 +206,7 @@ export function Services() {
                     {/* ── Extra Services ── */}
                     <div>
                         <SectionDivider label="Extra Services" />
-                        <div className="grid md:grid-cols-2 gap-6">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                             {extraGroups.map(({ label, items }) => (
                                 <motion.div
                                     key={label}

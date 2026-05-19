@@ -38,38 +38,47 @@ export const metadata: Metadata = {
         process.env.NEXT_PUBLIC_SITE_URL || "https://theathenabarbershopshop.site"
     ),
     title: {
-        default: "Athena Barber Shop Da Nang | Professional Barber Shop in Da Nang",
+        default: "Athena Barber Shop Da Nang | Premium Barber Shop in Hai Chau, Da Nang",
         template: "%s | Athena Barber Shop Da Nang",
     },
     description:
-        "Athena Barber Shop Da Nang - Premium barber shop in Hai Chau, Da Nang, Vietnam. Professional men's haircut, hot towel shaving, and grooming services. Book your appointment today.",
+        "Athena Barber Shop Da Nang - Tiệm cắt tóc nam cao cấp tại Hải Châu, Đà Nẵng. Professional men's haircut, hot towel shaving, beard grooming. Đặt lịch ngay: 0764214263.",
     keywords: [
         "athena barber shop da nang",
-        "athena barber shop da nang",
+        "tiệm cắt tóc nam đà nẵng",
         "barber shop da nang",
         "barbershop da nang",
-        "men haircut da nang",
+        "cắt tóc nam đà nẵng",
         "barber da nang vietnam",
-        "shaving da nang",
+        "cạo râu đà nẵng",
         "men grooming da nang",
         "hai chau barber",
-        "haircut vietnam",
+        "haircut da nang",
+        "fade haircut da nang",
+        "barber shop hải châu",
+        "tiệm tóc nam hải châu",
     ],
     authors: [{ name: "Athena Barber Shop Da Nang" }],
     creator: "Athena Barber Shop Da Nang",
+    publisher: "Athena Barber Shop Da Nang",
+    formatDetection: {
+        telephone: true,
+        email: true,
+        address: true,
+    },
     openGraph: {
         type: "website",
         locale: "vi_VN",
         siteName: "Athena Barber Shop Da Nang",
-        title: "Athena Barber Shop Da Nang | Professional Barber Shop in Da Nang",
+        title: "Athena Barber Shop Da Nang | Premium Barber Shop in Hai Chau",
         description:
-            "Premium barber shop in Hai Chau, Da Nang. Professional men's haircut, hot towel shaving, and grooming services.",
+            "Tiệm cắt tóc nam cao cấp tại Hải Châu, Đà Nẵng. Professional men's haircut, hot towel shaving, and grooming services. Open daily 9AM-8PM.",
         images: [
             {
                 url: "/og-image.jpg",
                 width: 1200,
                 height: 630,
-                alt: "Athena Barber Shop Da Nang - Premium Barber Shop",
+                alt: "Athena Barber Shop Da Nang - Premium Barber Shop in Hai Chau",
             },
         ],
     },
@@ -77,7 +86,7 @@ export const metadata: Metadata = {
         card: "summary_large_image",
         title: "Athena Barber Shop Da Nang | Barber Shop in Da Nang",
         description:
-            "Premium barber shop in Da Nang, Vietnam. Men's haircut, shaving, and grooming services.",
+            "Premium barber shop in Da Nang, Vietnam. Men's haircut, shaving, and grooming services. Open daily 9AM-8PM.",
         images: ["/og-image.jpg"],
     },
     robots: {
@@ -91,10 +100,19 @@ export const metadata: Metadata = {
             "max-snippet": -1,
         },
     },
-    // icons: { ... } removed to use Next.js file-based icon generation (src/app/icon.jpg)
     manifest: "/site.webmanifest",
     alternates: {
         canonical: "https://theathenabarbershopshop.site",
+        languages: {
+            "vi": "https://theathenabarbershopshop.site",
+            "en": "https://theathenabarbershopshop.site",
+        },
+    },
+    other: {
+        "mobile-web-app-capable": "yes",
+        "apple-mobile-web-app-capable": "yes",
+        "apple-mobile-web-app-status-bar-style": "black-translucent",
+        "apple-mobile-web-app-title": "Athena Barber",
     },
 };
 
@@ -103,6 +121,7 @@ export const viewport: Viewport = {
     width: "device-width",
     initialScale: 1,
     maximumScale: 5,
+    viewportFit: "cover",
 };
 
 // ============================================
